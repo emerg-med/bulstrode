@@ -1,0 +1,10 @@
+{% for zone in zones %}
+    <div class="row">
+        <div class="column">
+            <h3 class="ui header">{{ zone.label }}</h3>
+            <a href="{% url "sackett:zone_overview" zone.id %}" class="area-anchor">
+                {{ zone.content }}
+            </a>
+        </div>
+    </div>
+{% endfor %}

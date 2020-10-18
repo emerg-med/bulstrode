@@ -1,0 +1,150 @@
+{% load i18n %}
+<script type="application/javascript" language="JavaScript">
+    function initialise_injury_dropdowns() {
+        $('#id_em_care_inj_activity_type_outer_dropdown').dropdown('set selected',
+                '{{ form.em_care_inj_activity_type.value|default_if_none:"" }}');
+
+        $('#id_em_care_inj_mechanism_outer_dropdown').dropdown('set selected',
+                '{{ form.em_care_inj_mechanism.value|default_if_none:"" }}');
+
+        $('#id_em_care_inj_intent_outer_dropdown').dropdown('set selected',
+                '{{ form.em_care_inj_intent.value|default_if_none:"" }}');
+
+        $('#id_em_care_inj_place_type_outer_dropdown').dropdown('set selected',
+                '{{ form.em_care_inj_place_type.value|default_if_none:"" }}');
+    }
+</script>
+<div style="display: none;" class="row drugsalcohol-item-template">
+    <div class="eight wide left aligned column">
+        <span class="drugsalcohol-narrative" data-id=""></span>
+    </div>
+    <div class="eight wide left aligned column ">
+        <button type="button" class="ui button drugsalcohol-delete">{% trans 'Delete' %}</button>
+    </div>
+</div>
+
+<div class="active title">
+    <i class="dropdown icon"></i>
+    {% trans 'Injury detail' %}
+</div>
+<div class="active content">
+    <div class="ui middle aligned stackable grid">
+        <div class="six wide computer only tablet only right aligned column">
+            {{ form.em_care_inj_date_time.label_tag }}
+        </div>
+        <div class="six wide mobile only left aligned column">{{ form.em_care_inj_date_time.label_tag }}</div>
+        <div class="eight wide left aligned column">
+            <div class="ui fluid input">{{ form.em_care_inj_date_time }}</div>
+            {{ form.em_care_inj_date_time.errors }}
+        </div>
+        <div class="two wide computer only tablet only left aligned column"></div>
+        <div class="six wide computer only tablet only right aligned column">
+            {{ form.em_care_inj_activity_type.label_tag }}
+        </div>
+        <div class="six wide mobile only left aligned column">{{ form.em_care_inj_activity_type.label_tag }}</div>
+        <div class="eight wide left aligned column">
+            {{ form.em_care_inj_activity_type }}{{ form.em_care_inj_activity_type.errors }}
+        </div>
+        <div class="two wide computer only tablet only left aligned column"></div>
+        <div class="six wide computer only tablet only right aligned column">
+            {{ form.em_care_inj_activity_detail.label_tag }}
+        </div>
+        <div class="six wide mobile only left aligned column">{{ form.em_care_inj_activity_detail.label_tag }}</div>
+        <div class="eight wide left aligned column">
+            <div class="ui fluid input">{{ form.em_care_inj_activity_detail }}</div>
+            {{ form.em_care_inj_activity_detail.errors }}
+        </div>
+        <div class="two wide computer only tablet only left aligned column"></div>
+        <div class="six wide computer only tablet only right aligned column">
+            {{ form.em_care_inj_mechanism.label_tag }}
+        </div>
+        <div class="six wide mobile only left aligned column">{{ form.em_care_inj_mechanism.label_tag }}</div>
+        <div class="eight wide left aligned column">
+            {{ form.em_care_inj_mechanism }}{{ form.em_care_inj_mechanism.errors }}
+        </div>
+        <div class="two wide computer only tablet only left aligned column"></div>
+        <div class="six wide computer only tablet only right aligned column">
+            {{ form.em_care_inj_intent.label_tag }}
+        </div>
+        <div class="six wide mobile only left aligned column">{{ form.em_care_inj_intent.label_tag }}</div>
+        <div class="eight wide left aligned column">
+            {{ form.em_care_inj_intent }}{{ form.em_care_inj_intent.errors }}
+        </div>
+        <div class="two wide computer only tablet only left aligned column"></div>
+        <div class="sixteen wide column">
+            <div class="ui centered stackable grid">
+                {{ form.em_care_inj_drug_alcohol }}     {# hidden field #}
+                <div class="six wide computer only tablet only right aligned column">
+                    {{ form.em_care_inj_drug_alcohol.label_tag }}
+                </div>
+                <div class="six wide mobile only left aligned column">
+                    {{ form.em_care_inj_drug_alcohol.label_tag }}
+                </div>
+                <div class="eight wide left aligned column">
+                    <div class="ui grid" id="drugsalcohol_item_grid">
+                    {% for drugs_alcohol_item in drugs_alcohol_items %}
+                        <div class="row drugsalcohol-item">
+                            <div class="eight wide left aligned column ">
+                                <span class="drugsalcohol-narrative" data-id="{{ drugs_alcohol_item.item_id }}">{{ drugs_alcohol_item.item_name }}</span>
+                            </div>
+                            <div class="eight wide left aligned column ">
+                                <button type="button" class="ui button drugsalcohol-delete">{% trans 'Delete' %}</button>
+                            </div>
+                        </div>
+                    {% endfor %}
+                        <div class="row" id="new_drugsalcohol_select_row">
+                            <div class="sixteen wide left aligned column">
+                                <div id="new_drugsalcohol_select" class="ui inline fluid dropdown">
+                                    <div class="default text">{% trans 'choose' %}</div>
+                                    <i class="dropdown icon"></i>
+                                    <div class="menu">
+                                    {% for drugs_alcohol_choice_group in form.drugs_alcohol_choices %}
+                                        <div class="item">
+                                            <i class="dropdown icon"></i>
+                                            <span class="text">{{ drugs_alcohol_choice_group.0 }}</span>
+                                            <div class="right menu">
+                                                {% for drugs_alcohol_choice in drugs_alcohol_choice_group.1 %}
+                                                    <div class="item" data-value="{{ drugs_alcohol_choice.code }}">
+                                                        {{ drugs_alcohol_choice.description }}
+                                                    </div>
+                                                {% endfor %}
+                                            </div>
+                                        </div>
+                                    {% endfor %}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="two wide computer only tablet only left aligned column"></div>
+            </div>
+        </div>
+        <div class="six wide computer only tablet only right aligned column">
+            {{ form.em_care_inj_place_type.label_tag }}
+        </div>
+        <div class="six wide mobile only left aligned column">{{ form.em_care_inj_place_type.label_tag }}</div>
+        <div class="eight wide left aligned column">
+            {{ form.em_care_inj_place_type }}{{ form.em_care_inj_place_type.errors }}
+        </div>
+        <div class="two wide computer only tablet only left aligned column"></div>
+        <div class="six wide computer only tablet only right aligned column">
+            {{ form.em_care_inj_place_exact.label_tag }}
+        </div>
+        <div class="six wide mobile only left aligned column">{{ form.em_care_inj_place_exact.label_tag }}</div>
+        <div class="eight wide left aligned column">
+            <div class="ui fluid input">{{ form.em_care_inj_place_exact }}</div>
+            {{ form.em_care_inj_place_exact.errors }}
+        </div>
+        <div class="two wide computer only tablet only left aligned column"></div>
+        <div class="six wide computer only tablet only right aligned column">
+            {{ form.em_care_inj_place_lat_long.label_tag }}
+        </div>
+        <div class="six wide mobile only left aligned column">{{ form.em_care_inj_place_lat_long.label_tag }}</div>
+        <div class="eight wide left aligned column">
+            <div class="ui fluid input">{{ form.em_care_inj_place_lat_long }}</div>
+            {{ form.em_care_inj_place_lat_long.errors }}
+        </div>
+        <div class="two wide computer only tablet only left aligned column"></div>
+    </div>
+</div>

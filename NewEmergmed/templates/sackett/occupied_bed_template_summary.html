@@ -1,0 +1,10 @@
+<div class="ui segment episode bed-summary">
+    <div class="patient-container">
+        <span class="patient-name">{{ episode.person_family_name|upper }}, {{ episode.person_given_name }}</span>
+    </div>
+    <div class="icon-container">
+        {% for state_icon in state_icons %}
+            <i class="{{ state_icon.0 }}" data-content="{{ state_icon.1 }}"></i>
+        {% endfor %}
+    </div>
+</div>

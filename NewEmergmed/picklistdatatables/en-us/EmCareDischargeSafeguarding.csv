@@ -1,0 +1,30 @@
+ECDS_UniqueID,ECDS_Group,ECDS_Description,ECDS_Code,Sort1,Sort2,SNOMED_Code
+2018111100,No safeguarding concern,No safeguarding concern,2018111100,11,11,861931000000100
+2018211100,Child - this attendance ,Repeated attendances to ED,2018211100,21,11,826931000000104
+2018212100,Child - this attendance ,Delay in presentation,2018212100,21,21,423217007
+2018213100,Child - this attendance ,Self harm,2018213100,21,31,401206008
+2018214100,Child - this attendance ,Significant injury,2018214100,21,41,
+2018214500,Child - this attendance ,Genital injury (not FGM) ,2018214500,21,45,
+2018215100,Child - this attendance ,Disclosure of abuse,2018215100,21,51,162596006
+2018216100,Child - this attendance ,Suspected drug use,2018216100,21,61,
+2018216500,Child - this attendance ,Suspected alcohol use,2018216500,21,65,
+2018217100,Child - this attendance ,Worrying parent/ child interaction,2018217100,21,71,
+2018217500,Child - this attendance ,Worrying child behaviour,2018217500,21,75,
+2018218100,Child - this attendance ,Worrying parental behaviour,2018218100,21,81,
+2018218500,Child - this attendance ,Worrying parental mental health,2018218500,21,85,
+2018311100,Child - environment,Possible neglect,2018311100,31,11,704658004
+2018312100,Child - environment,Risk to sibling,2018312100,31,21,160891002
+2018312500,Child - environment,Bullying,2018312500,31,25,
+2018313100,Child - environment,Possible grooming target,2018313100,31,31,
+2018314100,Child - environment,Radicalisation,2018314100,31,41,
+2018315100,Child - environment,Female Genital Mutilation,2018315100,31,51,
+2018315500,Child - environment,Chlld sexual exploitation,2018315500,31,55,
+2018316100,Child - environment,Child’s environment (general),2018316100,31,61,
+2018611100,Adult,Alcohol use,2018611100,61,11,
+2018612100,Adult,Drug use,2018612100,61,21,
+2018613100,Adult,Domestic Violence,2018613100,61,31,707087005
+2018613500,Adult,Adult sexual eploitation,2018613500,61,35,
+2018614100,Adult,Elder abuse,2018614100,61,41,704349002
+2018615100,Adult,Risk to carer,2018615100,61,51,
+2018616100,Adult,Modern slavery,2018616100,61,61,
+2018616500,Adult,Adult exploitation (non sexual),2018616500,61,65,

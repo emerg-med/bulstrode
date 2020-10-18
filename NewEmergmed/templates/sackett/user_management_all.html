@@ -1,0 +1,109 @@
+{% extends "sackett/site_base.html" %}
+{% load i18n %}
+{% load staticfiles %}
+
+{% block meta %}
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+{% endblock %}
+
+{% block title %}{% trans 'User profile management' %}{% endblock %}
+
+{% block scripts %}
+{% endblock %}
+
+{% block body %}
+    <div class="top-padded-frame">
+        <div class="ui text container primary-container">
+            <div class="ui middle aligned grid">
+                <div class="sixteen wide left aligned column">
+                    <span class="user-mgmt-heading">
+                        {% blocktrans %}Users{% endblocktrans %}
+                    </span>
+                </div>
+                <div class="sixteen wide left aligned column">
+                    <table class="ui compact celled table">
+                        <thead>
+                            <tr>
+                                <th>{% trans 'Username' %}</th>
+                                <th>{% trans 'Enabled' %}</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        {% for u in users %}
+                            <tr>
+                                <td>{{ u.username }}</td>
+                                <td>{% if u.is_enabled %}{% trans 'Yes' %}{% else %}{% trans 'No' %}{% endif %}</td>
+                                <td>
+                                    <button type="button"
+                                            onclick="location.href='{% url 'sackett:user_management_edit' u.id %}'">
+                                        {% trans 'Edit' %}
+                                    </button>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+                <div class="sixteen wide right aligned column">
+                    <button type="button" onclick="location.href='{% url 'sackett:user_management_add' 0 %}'"
+                            class="ui button">
+                        {% trans 'Add new user' %}
+                    </button>
+                </div>
+                <div class="sixteen wide left aligned column">
+                    <span class="user-mgmt-heading">
+                        {% blocktrans %}Doctors{% endblocktrans %}
+                    </span>
+                </div>
+                <div class="sixteen wide left aligned column">
+                    <table class="ui compact celled table">
+                        <thead>
+                            <tr>
+                                <th>{% trans 'Last Name' %}</th>
+                                <th>{% trans 'First Name' %}</th>
+                                <th>{% trans 'Enabled' %}</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        {% for c in consultants %}
+                            <tr>
+                                <td>{{ c.last_name }}</td>
+                                <td>{{ c.first_name }}</td>
+                                <td>{% if c.is_enabled %}{% trans 'Yes' %}{% else %}{% trans 'No' %}{% endif %}</td>
+                                <td>
+                                    {% if c.is_enabled %}
+                                    <button type="button" class="ui button"
+                                            onclick="location.href='{% url 'sackett:user_management_disable_doctor' c.id %}'">
+                                        {% trans 'Disable' %}
+                                    </button>
+                                    {% else %}
+                                    <button type="button" class="ui button"
+                                            onclick="location.href='{% url 'sackett:user_management_enable_doctor' c.id %}'">
+                                        {% trans 'Enable' %}
+                                    </button>
+                                    {% endif %}
+                                {% comment %}
+                                TODO: confirmation dialog on delete button
+                                {% endcomment %}
+                                    <button type="button" class="ui right floated negative button"
+                                            onclick="location.href='{% url 'sackett:user_management_delete_doctor' c.id %}'">
+                                        {% trans 'Delete' %}
+                                    </button>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+                <div class="sixteen wide right aligned column">
+                    <button type="button" onclick="location.href='{% url 'sackett:user_management_add' 1 %}'"
+                            class="ui button">
+                        {% trans 'Add new doctor' %}
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

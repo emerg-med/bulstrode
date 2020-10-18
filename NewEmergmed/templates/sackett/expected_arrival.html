@@ -1,0 +1,108 @@
+{% extends "sackett/site_base.html" %}
+{% load i18n %}
+{% load staticfiles %}
+
+{% block meta %}
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+{% endblock %}
+
+{% block title %}{% trans 'Expected patient' %}{% endblock %}
+
+{% block scripts %}
+    <script language="JavaScript" type="application/javascript">
+        $('document').ready(function() {
+            $('.ui.dropdown').dropdown();
+        });
+    </script>
+{% endblock %}
+{% block body %}
+    <div class="top-padded-frame">
+        <div class="ui text container primary-container no-bottom-border-radius">
+            <h2 class="ui dividing header">{% trans 'New patient expected' %}</h2>
+            <form action="{% url 'sackett:expected_arrival' %}" method="post">
+                {% csrf_token %}
+                <div class="ui middle aligned centered stackable grid">
+                    <div class="six wide computer only tablet only right aligned column">
+                        {{ form.person_given_name.label_tag }}
+                    </div>
+                    <div class="six wide mobile only left aligned column">{{ form.person_given_name.label_tag }}</div>
+                    <div class="eight wide left aligned column">
+                        <div class="ui fluid input">
+                            {{ form.person_given_name }}
+                        </div>
+                        {{ form.person_given_name.errors }}
+                    </div>
+                    <div class="two wide computer only tablet only left aligned column"></div>
+                    <div class="six wide computer only tablet only right aligned column">
+                        {{ form.person_family_name.label_tag }}
+                    </div>
+                    <div class="six wide mobile only left aligned column">{{ form.person_family_name.label_tag }}</div>
+                    <div class="eight wide left aligned column">
+                        <div class="ui fluid input">
+                            {{ form.person_family_name }}
+                        </div>
+                        {{ form.person_family_name.errors }}
+                    </div>
+                    <div class="two wide computer only tablet only left aligned column"></div>
+                    <div class="six wide computer only tablet only right aligned column">
+                        {{ form.em_care_chief_complaint.label_tag }}
+                    </div>
+                    <div class="six wide mobile only left aligned column">{{ form.em_care_chief_complaint.label_tag }}</div>
+                    <div class="eight wide left aligned column">
+                        {{ form.em_care_chief_complaint }}{{ form.em_care_chief_complaint.errors }}
+                    </div>
+                    <div class="two wide computer only tablet only left aligned column"></div>
+                    <div class="six wide computer only tablet only right aligned column">
+                        {{ form.person_stated_gender.label_tag }}
+                    </div>
+                    <div class="six wide mobile only left aligned column">{{ form.person_stated_gender.label_tag }}</div>
+                    <div class="six wide left aligned column">
+                        {{ form.person_stated_gender }}{{ form.person_stated_gender.errors }}
+                    </div>
+                    <div class="four wide computer only tablet only left aligned column"></div>
+                    <div class="six wide computer only tablet only right aligned column">
+                        {{ form.person_age_at_attendance.label_tag }}
+                    </div>
+                    <div class="six wide mobile only left aligned column">
+                        {{ form.person_age_at_attendance.label_tag }}
+                    </div>
+                    <div class="six wide left aligned column">
+                        <div class="ui fluid input">
+                            {{ form.person_age_at_attendance }}
+                        </div>
+                        {{ form.person_age_at_attendance.errors }}
+                    </div>
+                    <div class="four wide computer only tablet only left aligned column"></div>
+                    <div class="sixteen wide center aligned column">
+                        <input class="ui primary button" type="submit" value="{% trans 'Add' %}" />
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="ui text container primary-container no-top-border-radius">
+            <h2 class="ui dividing header">{% trans 'Other expected patients' %}</h2>
+    {#        <input type="checkbox">{% trans 'Show arrived and deleted (last 24hrs)' %} [TODO: AWAITING AJAX INTEGRATION]</input>#}
+            <table class="ui single line celled striped table">
+                <thead>
+                    <tr>
+                        <th>{% trans "Name" %}</th>
+                        <th>{% trans "Information" %}</th>
+                        <th class="center aligned">{% trans "Gender" %}</th>
+                        <th class="center aligned">{% trans "Age" %}</th>
+    {#                    <th>_Del_</th>#}
+                    </tr>
+                </thead>
+            <!-- TODO: Show arrived and deleted (last 24hrs) checkbox -->
+            {% for item in expected %}
+                <tr>
+                    <td>{{ item.name }}</td>
+                    <td>{{ item.information }}</td>
+                    <td class="center aligned">{{ item.gender }}</td>
+                    <td class="center aligned">{{ item.age }}</td>
+    {#                <td>&nbsp;</td>#}
+                </tr>
+            {% endfor %}
+            </table>
+        </div>
+    </div>
+{% endblock %}

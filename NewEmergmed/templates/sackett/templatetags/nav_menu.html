@@ -1,0 +1,169 @@
+{% load staticfiles %}
+{% load i18n %}
+
+<div class="ui one column grid">
+    <div class="computer only tablet only column">
+        <div class="ui fixed inverted main menu">
+            <a href="{% url 'sackett:default' %}" class="nav-menu-home-link" target="_top">
+                <img src="{% static "img/logo.png" %}" class="nav-menu-home-image"/>
+            </a>
+            <a href="{% url 'sackett:expected_arrival' %}" class="item" target="_top">
+                {% trans 'Expected patient' %}
+            </a>
+            <a href="{% url 'sackett:triage_arrival' %}" class="item" target="_top">
+                {% trans 'Triage' %}
+            </a>
+            <a href="{% url 'sackett:patient_details_overview' %}" class="item" target="_top">
+                {% trans 'Registration' %}
+            </a>
+            <div class="right menu">
+                {% if user.is_authenticated %}
+                <div class="ui simple vertical dropdown item">
+                    <a href="{% url 'sackett:user_management_personal' %}" target="_top">
+                        <i class="large user icon no-margin"></i>
+                        <span class="nav-menu-username">{{ user.username }}</span>
+                    </a>
+                    <i class="dropdown icon"></i>
+                    <div class="ui menu">
+                        <a href="{% url 'sackett:user_management_personal' %}" class="item" target="_top">
+                            {% trans 'Account' %}
+                        </a>
+                        {% if perms.sackett.can_administer_users %}
+                        <a href="{% url 'sackett:user_management_all' %}" class="item" target="_top">
+                            {% trans 'User admin' %}
+                        </a>
+                        {% endif %}
+                        {% if perms.sackett.can_export_data %}
+                        <a href="{% url 'sackett:export_data' %}" class="item" target="_top">
+                            {% trans 'Export data' %}
+                        </a>
+                        {% endif %}
+                        {% if perms.sackett.can_review_breaches %}
+                        <a href="{% url 'sackett:review_breaches' %}" class="item" target="_top">
+                            {% trans 'Quality review' %}
+                        </a>
+                        {% endif %}
+                        {% if perms.sackett.can_view_dashboard %}
+                        <a href="{% url 'sackett:dashboard' %}" class="item" target="_top">
+                            {% trans 'Dashboard' %}
+                        </a>
+                        {% endif %}
+                        {% if perms.sackett.can_undischarge %}
+                        <a href="{% url 'sackett:view_discharged' %}" class="item" target="_top">
+                            {% trans 'Discharged patients' %}
+                        </a>
+                        {% endif %}
+                        {% if perms.sackett.can_modify_org %}
+                        <a href="{% url 'sackett:modify_org' %}" class="item" target="_top">
+                            {% trans 'Settings' %}
+                        </a>
+                        {% endif %}
+                    </div>
+                </div>
+                {% else %}
+                <a href="{% url 'sackett:login' %}" class="item" target="_top">
+                    <i class="large sign in icon no-margin"></i>
+                </a>
+                {% endif %}
+                <div class="ui simple vertical dropdown item">
+                    {% trans 'Clinical areas' %}
+                    <i class="dropdown icon"></i>
+                    <div class="ui menu">
+                        {% for zone in zones %}
+                            <a href="{% url 'sackett:zone_overview' zone.id %}" class="item" target="_top">
+                                {{ zone.label }}
+                            </a>
+                        {% endfor %}
+                        {% if perms.sackett.can_administer_zones %}
+                            <a href="{% url 'sackett:add_zone' %}" class="item" target="_top">
+                                {% trans 'Add new...' %}
+                            </a>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="mobile only column">
+        <div class="ui fixed inverted main menu">
+            <a href="{% url 'sackett:default' %}" class="item" target="_top">
+                {% trans 'Overview' %}
+            </a>
+            <a href="{% url 'sackett:expected_arrival' %}" class="item" target="_top">
+                {% trans 'Expected' %}
+            </a>
+            <a href="{% url 'sackett:triage_arrival' %}" class="item" target="_top">
+                {% trans 'Triage' %}
+            </a>
+            <a href="{% url 'sackett:patient_details_overview' %}" class="item" target="_top">
+                {% trans 'Reg' %}
+            </a>
+            <div class="right menu">
+                {% if user.is_authenticated %}
+                <div class="ui simple vertical dropdown item">
+                    <a href="{% url 'sackett:user_management_personal' %}" class="horizontal slim fitted item"
+                       target="_top">
+                        <i class="user icon no-margin"></i>
+                    </a>
+                    <i class="dropdown icon"></i>
+                    <div class="ui menu">
+                        <a href="{% url 'sackett:user_management_personal' %}" class="item" target="_top">
+                            {% trans 'Account' %}
+                        </a>
+                        {% if perms.sackett.can_administer_users %}
+                        <a href="{% url 'sackett:user_management_all' %}" class="item" target="_top">
+                            {% trans 'User admin' %}
+                        </a>
+                        {% endif %}
+                        {% if perms.sackett.can_export_data %}
+                        <a href="{% url 'sackett:export_data' %}" class="item" target="_top">
+                            {% trans 'Export data' %}
+                        </a>
+                        {% endif %}
+                        {% if perms.sackett.can_review_breaches %}
+                        <a href="{% url 'sackett:review_breaches' %}" class="item" target="_top">
+                            {% trans 'Quality review' %}
+                        </a>
+                        {% endif %}
+                        {% if perms.sackett.can_view_dashboard %}
+                        <a href="{% url 'sackett:dashboard' %}" class="item" target="_top">
+                            {% trans 'Dashboard' %}
+                        </a>
+                        {% endif %}
+                        {% if perms.sackett.can_undischarge %}
+                        <a href="{% url 'sackett:view_discharged' %}" class="item" target="_top">
+                            {% trans 'Discharged patients' %}
+                        </a>
+                        {% endif %}
+                        {% if perms.sackett.can_modify_org %}
+                        <a href="{% url 'sackett:modify_org' %}" class="item" target="_top">
+                            {% trans 'Settings' %}
+                        </a>
+                        {% endif %}
+                    </div>
+                </div>
+                {% else %}
+                <a href="{% url 'sackett:login' %}" class="horizontal slim fitted item" target="_top">
+                    <i class="sign in icon no-margin"></i>
+                </a>
+                {% endif %}
+                <div class="ui simple vertical dropdown item">
+                    {% trans 'Areas' %}
+                    <i class="dropdown icon"></i>
+                    <div class="ui menu">
+                        {% for zone in zones %}
+                            <a href="{% url 'sackett:zone_overview' zone.id %}" class="item" target="_top">
+                                {{ zone.label }}
+                            </a>
+                        {% endfor %}
+                        {% if perms.sackett.can_administer_zones %}
+                            <a href="{% url 'sackett:add_zone' %}" class="item" target="_top">
+                                {% trans 'Add new...' %}
+                            </a>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

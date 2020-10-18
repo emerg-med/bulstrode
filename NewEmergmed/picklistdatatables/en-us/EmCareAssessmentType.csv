@@ -1,0 +1,13 @@
+ECDS_UniqueID,ECDS_Group,ECDS_Description,ECDS_Code,Sort1,Sort2,SNOMED_Code,Notes
+2018111100,Triage system,Australian Triage System,<ATS>,11,11,273887006,This is the generic SNOMED code for a triage scoring / indexing system
+2018112100,Triage system,Canadian Triage System,<CTS>,11,21,273887006,This is the generic SNOMED code for a triage scoring / indexing system
+2018113100,Triage system,Emergency Severity Index,<ESI>,11,31,273887006,This is the generic SNOMED code for a triage scoring / indexing system
+2018114100,Triage system,Manchester Triage System,<MTS>,11,41,713009001,
+2018115100,Triage system,Manchester Triage System (modified),<XMTS>,11,51,273887006,This is the generic SNOMED code for a triage scoring / indexing system
+2018116100,Triage system,South African Triage System,<SATS>,11,61,273887006,This is the generic SNOMED code for a triage scoring / indexing system
+2018311100,Early warning score,NEWS - UK National Early Warning Score,<NEWS>,31,11,859261000000108,
+2018315100,Early warning score,PEWS - Paediatric Early Warning Score,<PEWS>,31,51,445597002,
+2018511100,Specialist,GCS - Glasgow Coma Scale,<GCS>,51,11,386554004,
+2018515100,Specialist,Quick SOFA score,<QSOFA>,51,51,,Awaiting SNOMED code
+2018515900,Specialist,APACHE II score,<APACHE2>,51,59,273258004,
+2018518100,Specialist,ISS - Injury Severity Scale,<ISS>,51,81,273533008,

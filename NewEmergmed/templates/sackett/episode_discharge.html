@@ -1,0 +1,121 @@
+{% load i18n %}
+<script type="application/javascript" language="JavaScript">
+    function initialise_discharge_dropdowns() {
+        $('#id_em_care_discharge_status_outer_dropdown').dropdown('set selected',
+                '{{ form.em_care_discharge_status.value|default_if_none:"" }}');
+        $('#id_em_care_discharge_follow_up_outer_dropdown').dropdown('set selected',
+                '{{ form.em_care_discharge_follow_up.value|default_if_none:"" }}');
+        $('#id_em_care_discharge_safeguarding_outer_dropdown').dropdown('set selected',
+                '{{ form.em_care_discharge_safeguarding.value|default_if_none:"" }}');
+        $('#id_em_care_admit_speciality_outer_dropdown').dropdown('set selected',
+                '{{ form.em_care_admit_speciality.value|default_if_none:"" }}');
+    }
+
+    {# TODO this should be issued by the widget - need some sort of central script registry, maybe as an #}
+    {# inclusion tag in the base template #}
+    function initialise_transfer_destination_dropdown() {
+        $('#id_em_care_transfer_destination_outer_dropdown').dropdown(
+            {
+                apiSettings: {
+                    url: '{% url "sackett:healthcare_facility_search" ""%}{value}',
+                    beforeSend: function(settings) {
+                        settings.urlData = {
+                            value: $('#id_em_care_transfer_destination_outer_dropdown .search').val()
+                        };
+
+                        return settings;
+                    }
+                }
+            }
+        );
+    }
+</script>
+<div class="active title">
+    <i class="dropdown icon"></i>
+    {% trans 'Discharge' %}
+</div>
+<div class="active content">
+    <div class="ui middle aligned grid">
+    {% if is_discharged %}
+        <div class="sixteen wide left aligned column">
+            <span>{{ discharged_message }}</span>
+        </div>
+    {% endif %}
+        <div class="six wide right aligned column">{{ form.em_care_discharge_status.label_tag }}</div>
+        <div class="eight wide left aligned column">
+            <div class="ui fluid input">{{ form.em_care_discharge_status }}</div>
+            {{ form.em_care_inj_date_time.errors }}
+        </div>
+        <div class="two wide left aligned column"></div>
+
+    {% if not is_early_discharge %}
+        <div class="six wide right aligned column">{{ form.em_care_discharge_follow_up.label_tag }}</div>
+        <div class="eight wide left aligned column">
+            <div class="ui fluid input">{{ form.em_care_discharge_follow_up }}</div>
+            {{ form.em_care_discharge_follow_up.errors }}
+        </div>
+        <div class="two wide left aligned column"></div>
+        <div class="six wide right aligned column">{{ form.em_care_discharge_medication.label_tag }}</div>
+        <div class="eight wide left aligned column">
+            <div class="ui fluid input">{{ form.em_care_discharge_medication }}</div>
+            {{ form.em_care_discharge_medication.errors }}
+        </div>
+        <div class="two wide left aligned column"></div>
+
+        <div class="six wide right aligned column">{{ form.em_care_discharge_instructions.label_tag }}</div>
+        <div class="eight wide left aligned column">
+            <div class="ui fluid input">{{ form.em_care_discharge_instructions }}</div>
+            {{ form.em_care_discharge_instructions.errors }}
+        </div>
+        <div class="two wide left aligned column"></div>
+
+        <div class="six wide right aligned column">{{ form.em_care_discharge_safeguarding.label_tag }}</div>
+        <div class="eight wide left aligned column">
+            <div class="ui fluid input">{{ form.em_care_discharge_safeguarding }}</div>
+            {{ form.em_care_discharge_safeguarding.errors }}
+        </div>
+        <div class="two wide left aligned column"></div>
+
+        <div id="transfer_destination_container"
+             {% if not transfer_destination_visible %}style="display: none;"{% endif %} class="row">
+
+            <div class="six wide right aligned column">{{ form.em_care_transfer_destination.label_tag }}</div>
+            <div class="eight wide left aligned column">
+                {{ form.em_care_transfer_destination }}
+                {{ form.em_care_transfer_destination.errors }}
+            </div>
+            <div class="two wide left aligned column"></div>
+        </div>
+        <div id="admit_speciality_container"
+             {% if not admit_speciality_visible %}style="display: none;"{% endif %} class="row">
+            <div class="six wide right aligned column">{{ form.em_care_admit_speciality.label_tag }}</div>
+            <div class="eight wide left aligned column">
+                <div class="ui fluid input">{{ form.em_care_admit_speciality }}</div>
+                {{ form.em_care_admit_speciality.errors }}
+            </div>
+            <div class="two wide left aligned column"></div>
+        </div>
+        <div class="eight wide center aligned column">
+{#            <button type="button" class="ui button" id="discharge_letter_button">#}
+{#                {% trans 'Discharge Letter' %}#}
+{#            </button>#}
+        </div>
+    {% elif not is_discharged %}
+        <div class="eight wide center aligned column">
+            <button type="button" class="ui button" id="undo_early_discharge_button">
+                {% trans 'Undo early discharge' %}
+            </button>
+        </div>
+    {% endif %}
+    {% if discharge_button_visible %}
+        <div class="eight wide center aligned column">
+            <button type="button" class="ui button" id="discharge_button">
+                {% trans 'Complete Discharge' %}
+            </button>
+            <span id="discharge_button_clicked_label" style="display: none;">
+                {% trans 'Click Save to continue' %}
+            </span>
+        </div>
+    {% endif %}
+    </div>
+</div>

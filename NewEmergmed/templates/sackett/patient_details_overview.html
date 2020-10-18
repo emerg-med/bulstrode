@@ -1,0 +1,51 @@
+{% extends "sackett/site_base_no_menu.html" %}
+{% load i18n %}
+{% get_current_language_bidi as LANGUAGE_BIDI %}
+
+{% block meta %}
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+{% endblock %}
+
+{% block title %}{% trans 'Patient registration' %}{% endblock %}
+
+{% block scripts %}
+    <script type="application/javascript" language="JavaScript">
+        $('.document').ready(function() {
+            $('.sidebar').sidebar({
+                transition: 'push',
+                context: $('#sidebar_context')
+            }).sidebar('show');
+
+            $('#patient_list_button').click(function () {
+                $('.sidebar').sidebar('toggle');
+            });
+        });
+    </script>
+{% endblock %}
+
+{% block body %}
+    <div id="sidebar_context">
+        <div class="ui sidebar inverted vertical menu">
+            {% for group in grouped_patients %}
+                <div class="item">
+                    <div class="header">{{ group.0 }}</div>
+                    <div class="menu">
+                        {% for patient in group.1 %}
+                            <a class="item" href="{% url 'sackett:patient_details' patient.id %}"
+                               target="content_frame">
+                                {{ patient.name }}
+                            </a>
+                        {% endfor %}
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+        <div class="pusher">
+            <button class="ui primary icon button {% if LANGUAGE_BIDI %}rtl{% endif %}" id="patient_list_button">
+                <i class="large chevron {% if LANGUAGE_BIDI %}left{% else %}right{% endif %} icon"></i>
+            </button>
+            <iframe id="content_frame" name="content_frame" src="{% url 'sackett:patient_details' first_patient_id %}">
+            </iframe>
+        </div>
+    </div>
+{% endblock %}

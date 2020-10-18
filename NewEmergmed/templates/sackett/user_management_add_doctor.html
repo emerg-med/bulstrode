@@ -1,0 +1,56 @@
+{% extends "sackett/site_base.html" %}
+{% load i18n %}
+{% load staticfiles %}
+
+{% block meta %}
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+{% endblock %}
+
+{% block title %}{% trans 'Add doctor' %}{% endblock %}
+
+{% block scripts %}
+{% endblock %}
+
+{% block body %}
+    <div class="top-padded-frame">
+        <div class="ui text container primary-container">
+            <h2 class="ui dividing header">{% trans 'Add doctor' %}</h2>
+            <form action="{% url 'sackett:user_management_add' 1 %}" method="post">
+                {% csrf_token %}
+                <div class="ui middle aligned grid">
+                {% if saved %}
+                    <div class="sixteen wide left aligned column">
+                        <div class="ui positive message">
+                            <div class="header">
+                                {% blocktrans %}Doctor '{{ saved_first_name }} {{ saved_last_name }}' created successfully{% endblocktrans %}
+                            </div>
+                        </div>
+                    </div>
+                {% endif %}
+                    <div class="eight wide right aligned column">
+                        {{ form.first_name.label_tag }}
+                    </div>
+                    <div class="eight wide left aligned column">
+                        {{ form.first_name }}
+                    </div>
+                    <div class="eight wide right aligned column">
+                        {{ form.last_name.label_tag }}
+                    </div>
+                    <div class="eight wide left aligned column">
+                        {{ form.last_name }}
+                    </div>
+                {% for err in form.non_field_errors %}
+                    <div class="six wide right aligned column">
+                    </div>
+                    <div class="ten wide left aligned column">
+                        <span class="errorlist">{{ err }}</span>
+                    </div>
+                {% endfor %}
+                    <div class="sixteen wide center aligned column">
+                        <input class="ui primary button" type="submit" value="{% trans 'Add' %}" />
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+{% endblock %}

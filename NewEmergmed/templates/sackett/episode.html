@@ -1,0 +1,324 @@
+{% extends "sackett/site_base.html" %}
+{% load i18n %}
+{% load staticfiles %}
+{% load episode_locking %}
+
+{% block meta %}
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+{% endblock %}
+
+{% block title %}{% trans 'Episode :: ' %}{{ full_name }}{% endblock %}
+
+{% block scripts %}
+{#    {% if not is_discharged %}  TODO check to ensure form is disabled when discharged! #}
+        <script src="{% static "js/episode_locking.js" %}"></script>
+        <script src="{% static "js/jquery.fn.sortable.js" %}"></script>
+        <script type="application/javascript" language="JavaScript">
+            configure_locking(1, '#episode_form');       // TODO magic number
+            add_save_element('#floating_save_button');
+            add_save_element('#floating_mobile_save_button');
+        </script>
+        <script src="{% static "js/episode.js" %}"></script>    {# TODO minify #}
+        <script src="{% static "js/injury_panel.js" %}"></script>    {# TODO minify #}
+
+        {# TODO this has to be inline in episode.html because it contains a Django template tag... find a better way #}
+        <script type="application/javascript" language="JavaScript">
+            function initialise_new_diagnosis_dropdown() {
+                $('#new_diagnosis_select').dropdown(
+                    {
+                        action: 'select',
+                        onChange: new_diagnosis_select_changed,
+                        apiSettings: {
+                            url: '{% url "sackett:diagnosis_search" ""%}{value}',
+                            beforeSend: function(settings) {
+                                settings.urlData = {
+                                    value: $('#new_diagnosis_select .search').val()
+                                };
+
+                                return settings;
+                            }
+                        }
+                    }
+                );
+            }
+
+            // called in document.ready() in episode.js
+            function episode_html_ready() {
+                var accordion_content = $('#accordion_content');
+
+                {% for collapsed_panel in collapsed_panels %}
+                    accordion_content.accordion('close', {{ collapsed_panel }});
+                {% endfor %}
+
+                $('#id_em_care_chief_complaint_outer_dropdown').dropdown('set selected',
+                    '{{ pre_diagnosis_form.em_care_chief_complaint.value|default_if_none:"" }}');
+
+                $('#id_em_care_assessment_outer_dropdown').dropdown('set selected',
+                    '{{ pre_diagnosis_form.em_care_assessment.value|default_if_none:"" }}');
+
+                $('#id_assigned_clinician_outer_dropdown').dropdown('set selected',
+                    '{{ pre_diagnosis_form.assigned_clinician.value|default_if_none:"" }}');
+
+                $('#id_bed_outer_dropdown').dropdown('set selected',
+                    '{{ pre_diagnosis_form.bed.value|default_if_none:"" }}');
+
+                $('#triage_decision_support_button').click(function() {
+                    $('.ui.modal.acuity').modal('show');
+                });
+
+                $('#breach_button').click(function() {
+                    $('.ui.modal.breach').modal({closable: false}).modal('show');
+                });
+
+                $('#breach_detail').keydown(function(evt) {
+                    var key = evt.charCode ? evt.charCode : evt.keyCode ? evt.keyCode : 0;
+
+                    if (key == 13) {
+                        evt.preventDefault();
+                        breach_submit_button_action(evt);
+                    } else if (key == 27){
+                        evt.preventDefault();
+                        breach_cancel_button_action(evt);
+                    }
+                });
+            }
+        </script>
+{#    {% endif %}#}
+{% endblock %}
+
+{% block body %}
+    <div class="top-padded-frame {% if is_discharged %}discharged{% else %}not-discharged{% endif %}">
+        {% locking_messages %}
+        <div class="ui modal acuity">
+            <i class="acuity circular inverted red close icon"></i>
+            <div class="ui fluid image">
+                <img src="{% static 'img/True_Acuity1.png' %}">
+            </div>
+        </div>
+        <div class="ui modal breach">
+            <div class="header">
+                {% trans 'Breach/Incident detail' %}
+            </div>
+            <div class="content">
+                <form action="{% url 'sackett:submit_breach' episode_id %}" method="post" id="breach_form">
+                    {% csrf_token %}
+                    <div class="ui fluid input">
+                        {{ breach_form.detail }}
+                    </div>
+                    <br/>
+                    <button class="ui cancel button" type="button" id="breach_cancel_button">
+                        {% trans 'Cancel' %}</button>
+                    <button class="ui primary ok button" type="button" id="breach_submit_button">
+                        {% trans 'Submit' %}</button>
+                </form>
+            </div>
+        </div>
+        {% if not is_discharged %}
+            <button type="button" class="ui primary button" id="floating_mobile_save_button">
+                {% trans 'Save' %}
+            </button>
+        {% endif %}
+
+        <button class="ui compact red icon button breach-button" id="breach_button">
+            <span class="breach-label">{% trans 'Breach' %}</span>
+            <br/>
+            <i class="large white bullhorn icon"></i>
+        </button>
+
+        <div class="ui text container primary-container floating-patient-header-row
+        {% if is_discharged %} discharged{% else %} not-discharged{% endif %}">
+            <div class="ui middle aligned stackable centered grid">
+                <div class="eight wide computer only tablet only left aligned column">
+                    <span class="patient-name">
+                        {# TODO split name up #}
+                        {% blocktrans %}{{ full_name }}{% endblocktrans %}
+                    </span>
+                </div>
+                <div class="four wide computer only tablet only right aligned column">
+                    <a href="{% url 'sackett:patient_details' episode_id %}">{% trans 'Registration...' %}</a>
+                </div>
+                <div class="four wide computer only tablet only right aligned column">
+                {% if not is_discharged %}
+                    <button type="button" class="ui primary button" id="floating_save_button">
+                        {% trans 'Save' %}
+                    </button>
+                {% endif %}
+                </div>
+                <div class="twelve wide mobile only left aligned column">
+                    <div class="ui grid">
+                        <div class="eleven wide left aligned column">
+                            <span class="patient-name">
+                                {# TODO split name up #}
+                                {% blocktrans %}{{ full_name }}{% endblocktrans %}
+                            </span>
+                        </div>
+                        <div class="five wide right aligned column">
+                            <a href="{% url 'sackett:patient_details' episode_id %}">{% trans 'Registration...' %}</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="ui text container primary-container" id="episode_container">
+            <div id="pre_diagnosis_content">
+                <div class="ui middle aligned stackable centered grid">
+                    <div class="row inline-patient-header-row">
+                        <div class="twelve wide left aligned column">
+                            <div class="ui grid">
+                                <div class="eleven wide left aligned column">
+                                    <span class="patient-name">
+                                        {# TODO split name up #}
+                                        {% blocktrans %}{{ full_name }}{% endblocktrans %}
+                                    </span>
+                                </div>
+                                <div class="five wide right aligned column">
+                                    <a href="{% url 'sackett:patient_details' episode_id %}">{% trans 'Registration...' %}</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="four wide computer only tablet only right aligned column">
+                        {% if not is_discharged %}
+                            <form action="{% url 'sackett:episode_update' episode_id %}" method="post"
+                                  id="episode_form" class="episode-save-form">
+                                {% csrf_token %}
+                                <input class="ui primary button" type="submit" value="{% trans 'Save' %}"/>
+                            </form>
+                        {% endif %}
+                        </div>
+                    </div>
+                    <div class="eight wide left aligned column">
+                        <div class="ui grid">
+                            <div class="six wide left aligned column">
+                                <h4 class="ui header">
+                                    {% blocktrans %}Unique id: {{ unique_id }}{% endblocktrans %}
+                                </h4>
+                            </div>
+                            <div class="ten wide left aligned column">
+                                <h4 class="ui header">
+                                    {% blocktrans %}Local number: {{ local_number }}{% endblocktrans %}
+                                </h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="four wide right aligned column">
+                        <div class="ui grid">
+                            <div class="twelve wide right aligned column">
+                                {% blocktrans %}{{ age }} years old{% endblocktrans %}
+                            </div>
+                            <div class="four wide right aligned column">
+                                <i class="large {{ gender.0 }} patient-gender"
+                                   data-content="{{ gender.1 }}"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="four wide computer only tablet only right aligned column" id="state_icon_content">
+                            {{ state_icons }}
+                        </div>
+                    <div class="sixteen wide center aligned column">
+                        {% if is_discharged %}
+                            <h3 class="ui orange header">
+                                {% trans 'Patient has been discharged - this record is read-only' %}
+                            </h3>
+                        {% endif %}
+                    </div>
+                    <div class="four wide computer only tablet only right aligned column">
+                        {{ pre_diagnosis_form.em_care_chief_complaint.label_tag }}
+                    </div>
+                    <div class="four wide mobile only left aligned column">
+                        {{ pre_diagnosis_form.em_care_chief_complaint.label_tag }}
+                    </div>
+                    <div class="twelve wide left aligned column">
+                        {{ pre_diagnosis_form.em_care_chief_complaint }}
+                        {{ pre_diagnosis_form.em_care_chief_complaint.errors }}
+                    </div>
+                    <div class="four wide computer only tablet only right aligned column">{{ pre_diagnosis_form.em_care_assessment.label_tag }}</div>
+                    <div class="four wide mobile only left aligned column">{{ pre_diagnosis_form.em_care_assessment.label_tag }}</div>
+                    <div class="four wide left aligned column">
+                        <div class="ui fluid input">{{ pre_diagnosis_form.em_care_assessment }}</div>
+                        {{ pre_diagnosis_form.em_care_assessment.errors }}
+                    </div>
+                    <div class="eight wide left aligned column">
+                        <button class="ui button" type="button" id="triage_decision_support_button">
+                            {% trans 'Triage decision support' %}
+                        </button>
+                    </div>
+                    <div class="four wide computer only tablet only right aligned column">
+                        {{ pre_diagnosis_form.assigned_clinician.label_tag }}
+                    </div>
+                    <div class="four wide mobile only left aligned column">
+                        {{ pre_diagnosis_form.assigned_clinician.label_tag }}
+                    </div>
+                    <div class="four wide left aligned column">
+                        {{ pre_diagnosis_form.assigned_clinician }}
+                        {{ pre_diagnosis_form.assigned_clinician.errors }}
+                    </div>
+                    <div class="four wide computer only tablet only right aligned column">
+                        {{ pre_diagnosis_form.action.label_tag }}
+                    </div>
+                    <div class="four wide mobile only left aligned column">
+                        {{ pre_diagnosis_form.action.label_tag }}
+                    </div>
+                    <div class="four wide left aligned column">
+                        <div class="ui fluid input">
+                            {{ pre_diagnosis_form.action }}
+                            {{ pre_diagnosis_form.action.errors }}
+                        </div>
+                    </div>
+                    <div class="eight wide column">
+                        <div class="ui grid">
+                            <div class="eight wide computer only tablet only right aligned column">
+                                {{ pre_diagnosis_form.bed_requested.label_tag }}
+                            </div>
+                            <div class="eight wide mobile only left aligned column">
+                                {{ pre_diagnosis_form.bed_requested.label_tag }}
+                            </div>
+                            <div class="eight wide left aligned column">
+                                {{ pre_diagnosis_form.bed_requested }}
+                                {{ pre_diagnosis_form.bed_requested.errors }}
+                            </div>
+    {#                            <div class="one wide mobile only column">#}
+                                {# padding #}
+    {#                            </div>#}
+                        </div>
+                    </div>
+                    <div class="eight wide computer only tablet only centered right aligned column">
+                        <a href="{% url 'sackett:patient_details' episode_id %}">{% trans 'Click here for patient registration' %}</a>
+                    </div>
+                    <div class="eight wide mobile only column">
+                        {# padding #}
+                    </div>
+                    <div class="sixteen wide mobile only centered left aligned column">
+                        <a href="{% url 'sackett:patient_details' episode_id %}">{% trans 'Click here for patient registration' %}</a>
+                    </div>
+                    <div class="four wide computer only tablet only right aligned column">
+                        {{ pre_diagnosis_form.bed.label_tag }}
+                    </div>
+                    <div class="four wide mobile only left aligned column">
+                        {{ pre_diagnosis_form.bed.label_tag }}
+                    </div>
+                    <div class="twelve wide left aligned column">
+                        {{ pre_diagnosis_form.bed }}
+                        {{ pre_diagnosis_form.bed.errors }}
+                    </div>
+                </div>
+            </div>
+            <div class="ui stackable centered grid" id="additional_content">
+                {{ additional_content }}
+            </div>
+            <div class="ui left aligned grid">
+                <div class="ui styled fluid accordion" id="accordion_content">
+                    {{ accordion_content }}
+                </div>
+            </div>
+        </div>
+    {#    {% if not is_discharged %}#}
+    {#        <form action="{% url 'sackett:episode_update' episode_id %}" method="post"#}
+    {#              id="episode_form" class="episode-save-form">#}
+    {#            {% csrf_token %}#}
+    {#            <input class="ui primary button save-button" type="submit" value="{% trans 'Save' %}"#}
+    {#                   id="episode_save_button" />#}
+    {#        </form>#}
+    {#    {% endif %}#}
+        {% locking_forms episode_id %}
+    </div>
+{% endblock %}

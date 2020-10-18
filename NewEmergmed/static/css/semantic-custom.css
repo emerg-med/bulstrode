@@ -1,0 +1,12 @@
+.acuity.icon {
+    top:0 !important;
+    right:-3rem !important;
+}
+
+i.icon, i.icons {
+    font-size: 1rem;        /* in semantic ui css, this is 1em for some reason, which results in inconsistent sizing */
+}
+
+.horizontal.slim.fitted.item {
+    padding: 0 0.4rem 0 0.4rem;
+}

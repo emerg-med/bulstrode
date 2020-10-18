@@ -1,0 +1,105 @@
+{% extends "sackett/site_base.html" %}
+{% load i18n %}
+
+{% block title %}{% trans 'Add new clinical area' %}{% endblock %}
+
+{% block scripts %}
+<script type='application/javascript' language='JavaScript'>
+    function zone_form_template_select_changed(value, text, $selected) {
+        var selectedIndex = -1;
+
+        if (typeof $selected != 'undefined') {
+            selectedIndex = parseInt($selected.data('index'));
+        }
+
+        for (var i = 0; i < {{ template_count }}; i++) {
+            var detailDiv = $('#template_detail_' + i);
+            if (i == selectedIndex) {
+                detailDiv.show();
+            } else {
+                detailDiv.hide();
+            }
+        }
+    }
+
+    function zone_form_post(evt)
+    {
+        var zone_form=$('#zone_form');
+        var zone_form_data = zone_form.serialize();
+        $.ajax({
+            type: 'POST',
+            url: zone_form.attr('action'),
+            dataType: 'html',
+            data: zone_form_data,
+            success: function(result)
+            {
+                $('#zone_form_result').html(result);
+                reset_form()
+            }
+        });
+
+        //don't submit the form
+        return false;
+    }
+
+    function reset_form() {
+        for (var i = 0; i < {{ template_count }}; i++) {
+            var detailDiv = $('#template_detail_' + i);
+            detailDiv.hide();
+        }
+
+        $('#zone_form_zone_label').val('');
+        $('#zone_form_template_outer_dropdown').dropdown('restore defaults');
+    }
+
+    $('document').ready(function() {
+        $('#zone_form_template_outer_dropdown').dropdown({
+            onChange: zone_form_template_select_changed
+        });
+
+        reset_form();
+
+        $('#zone_form').submit(zone_form_post);
+    });
+</script>
+{% endblock %}
+
+{% block body %}
+    <div class="top-padded-frame">
+        <div class="ui text container">
+            <h2 class="ui dividing header">{% trans 'Add new clinical area' %}</h2>
+            <form action="{% url 'sackett:add_zone' %}" method="post" id="zone_form">
+                {% csrf_token %}
+                <div class="ui middle aligned centered grid">
+                    <div class="six wide right aligned column">{{ form.label.label_tag }}</div>
+                    <div class="eight wide left aligned column">
+                        <div class="ui fluid input">{{ form.label }}</div>
+                        {{ form.label.errors }}
+                    </div>
+                    <div class="two wide right aligned column"></div>
+                    <div class="six wide right aligned column">{{ form.template.label_tag }}</div>
+                    <div class="eight wide left aligned column">
+                        {{ form.template }}
+                        {{ form.template.errors }}
+                    </div>
+                    <div class="two wide right aligned column">
+                        <input class="ui primary button" type="submit" value="{% trans 'Add' %}" />
+                    </div>
+                    <div class="six wide right aligned column"></div>
+                    <div class="eight wide left aligned column">
+                        {% for t in template_list %}
+                        <div id="template_detail_{{ t.index }}">
+                            <img src="zoneimg/{{ t.template.image }}" width="200"/>
+                            <p>{{ t.template.description }}</p>
+                        </div>
+                        {% endfor %}
+                    </div>
+                    <div class="two wide right aligned column"></div>
+                    <div class="sixteen wide left aligned column">
+                        <div id="zone_form_result"></div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+{% endblock %}

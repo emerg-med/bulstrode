@@ -1,0 +1,5 @@
+<select id="id_em_care_transfer_destination" name="id_em_care_transfer_destination" class="track-value-changes">
+    {% for destination in destinations %}
+        <option value="{{ destination.0 }}">{{ destination.1 }}</option>
+    {% endfor %}
+</select>

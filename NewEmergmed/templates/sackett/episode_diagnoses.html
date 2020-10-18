@@ -1,0 +1,21 @@
+{% load i18n %}
+
+<div class="active title">
+    <i class="dropdown icon"></i>
+    {% trans 'Diagnoses' %}
+</div>
+<div class="active content">
+    <div class="ui middle aligned stackable centered grid">
+        {{ new_diagnosis_select }}
+        <div class="row">
+            <div class="sixteen wide column">
+                <div class="ui middle aligned stackable centered grid" id="diagnoses_grid">
+                    {% for diagnosis in diagnoses %}
+                        {{ diagnosis }}
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        {{ new_diagnosis_template }}
+    </div>
+</div>

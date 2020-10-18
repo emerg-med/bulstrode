@@ -1,0 +1,43 @@
+{% load i18n %}
+
+<div class="ui warning message hidden" id="warning_banner">
+    <div class="header" id="record_locked_banner_message">
+        {% trans 'Another user is editing this record - please wait a moment' %}
+    </div>
+</div>
+<div class="ui negative message hidden" id="error_banner">
+    <div class="header" id="lock_failed_banner_message">
+        {% trans 'This record is locked by another user and cannot be edited' %}
+    </div>
+    <div id="lock_error_banner_message">
+        <div class="header" id="lock_error_banner_message">
+            {%  trans 'There was an error while locking this record - it cannot be edited and saved at this time' %}
+        </div>
+        <p>{% trans 'Further attempts will be made automatically - this message will disappear once the record has been successfully locked' %}</p>
+    </div>
+    <div class="header" id="lock_expired_banner_message">
+        {%  trans 'This record has been locked by another user - any unsaved changes you have made will be lost' %}
+    </div>
+</div>
+<div class="ui basic modal" id="record_steal_popup">
+    <div class="ui three icon header">
+        <i class="lock icon"></i>
+        {% trans 'Record locked' %}
+    </div>
+    <div class="content">
+        <div class="description">
+            <p>{% trans 'Another user is editing this record. You can take control of it but they will lose any unsaved changes.' %}</p>
+            <p>{% trans 'Take control of this record?' %}</p>
+        </div>
+    </div>
+    <div class="actions">
+        <div class="ui red basic cancel inverted button" id="record_steal_popup_no_button">
+            <i class="remove icon"></i>
+            {% trans 'No' %}
+        </div>
+        <div class="ui green ok inverted button" id="record_steal_popup_yes_button">
+            <i class="checkmark icon"></i>
+            {% trans 'Yes' %}
+        </div>
+    </div>
+</div>

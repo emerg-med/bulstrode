@@ -1,0 +1,9 @@
+ECDS_UniqueID,ECDS_Description,ECDS_Code
+2018010000,Number present and verified ,1
+2018020000,Number present but not traced ,2
+2018030000,Trace required ,3
+2018040000,Trace attempted - No match or multiple match found ,4
+2018050000,Trace needs to be resolved - (NHS Number or PATIENT detail conflict) ,5
+2018060000,Trace in progress ,6
+2018070000,Number not present and trace not required ,7
+2018080000,Trace postponed (baby under six weeks old) ,8

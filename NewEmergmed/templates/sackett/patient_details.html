@@ -1,0 +1,495 @@
+{% extends "sackett/site_base.html" %}
+{% load i18n %}
+{% load staticfiles %}
+{% load episode_locking %}
+
+{% block meta %}
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+{% endblock %}
+
+{% block title %}{% trans 'Patient registration' %}{% endblock %}
+
+{% block scripts %}
+    <script src="{% static "js/episode_locking.js" %}"></script>
+    <script type="application/javascript" language="JavaScript">
+        configure_locking(2, '#save_button');       // TODO magic number
+        add_save_element('#floating_save_button');
+        add_save_element('#floating_mobile_save_button');
+    </script>
+    <script src="{% static "js/injury_panel.js" %}"></script>    {# TODO minify #}
+    {# TODO this has to be inline in patient_details.html because it contains a Django template tag... find a better way #}
+    <script type="application/javascript" language="JavaScript">
+        function post_form() {
+            $('#patient_details_form').submit();
+        }
+
+        $('document').ready(function() {
+            $('#id_person_stated_gender_outer_dropdown').dropdown('set selected',
+                    '{{ form.person_stated_gender.value|default_if_none:"" }}');
+            $('#id_em_care_arrive_transport_mode_outer_dropdown').dropdown('set selected',
+                    '{{ form.em_care_arrive_transport_mode.value|default_if_none:"" }}');
+            $('#id_em_care_attendance_type_outer_dropdown').dropdown('set selected',
+                    '{{ form.em_care_attendance_type.value|default_if_none:"" }}');
+            $('#id_em_care_referral_source_outer_dropdown').dropdown('set selected',
+                    '{{ form.em_care_referral_source.value|default_if_none:"" }}');
+            $('#id_person_comm_lang_outer_dropdown').dropdown('set selected',
+                    '{{ form.person_comm_lang.value|default_if_none:"" }}');
+            $('#id_person_interpreter_lang_outer_dropdown').dropdown('set selected',
+                    '{{ form.person_interpreter_lang.value|default_if_none:"" }}');
+            $('#id_person_identity_withheld_reason_outer_dropdown').dropdown('set selected',
+                    '{{ form.person_identity_withheld_reason.value|default_if_none:"" }}');
+            $('#id_person_usual_residence_type_outer_dropdown').dropdown('set selected',
+                    '{{ form.person_usual_residence_type.value|default_if_none:"" }}');
+            $('#id_person_ethnic_category_outer_dropdown').dropdown('set selected',
+                    '{{ form.person_ethnic_category.value|default_if_none:"" }}');
+
+            $('#id_person_gp_practice_code_outer_dropdown').dropdown(
+                {
+                    apiSettings: {
+                        url: '{% url "sackett:gp_search" ""%}{value}',
+                        beforeSend: function(settings) {
+                            settings.urlData = {
+                                value: $('#id_person_gp_practice_code_outer_dropdown .search').val()
+                            };
+
+                            return settings;
+                        }
+                    }
+                }
+            );
+
+            $('#id_person_school_outer_dropdown').dropdown(
+                {
+                    apiSettings: {
+                        url: '{% url "sackett:school_search" ""%}{value}',
+                        beforeSend: function(settings) {
+                            settings.urlData = {
+                                value: $('#id_person_school_outer_dropdown .search').val()
+                            };
+
+                            return settings;
+                        }
+                    }
+                }
+            );
+
+            $('#id_em_care_arrive_transfer_source_outer_dropdown').dropdown(
+                {
+                    apiSettings: {
+                        url: '{% url "sackett:healthcare_facility_search" ""%}{value}',
+                        beforeSend: function(settings) {
+                            settings.urlData = {
+                                value: $('#id_em_care_arrive_transfer_source_outer_dropdown .search').val()
+                            };
+
+                            return settings;
+                        }
+                    }
+                }
+            );
+
+            var interpreter_check_box = $('#id_person_interpreter_rqd');
+
+            if (interpreter_check_box.prop('checked')) {
+                $('#id_person_interpreter_lang_outer_dropdown').css('display', '');
+            } else {
+                $('#id_person_interpreter_lang_outer_dropdown').hide();
+            }
+
+            interpreter_check_box.change(function() {
+                if ($(this).prop('checked')) {
+                    $('#id_person_interpreter_lang_outer_dropdown').css('display', '');
+                } else {
+                    $('#id_person_interpreter_lang_outer_dropdown').hide();
+                }
+            });
+
+            var withhold_check_box = $('#id_withhold_identity');
+            if (withhold_check_box.prop('checked')) {
+                $('#id_person_identity_withheld_reason_outer_dropdown').css('display', '');
+            } else {
+                $('#id_person_identity_withheld_reason_outer_dropdown').hide();
+            }
+
+            withhold_check_box.change(function() {
+                if ($(this).prop('checked')) {
+                    $('#id_person_identity_withheld_reason_outer_dropdown').css('display', '');
+                } else {
+                    $('#id_person_identity_withheld_reason_outer_dropdown').hide();
+                }
+            });
+
+            initialise_injury_panel();
+
+            $('.inline-patient-header-row').visibility({
+                type   : 'fixed'
+            });
+
+            $('.floating-patient-header-row').visibility({
+                type   : 'fixed'
+            });
+
+            $('#floating_save_button').click(post_form);
+
+            $('#floating_mobile_save_button').click(post_form);
+        });
+    </script>
+{% endblock %}
+
+{% block body %}
+    <div class="top-padded-frame {% if is_discharged %}discharged{% else %}not-discharged{% endif %}">
+        {% locking_messages %}
+        {% if not is_discharged %}
+            <button type="button" class="ui primary button" id="floating_mobile_save_button">
+                {% trans 'Save' %}
+            </button>
+        {% endif %}
+        <button class="ui compact red icon button breach-button" id="breach_button">
+            <span class="breach-label">{% trans 'Breach' %}</span>
+            <br/>
+            <i class="large white bullhorn icon"></i>
+        </button>
+        <div class="ui text container primary-container floating-patient-header-row">
+            <div class="ui middle aligned stackable centered grid">
+                <div class="eight wide computer only tablet only left aligned column">
+                    <span class="patient-name">
+                        {# TODO split full name #}
+                        {% blocktrans %}{{ full_name }}{% endblocktrans %}
+                    </span>
+                </div>
+                <div class="four wide computer only tablet only right aligned column">
+                    <a href="{% url 'sackett:episode' episode_id %}">{% trans 'Episode...' %}</a>
+                </div>
+                <div class="four wide computer only tablet only right aligned column">
+                {% if not is_discharged %}
+                    <button type="button" class="ui primary button" id="floating_save_button">
+                        {% trans 'Save' %}
+                    </button>
+                {% endif %}
+                </div>
+                <div class="twelve wide mobile only left aligned column">
+                    <div class="ui grid">
+                        <div class="eleven wide left aligned column">
+                            <span class="patient-name">
+                                {# TODO split name #}
+                                {% blocktrans %}{{ full_name }}{% endblocktrans %}
+                            </span>
+                        </div>
+                        <div class="five wide right aligned column">
+                            <a href="{% url 'sackett:episode' episode_id %}">{% trans 'Episode...' %}</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="ui text container primary-container">
+            <form action="{% url 'sackett:patient_details' episode_id %}" method="post" class="patient-details-form"
+                    id="patient_details_form">
+                {% csrf_token %}
+                <div class="ui grid">
+                    <div class="row inline-patient-header-row">
+                        <div class="sixteen wide mobile only left aligned column">
+                            <div class="ui grid">
+                                <div class="eleven wide left aligned column">
+                                    <span class="patient-name">
+                                        {# TODO split name #}
+                                        {% blocktrans %}{{ full_name }}{% endblocktrans %}
+                                    </span>
+                                </div>
+                                <div class="five wide right aligned column">
+                                    <a href="{% url 'sackett:episode' episode_id %}">{% trans 'Episode...' %}</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="twelve wide computer only tablet only left aligned column">
+                            <div class="ui grid">
+                                <div class="eleven wide left aligned column">
+                                    <span class="patient-name">
+                                        {# TODO split name #}
+                                        {% blocktrans %}{{ full_name }}{% endblocktrans %}
+                                    </span>
+                                </div>
+                                <div class="five wide right aligned column">
+                                    <a href="{% url 'sackett:episode' episode_id %}">{% trans 'Episode...' %}</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="four wide computer only tablet only right aligned column">
+                        {% if not is_discharged %}
+                            <input class="ui primary button" type="submit" value="{% trans 'Save' %}"
+                                   id="save_button"/>
+                        {% endif %}
+                        </div>
+                    </div>
+                </div>
+                <div class="ui middle aligned stackable centered grid">
+                    <div class="four wide computer only tablet only right aligned column">
+                        {{ form.person_global_number.label_tag }}
+                    </div>
+                    <div class="four wide mobile only left aligned column">{{ form.person_global_number.label_tag }}</div>
+                    <div class="ten wide left aligned column">
+                        <div class="ui fluid input">{{ form.person_global_number }}</div>
+                        {{ form.person_global_number.errors }}
+                    </div>
+                    <div class="two wide computer only tablet only left aligned column"></div>
+                    <div class="four wide computer only tablet only right aligned column">
+                        {{ form.person_local_number.label_tag }}
+                    </div>
+                    <div class="four wide mobile only left aligned column">{{ form.person_local_number.label_tag }}</div>
+                    <div class="ten wide left aligned column">
+                        <div class="ui fluid input">{{ form.person_local_number }}</div>
+                        {{ form.person_local_number.errors }}
+                    </div>
+                    <div class="two wide computer only tablet only left aligned column"></div>
+                    <div class="four wide computer only tablet only right aligned column">
+                        {{ form.person_given_name.label_tag }}
+                    </div>
+                    <div class="four wide mobile only left aligned column">{{ form.person_given_name.label_tag }}</div>
+                    <div class="ten wide left aligned column">
+                        <div class="ui fluid input">{{ form.person_given_name }}</div>
+                        {{ form.person_given_name.errors }}
+                    </div>
+                    <div class="two wide computer only tablet only left aligned column"></div>
+                    <div class="four wide computer only tablet only right aligned column">
+                        {{ form.person_family_name.label_tag }}
+                    </div>
+                    <div class="four wide mobile only left aligned column">{{ form.person_family_name.label_tag }}</div>
+                    <div class="ten wide left aligned column">
+                        <div class="ui fluid input">{{ form.person_family_name }}</div>
+                        {{ form.person_family_name.errors }}
+                    </div>
+                    <div class="two wide computer only tablet only left aligned column"></div>
+                    <div class="four wide computer only tablet only right aligned column">
+                        {{ form.person_stated_gender.label_tag }}
+                    </div>
+                    <div class="four wide mobile only left aligned column">{{ form.person_stated_gender.label_tag }}</div>
+                    <div class="ten wide left aligned column">
+                        {{ form.person_stated_gender }}{{ form.person_stated_gender.errors }}
+                    </div>
+                    <div class="two wide computer only tablet only left aligned column"></div>
+                    <div class="four wide computer only tablet only right aligned column">
+                        {{ form.person_birth_date.label_tag }}
+                    </div>
+                    <div class="four wide mobile only left aligned column">{{ form.person_birth_date.label_tag }}</div>
+                    <div class="six wide left aligned column">
+                        <div class="ui fluid input">{{ form.person_birth_date }}</div>
+                        {{ form.person_birth_date.errors }}
+                    </div>
+                    <div class="six wide left aligned column">
+                        {% if age_est %}{% trans 'Age (est.): ' %}
+                        {% else %}{% trans 'Age: ' %}{% endif %}{{ age }}
+                    </div>
+                {% if show_injury %}
+                    <div class="sixteen wide column">
+                        <div class="ui styled fluid accordion">
+                            {{ injury_panel }}
+                        </div>
+                    </div>
+                {% endif %}
+                    <div class="four wide computer only tablet only right aligned column">
+                        {{ form.em_care_arrive_transport_mode.label_tag }}
+                    </div>
+                    <div class="four wide mobile only left aligned column">
+                        {{ form.em_care_arrive_transport_mode.label_tag }}
+                    </div>
+                    <div class="ten wide left aligned column">
+                        {{ form.em_care_arrive_transport_mode }}{{ form.em_care_arrive_transport_mode.errors }}
+                    </div>
+                    <div class="two wide computer only tablet only left aligned column"></div>
+                    <div class="four wide computer only tablet only right aligned column">
+                        {{ form.em_care_attendance_type.label_tag }}
+                    </div>
+                    <div class="four wide mobile only left aligned column">
+                        {{ form.em_care_attendance_type.label_tag }}
+                    </div>
+                    <div class="ten wide left aligned column">
+                        {{ form.em_care_attendance_type }}{{ form.em_care_attendance_type.errors }}
+                    </div>
+                    <div class="two wide computer only tablet only left aligned column"></div>
+                    <div class="four wide computer only tablet only right aligned column">
+                        {{ form.em_care_referral_source.label_tag }}
+                    </div>
+                    <div class="four wide mobile only left aligned column">
+                        {{ form.em_care_referral_source.label_tag }}
+                    </div>
+                    <div class="ten wide left aligned column">
+                        {{ form.em_care_referral_source }}{{ form.em_care_referral_source.errors }}
+                    </div>
+                    <div class="two wide computer only tablet only left aligned column"></div>
+                    <div class="four wide computer only tablet only right aligned column">
+                        {{ form.em_care_arrive_transfer_source.label_tag }}
+                    </div>
+                    <div class="four wide mobile only left aligned column">
+                        {{ form.em_care_arrive_transfer_source.label_tag }}
+                    </div>
+                    <div class="ten wide left aligned column">
+                        {{ form.em_care_arrive_transfer_source }}{{ form.em_care_arrive_transfer_source.errors }}
+                    </div>
+                    <div class="two wide computer only tablet only left aligned column"></div>
+                    <div class="four wide computer only tablet only right aligned column">
+                        {{ form.person_comm_lang.label_tag }}
+                    </div>
+                    <div class="four wide mobile only left aligned column">{{ form.person_comm_lang.label_tag }}</div>
+                    <div class="ten wide left aligned column">
+                        {{ form.person_comm_lang }}{{ form.person_comm_lang.errors }}
+                    </div>
+                    <div class="two wide computer only tablet only left aligned column"></div>
+                    <div class="five wide column">
+                        <div class="ui grid">
+                            <div class="thirteen wide computer only tablet only right aligned column">
+                                {{ form.person_interpreter_rqd.label_tag }}
+                            </div>
+                            <div class="twelve wide mobile only left aligned column">
+                                {{ form.person_interpreter_rqd.label_tag }}
+                            </div>
+                            <div class="three wide left aligned column">
+                                {{ form.person_interpreter_rqd }}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="nine wide left aligned column">
+                        {{ form.person_interpreter_lang }}
+                        {{ form.person_interpreter_lang.errors }}
+                    </div>
+                    <div class="two wide computer only tablet only left aligned column"></div>
+                    <div class="five wide column">
+                        <div class="ui grid">
+                            <div class="thirteen wide computer only tablet only right aligned column">
+                                {{ form.withhold_identity.label_tag }}
+                            </div>
+                            <div class="twelve wide mobile only left aligned column">
+                                {{ form.withhold_identity.label_tag }}
+                            </div>
+                            <div class="three wide left aligned column">
+                                {{ form.withhold_identity }}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="nine wide left aligned column">
+                        {{ form.person_identity_withheld_reason }}
+                        {{ form.person_identity_withheld_reason.errors }}
+                    </div>
+                    <div class="two wide computer only tablet only left aligned column"></div>
+                    <div class="four wide computer only tablet only right aligned column">
+                        {{ form.person_usual_address_1.label_tag }}
+                    </div>
+                    <div class="four wide mobile only left aligned column">
+                        {{ form.person_usual_address_1.label_tag }}
+                    </div>
+                    <div class="ten wide left aligned column">
+                        <div class="ui fluid input">{{ form.person_usual_address_1 }}</div>
+                        {{ form.person_usual_address_1.errors }}
+                    </div>
+                    <div class="two wide computer only tablet only left aligned column"></div>
+                    <div class="four wide computer only tablet only right aligned column">
+                        {{ form.person_usual_address_2.label_tag }}
+                    </div>
+                    <div class="four wide mobile only left aligned column">
+                        {{ form.person_usual_address_2.label_tag }}
+                    </div>
+                    <div class="ten wide left aligned column">
+                        <div class="ui fluid input">{{ form.person_usual_address_2 }}</div>
+                        {{ form.person_usual_address_2.errors }}
+                    </div>
+                    <div class="two wide computer only tablet only left aligned column"></div>
+                    <div class="four wide computer only tablet only right aligned column">
+                        {{ form.person_usual_address_postcode.label_tag }}
+                    </div>
+                    <div class="four wide mobile only left aligned column">
+                        {{ form.person_usual_address_postcode.label_tag }}
+                    </div>
+                    <div class="ten wide left aligned column">
+                        <div class="ui fluid input">{{ form.person_usual_address_postcode }}</div>
+                        {{ form.person_usual_address_postcode.errors }}
+                    </div>
+                    <div class="two wide computer only tablet only left aligned column"></div>
+                    <div class="four wide computer only tablet only right aligned column">
+                        {{ form.person_usual_residence_type.label_tag }}
+                    </div>
+                    <div class="four wide mobile only left aligned column">
+                        {{ form.person_usual_residence_type.label_tag }}
+                    </div>
+                    <div class="ten wide left aligned column">
+                        {{ form.person_usual_residence_type }}
+                        {{ form.person_usual_residence_type.errors }}
+                    </div>
+                    <div class="two wide computer only tablet only left aligned column"></div>
+                    <div class="four wide computer only tablet only right aligned column">
+                        {{ form.person_preferred_contact_home.label_tag }}
+                    </div>
+                    <div class="four wide mobile only left aligned column">
+                        {{ form.person_preferred_contact_home.label_tag }}
+                    </div>
+                    <div class="ten wide left aligned column">
+                        <div class="ui fluid input">{{ form.person_preferred_contact_home }}</div>
+                        {{ form.person_preferred_contact_home.errors }}
+                    </div>
+                    <div class="two wide computer only tablet only left aligned column"></div>
+                    <div class="four wide computer only tablet only right aligned column">
+                        {{ form.person_preferred_contact_mobile.label_tag }}
+                    </div>
+                    <div class="four wide mobile only left aligned column">
+                        {{ form.person_preferred_contact_mobile.label_tag }}
+                    </div>
+                    <div class="ten wide left aligned column">
+                        <div class="ui fluid input">{{ form.person_preferred_contact_mobile }}</div>
+                        {{ form.person_preferred_contact_mobile.errors }}
+                    </div>
+                    <div class="two wide computer only tablet only left aligned column"></div>
+                    <div class="four wide computer only tablet only right aligned column">
+                        {{ form.person_preferred_contact_email.label_tag }}
+                    </div>
+                    <div class="four wide mobile only left aligned column">
+                        {{ form.person_preferred_contact_email.label_tag }}
+                    </div>
+                    <div class="ten wide left aligned column">
+                        <div class="ui fluid input">{{ form.person_preferred_contact_email }}</div>
+                        {{ form.person_preferred_contact_email.errors }}
+                    </div>
+                    <div class="two wide computer only tablet only left aligned column"></div>
+                    {# TODO ethnic category should be a pop-up of some sort #}
+                    <div class="four wide computer only tablet only right aligned column">
+                        {{ form.person_ethnic_category.label_tag }}
+                    </div>
+                    <div class="four wide mobile only left aligned column">{{ form.person_ethnic_category.label_tag }}</div>
+                    <div class="ten wide left aligned column">
+                        {{ form.person_ethnic_category }}
+                        {{ form.person_ethnic_category.errors }}
+                    </div>
+                    <div class="two wide computer only tablet only left aligned column"></div>
+                    <div class="four wide computer only tablet only right aligned column">
+                        {{ form.person_gp_practice_code.label_tag }}
+                    </div>
+                    <div class="four wide mobile only left aligned column">
+                        {{ form.person_gp_practice_code.label_tag }}
+                    </div>
+                    <div class="ten wide left aligned column">
+                        {{ form.person_gp_practice_code }}
+                        {{ form.person_gp_practice_code.errors }}
+                    </div>
+                    <div class="two wide computer only tablet only left aligned column"></div>
+                    <div class="four wide computer only tablet only right aligned column">
+                        {{ form.person_school.label_tag }}
+                    </div>
+                    <div class="four wide mobile only left aligned column">{{ form.person_school.label_tag }}</div>
+                    <div class="ten wide left aligned column">
+                        {{ form.person_school }}
+                        {{ form.person_school.errors }}
+                    </div>
+                    <div class="two wide computer only tablet only left aligned column"></div>
+                    <div class="four wide computer only tablet only right aligned column">
+                        {{ form.person_companion.label_tag }}
+                    </div>
+                    <div class="four wide mobile only left aligned column">{{ form.person_companion.label_tag }}</div>
+                    <div class="ten wide left aligned column">
+                        <div class="ui fluid input">{{ form.person_companion }}</div>
+                        {{ form.person_companion.errors }}
+                    </div>
+                    <div class="two wide computer only tablet only left aligned column"></div>
+                </div>
+            </form>
+        </div>
+        {% locking_forms episode_id %}
+    </div>
+{% endblock %}

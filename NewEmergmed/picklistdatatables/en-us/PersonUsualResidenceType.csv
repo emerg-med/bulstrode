@@ -1,0 +1,15 @@
+ECDS_UniqueID,ECDS_Description,ECDS_Code,Sort1,ECDS_Notes
+2018110000,Home,242711000000100,11,"Includes : house, farm house, non-institutional place of residence, apartment/ flat, boarding house, hotel, caravan park, refuge, long-term squat with utilities
+Excludes : Institutional long-term place of residence, Abandoned or derelict house"
+2018210000,Warden controlled accommodation,224221006,21,"Includes : home with intermittent welfare checks
+Excludes : residential / nursing home with continuous dedicated staffing"
+2018310000,Residential institution WITHOUT routine nursing care,394923006,31,"Includes : Children’s home, residential home, old people’s home, military camp, prison, monastery
+Excludes : Hospital, nursing home, hospice, psychiatric hospital"
+2018410000,Residential institution WITH routine nursing care,160734000,41,"Includes : nursing home, hospice
+Excludes : hospital, residential home, psychiatric hospital"
+2018510000,Medical service area,224225002,51,"Includes : hospital, clinic, psychiatric hospital (long term)
+Excludes : hospice, nursing home"
+2018610000,Homeless in night shelter,224231004,61,"Includes : night shelter, homeless shelter, emergency housing
+Excludes : sleeping rough"
+2018710000,Homeless without accommodation,32911000,71,"Includes : homeless, sleeping rough, abandoned or derelict housing, squatting without utilities
+Excludes : night shelter, homeless shelter"

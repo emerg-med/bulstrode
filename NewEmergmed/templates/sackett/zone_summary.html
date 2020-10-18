@@ -1,0 +1,41 @@
+{% extends "sackett/site_base.html" %}
+{% load i18n %}
+
+{% block title %}{% trans 'Clinical areas overview' %}{% endblock %}
+
+{% block scripts %}
+<script type="application/javascript" language="JavaScript">
+    function refresh_page() {
+        $.ajax({
+            type: 'GET',
+            url: '{{ refresh_url }}',
+            dataType: 'html',
+            success: function (result) {
+                $('#zone_list_content').html(result);
+            }
+        });
+    }
+
+    $('document').ready(function() {
+        window.setInterval(refresh_page, 5000);     // TODO this interval should at least be a constant, or configurable
+    });
+</script>
+{% endblock %}
+
+{% block body %}
+    <div class="padded-frame">
+        <h2 class="ui header">{% trans 'Clinical areas' %}</h2>
+        <div class="ui one column grid" id="zone_list_content">
+        {% for zone in zones %}
+            <div class="row">
+                <div class="column">
+                    <h3 class="ui header">{{ zone.label }}</h3>
+                    <a href="{% url "sackett:zone_overview" zone.id %}" class="area-anchor">
+                        {{ zone.content }}
+                    </a>
+                </div>
+            </div>
+        {% endfor %}
+        </div>
+    </div>
+{% endblock %}

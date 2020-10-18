@@ -1,0 +1,12 @@
+ECDS_UniqueID,ECDS_Description,ECDS_Code,Sort1
+2018010000,Patient’s own transport,2018010000,1
+2018020000,Public transport,2018020000,2
+2018030000,Emergency road ambulance ,2018030000,3
+2018040000,Emergency road ambulance with medical escort,2018040000,4
+2018050000,Air Ambulance - helicopter ,2018050000,5
+2018060000,Fixed Wing/ Medical repatriation by air,2018060000,6
+2018070000,Non-emergency road ambulance ,2018070000,7
+2018080000,Prison ,2018080000,8
+2018090000,Police,2018090000,9
+2018970000,Other specified,2018970000,97
+2018990000,Unspecified,2018990000,99

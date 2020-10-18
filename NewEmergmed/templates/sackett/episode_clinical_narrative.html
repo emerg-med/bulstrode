@@ -1,0 +1,20 @@
+{% load i18n %}
+<div class="four wide computer only tablet only right aligned column">{% trans 'Clinical notes:' %}</div>
+<div class="four wide mobile only left aligned column">{% trans 'Clinical notes:' %}</div>
+<div class="twelve wide left aligned column">
+    <span id="id_em_care_clinical_narrative">{{ em_care_clinical_narrative }}</span>
+</div>
+<div class="four wide right aligned column"></div>
+<div class="twelve wide column">
+    <div class="ui grid">
+        <div class="ten wide left aligned column">
+        {#        <label for="id_em_care_clinical_narrative_add"></label> #}
+            <div class="ui fluid input">
+                <input type="text" id="id_em_care_clinical_narrative_add" name="em_care_clinical_narrative_add"/>
+            </div>
+        </div>
+        <div class="five wide left aligned column">
+            <button class="ui button" type="button" id="id_em_care_clinical_narrative_add_button">{% trans 'Add note' %}</button>
+        </div>
+    </div>
+</div>

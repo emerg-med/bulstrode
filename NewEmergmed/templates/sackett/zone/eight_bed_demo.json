@@ -1,0 +1,17 @@
+{
+  "template":"eight_bed_demo.html",
+  "summary_template":"eight_bed_demo_summary.html",
+  "image":"eight_bed_demo.jpg",
+  "name":"Eight bed demo template",
+  "description":"A small demonstration template with eight beds across two rooms",
+  "beds": [
+    { "name": "room_one_bed_one", "label": "Room One, Bed One" },
+    { "name": "room_one_bed_two" , "label": "Room One, Bed Two" },
+    { "name": "room_one_bed_three" , "label": "Room One, Bed Three" },
+    { "name": "room_one_bed_four" , "label": "Room One, Bed Four" },
+    { "name": "room_two_bed_one" , "label": "Room Two, Bed One" },
+    { "name": "room_two_bed_two" , "label": "Room Two, Bed Two" },
+    { "name": "room_two_bed_three" , "label": "Room Two, Bed Three" },
+    { "name": "room_two_bed_four" , "label": "Room Two, Bed Four" }
+  ]
+}

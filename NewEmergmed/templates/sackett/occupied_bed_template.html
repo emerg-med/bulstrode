@@ -1,0 +1,27 @@
+{% load i18n %}
+{% get_current_language_bidi as LANGUAGE_BIDI %}
+
+<div class="ui segment episode bed {% if LANGUAGE_BIDI %}rtl {% endif %}drop-target" draggable="true"
+     data-id="{{ drag_data_id }}" data-bed-id="{{ drag_bed_id }}">
+    <a href="{% url "sackett:episode" episode.id %}" class="area-anchor">
+        <span class="bed-name">
+            {{ bed.label }}
+        </span>
+        <span class="clinician">
+            {{ episode.assigned_clinician.first_name }}
+            {{ episode.assigned_clinician.last_name }}
+        </span>
+        <div class="patient-container">
+            <span class="patient-name">{{ episode.person_family_name|upper }}, {{ episode.person_given_name }}</span>
+            <span class="patient-age">{{ episode.person_age_at_attendance|stringformat:"d" }}</span>
+        </div>
+        <div class="icon-container">
+            {% for state_icon in state_icons %}
+                <i class="{{ state_icon.0 }}" data-content="{{ state_icon.1 }}"></i>
+            {% endfor %}
+        </div>
+        <span class="patient-complaint">
+            {{ complaint }}
+        </span>
+    </a>
+</div>
