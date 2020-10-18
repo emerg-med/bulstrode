@@ -1,0 +1,51 @@
+{% load i18n %}
+
+<div class="ui grid">
+    <div class="sixteen wide column">
+        <div class="ui two column grid">
+            <div class="row">
+                <div class="column">
+                    <div class="ui grid segment" style="margin: 0px; height: 100%">
+                        <div class="eight wide column">
+                            {{ beds.room_one_bed_one }}
+                        </div>
+                        <div class="eight wide column">
+                            {{ beds.room_one_bed_two }}
+                        </div>
+                        <div class="eight wide column">
+                            {{ beds.room_one_bed_three }}
+                        </div>
+                        <div class="eight wide column">
+                            {{ beds.room_one_bed_four }}
+                        </div>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="ui grid segment" style="margin: 0px; height: 100%">
+                        <div class="eight wide column">
+                            {{ beds.room_two_bed_one }}
+                        </div>
+                        <div class="eight wide column">
+                            {{ beds.room_two_bed_two }}
+                        </div>
+                        <div class="eight wide column">
+                            {{ beds.room_two_bed_three }}
+                        </div>
+                        <div class="eight wide column">
+                            {{ beds.room_two_bed_four }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<h4 class="ui header">Waiting list</h4>
+<div class="ui four column stretched grid segment waiting-list drop-target" data-bed-id="{{ waiting_list_bed_id }}">
+    {% for waiting in waiting_list %}
+        <div class="column">
+            {{ waiting }}
+        </div>
+    {% endfor %}
+</div>

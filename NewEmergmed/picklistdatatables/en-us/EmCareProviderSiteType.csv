@@ -1,0 +1,11 @@
+ECDS_Code,ECDS_Description,Sort1
+1,Type 1 - General Emergency Department (24 hour),1
+2,"Type 2 - Specialist Emergency Department (e.g. paediatric, ophthalmology)",2
+3,Type 3 - Minor Injury Unit,3
+4,Type 4 - Walk in Centre,4
+U,Urgent Care Centre (including non-24 hour Emergency Department),5
+A,Ambulatory Emergency Care ,6
+G,Elderly Care Assessment Unit,7
+M,Medical Assessment Unit,8
+S,Surgical Assessment Unit,9
+9,Ambulance Service,10

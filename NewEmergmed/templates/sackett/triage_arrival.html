@@ -1,0 +1,246 @@
+{% extends "sackett/site_base.html" %}
+{% load i18n %}
+{% load staticfiles %}
+
+{% block meta %}
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+{% endblock %}
+
+{% block title %}{% trans 'Triage' %}{% endblock %}
+
+{% block scripts %}
+    <script type="application/javascript" language="JavaScript">
+        var data_changes = [];
+    </script>
+
+    <script src="{% static "js/injury_panel.js" %}"></script>    {# TODO minify #}
+
+    <script type="application/javascript" language="JavaScript">
+        $('document').ready(function() {
+            $('#id_person_interpreter_rqd').change(function() {
+                if ($(this).prop('checked')) {
+                    $('#id_person_interpreter_lang_outer_dropdown').removeClass('disabled')
+                            .dropdown();
+                } else {
+                    $('#id_person_interpreter_lang_outer_dropdown').addClass('disabled')
+                            .dropdown();
+                }
+            });
+
+            $('#id_em_care_chief_complaint_outer_dropdown').dropdown('set selected',
+                    '{{ form.em_care_chief_complaint.value|default_if_none:"" }}'
+            );
+{##}
+{#                    .dropdown(#}
+{#                    {#}
+{#                        onChange: function(value, text, $selected_item) {#}
+{#                            if (($selected_item != null) && ($selected_item.data('injury') == '1')) {#}
+{#                                $('#triage_injury_panel_container').show();#}
+{#                            } else {#}
+{#                                $('#triage_injury_panel_container').hide();#}
+{#                            }#}
+{#                        }#}
+{#                    }#}
+{#            )#}
+
+            $('#id_em_care_arrive_transport_mode_outer_dropdown').dropdown('set selected',
+                    '{{ form.em_care_arrive_transport_mode.value|default_if_none:"" }}')
+                    .dropdown('setting', {'direction': 'downward'});
+
+            $('#id_person_stated_gender_outer_dropdown').dropdown('set selected',
+                    '{{ form.person_stated_gender.value|default_if_none:"" }}');
+
+            $('#id_em_care_attendance_type_outer_dropdown').dropdown('set selected',
+                    '{{ form.em_care_attendance_type.value|default_if_none:"" }}');
+
+            $('#id_person_interpreter_lang_outer_dropdown').addClass('disabled')
+                    .dropdown('set selected',
+                              '{{ form.person_interpreter_lang.value|default_if_none:"" }}');
+
+            $('#id_zone_id_outer_dropdown').dropdown('set selected',
+                    '{{ form.zone_id.value|default_if_none:"" }}');
+
+            $('#id_em_care_assessment_outer_dropdown').dropdown('set selected',
+                    '{{ form.em_care_assessment.value|default_if_none:"" }}');
+
+            $('#triage_decision_support_button').click(function() {
+                $('.ui.modal').modal('show');
+            });
+
+            $('#triage_injury_panel_accordion').accordion();
+
+            $('#triage_form_clear_button').click(function(){
+                $('#id_person_given_name').val('');
+                $('#id_person_family_name').val('');
+                $('#id_person_stated_gender_outer_dropdown').dropdown('restore defaults');
+                $('#id_person_age_at_attendance').val('');
+                $('#id_em_care_chief_complaint_outer_dropdown').dropdown('restore defaults');
+                $('#id_person_interpreter_rqd').prop('checked', false);
+                $('#id_person_interpreter_lang_outer_dropdown').addClass('disabled')
+                        .dropdown('restore defaults');
+                $('#id_em_care_attendance_type_outer_dropdown').dropdown('restore defaults');
+                $('#id_em_care_arrive_transport_mode_outer_dropdown').dropdown('restore defaults');
+                var expected_list = $('#triage_expected_list');
+                expected_list.find('option:selected').prop('selected', false);
+                expected_list.selectedIndex = -1;
+
+                return false;
+            });
+
+            var expected_list = $('#triage_expected_list');
+            expected_list.selectedIndex = -1;
+
+            expected_list.change(function() {
+                var selected_item = $('#triage_expected_list').find('option:selected');
+
+                $('#id_person_given_name').val(selected_item.data('given-name'));
+                $('#id_person_family_name').val(selected_item.data('family-name'));
+                $('#id_person_stated_gender_outer_dropdown').dropdown('set selected', selected_item.data('gender'));
+                $('#id_person_age_at_attendance').val(selected_item.data('age'));
+                $('#id_em_care_chief_complaint_outer_dropdown').dropdown('set selected', selected_item.data('complaint'))
+            });
+
+            initialise_injury_panel();
+        })
+    </script>
+{% endblock %}
+
+{% block body %}
+    <div class="top-padded-frame">
+        <div class="ui modal">
+            <i class="acuity circular inverted red close icon"></i>
+            <div class="ui fluid image">
+                <img src="{% static 'img/True_Acuity1.png' %}">
+            </div>
+        </div>
+        <div class="ui text container primary-container">
+            <h2 class="ui dividing header">{% trans 'Triage' %}</h2>
+            <form action="{% url 'sackett:triage_arrival' %}" method="post">
+                {% csrf_token %}
+                <div class="ui middle aligned stackable centered grid">
+                    <div class="six wide computer only tablet only right aligned column">
+                        {{ form.person_given_name.label_tag }}
+                    </div>
+                    <div class="six wide mobile only left aligned column">{{ form.person_given_name.label_tag }}</div>
+                    <div class="eight wide left aligned column">
+                        <div class="ui fluid input">{{ form.person_given_name }}</div>
+                        {{ form.person_given_name.errors }}
+                    </div>
+                    <div class="two wide computer only tablet only left aligned column"></div>
+                    <div class="six wide computer only tablet only right aligned column">
+                        {{ form.person_family_name.label_tag }}
+                    </div>
+                    <div class="six wide mobile only left aligned column">{{ form.person_family_name.label_tag }}</div>
+                    <div class="eight wide left aligned column">
+                        <div class="ui fluid input">{{ form.person_family_name }}</div>
+                        {{ form.person_family_name.errors }}
+                    </div>
+                    <div class="two wide computer only tablet only left aligned column"></div>
+                    <div class="six wide computer only tablet only right aligned column">
+                        {{ form.person_stated_gender.label_tag }}
+                    </div>
+                    <div class="six wide mobile only left aligned column">{{ form.person_stated_gender.label_tag }}</div>
+                    <div class="eight wide left aligned column">
+                        {{ form.person_stated_gender }}{{ form.person_stated_gender.errors }}
+                    </div>
+                    <div class="two wide computer only tablet only left aligned column"></div>
+                    <div class="six wide computer only tablet only right aligned column">
+                        {{ form.person_age_at_attendance.label_tag }}
+                    </div>
+                    <div class="six wide mobile only left aligned column">
+                        {{ form.person_age_at_attendance.label_tag }}
+                    </div>
+                    <div class="eight wide left aligned column">
+                        <div class="ui fluid input">{{ form.person_age_at_attendance }}</div>
+                        {{ form.person_age_at_attendance.errors }}
+                    </div>
+                    <div class="two wide computer only tablet only left aligned column"></div>
+                    <div class="six wide computer only tablet only right aligned column">
+                        {{ form.em_care_arrive_transport_mode.label_tag }}
+                    </div>
+                    <div class="six wide mobile only left aligned column">
+                        {{ form.em_care_arrive_transport_mode.label_tag }}
+                    </div>
+                    <div class="eight wide left aligned column">
+                        {{ form.em_care_arrive_transport_mode }}{{ form.em_care_arrive_transport_mode.errors }}
+                    </div>
+                    <div class="two wide computer only tablet only left aligned column"></div>
+                    <div class="six wide computer only tablet only right aligned column">
+                        {{ form.em_care_chief_complaint.label_tag }}
+                    </div>
+                    <div class="six wide mobile only left aligned column">{{ form.em_care_chief_complaint.label_tag }}</div>
+                    <div class="eight wide left aligned column">
+                        {{ form.em_care_chief_complaint }}{{ form.em_care_chief_complaint.errors }}
+                    </div>
+                    <div class="two wide computer only tablet only left aligned column"></div>
+    {#                <div class="sixteen wide column" id="triage_injury_panel_container" style="display: none;">#}
+    {#                    <div class="ui styled fluid accordion" id="triage_injury_panel_accordion">#}
+    {#                        {{ injury_panel }}#}
+    {#                    </div>#}
+    {#                </div>#}
+                    <div class="six wide computer only tablet only right aligned column">
+                        {{ form.em_care_attendance_type.label_tag }}
+                    </div>
+                    <div class="six wide mobile only left aligned column">{{ form.em_care_attendance_type.label_tag }}</div>
+                    <div class="eight wide left aligned column">
+                        {{ form.em_care_attendance_type }}{{ form.em_care_attendance_type.errors }}
+                    </div>
+                    <div class="two wide computer only tablet only left aligned column"></div>
+                    <div class="seven wide column">
+                        <div class="ui grid">
+                            <div class="fourteen wide computer only tablet only right aligned column">
+                                {{ form.person_interpreter_rqd.label_tag }}
+                            </div>
+                            <div class="eight wide mobile only left aligned column">
+                                {{ form.person_interpreter_rqd.label_tag }}
+                            </div>
+                            <div class="two wide left aligned column">
+                                {{ form.person_interpreter_rqd }}
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="seven wide left aligned column">
+                        {{ form.person_interpreter_lang }}{{ form.person_interpreter_lang.errors }}
+                    </div>
+                    <div class="two wide computer only tablet only left aligned column"></div>
+                    <div class="six wide computer only tablet only right aligned column">
+                        {{ form.em_care_assessment.label_tag }}
+                    </div>
+                    <div class="six wide mobile only left aligned column">{{ form.em_care_assessment.label_tag }}</div>
+                    <div class="four wide left aligned column">
+                        <div class="ui fluid input">{{ form.em_care_assessment }}</div>
+                        {{ form.em_care_assessment.errors }}
+                    </div>
+                    <div class="six wide left aligned column">
+                        <button class="ui button" type="button" id="triage_decision_support_button">
+                            {% trans 'Triage decision support' %}
+                        </button>
+                    </div>
+                    <div class="six wide computer only tablet only right aligned column">{{ form.zone_id.label_tag }}</div>
+                    <div class="six wide mobile only left aligned column">{{ form.zone_id.label_tag }}</div>
+                    <div class="eight wide left aligned column">
+                        {{ form.zone_id }}{{ form.zone_id.errors }}
+                    </div>
+                    <div class="two wide computer only tablet only left aligned column"></div>
+                    <div class="sixteen wide column">
+                        <div class="ui grid">
+                            <div class="eight wide center aligned column">
+                                <input class="ui primary button" type="submit" value="{% trans 'Triage' %}" />
+                            </div>
+                            <div class="eight wide center aligned column">
+                                <button class="ui button" type="button" id="triage_form_clear_button">{% trans 'Clear' %}</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="ui form" style="position: fixed; top: 60px; right: 10px;">
+                    {{ form.expected_arrival.label_tag }}
+                    <div class="field">
+                        {{ form.expected_arrival }}
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+{% endblock %}

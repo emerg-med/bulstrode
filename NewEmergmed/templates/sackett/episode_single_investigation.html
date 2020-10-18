@@ -1,0 +1,15 @@
+{% load i18n %}
+<div {% if hidden %}
+     style="display: none;" class="row investigation-item-template"
+     {% else %}
+     class="row investigation-item"
+     {% endif %}>
+    <div class="seven wide left aligned column">
+        <span class="investigation-narrative" data-id="{{ item_id }}">{{ item_name }}</span>
+    </div>
+    <div class="six wide left aligned column">
+    </div>
+    <div class="two wide left aligned column">
+        <button type="button" class="ui button investigation-delete">{% trans 'Delete' %}</button>
+    </div>
+</div>

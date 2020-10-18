@@ -1,0 +1,12 @@
+ECDS_UniqueID,ECDS_Group,ECDS_Description,ECDS_Code,Sort1,Sort2
+2018111100,Community,General Practitioner,2018111100,11,11
+2018112100,Community,Physiotherapy,2018112100,11,21
+2018113100,Community,Dentist,2018113100,11,31
+2018114100,Community,Community psychiatric support services,2018114100,11,41
+2018115100,Community,Other community service,2018115100,11,51
+2018211100,Hospital,Fracture clinic,2018211100,21,11
+2018212100,Hospital,Emergency Ambulatory Care service,2018212100,21,21
+2018213100,Hospital,Outpatients (not fracture clinic),2018213100,21,31
+2018214100,Hospital,Review in ED – Scheduled ,2018214100,21,41
+2018216100,Hospital,Medical Specialist (private),2018216100,21,61
+2018911100,No referral,No referral ,2018911100,91,11

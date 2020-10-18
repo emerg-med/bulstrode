@@ -1,0 +1,61 @@
+{% load i18n %}
+
+<div class="ui grid">
+    <div class="ten wide column">
+        <div class="ui two column fixed grid">
+            <div class="row">
+                <div class="column">
+                    <div class="ui grid segment" style="margin: 0; height: 100%">
+                        <div class="row">
+                            <div class="column">
+                                {{ beds.room_one_bed_one }}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="column">
+                                {{ beds.room_one_bed_two }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="ui grid segment" style="margin: 0; height: 100%">
+                        <div class="row">
+                            <div class="column">
+                                {{ beds.room_two_bed_one }}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="column">
+                                {{ beds.room_two_bed_two }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="three wide column">
+        <div class="ui one column grid">
+            <div class="row">
+                <div class="column">
+                    <div class="ui grid segment waiting-list" data-id="{{ drag_data_id }}"
+                         style="margin: 0; height: 200px;">
+                        <h4 class="ui header compact" style="margin-top: 4px; margin-bottom: 0; height: 20px;">{% trans 'Waiting list' %}</h4>
+                        {% for waiting in waiting_list %}
+                            <div class="row">
+                                <div class="column">
+                                    {{ waiting }}
+                                </div>
+                            </div>
+                        {% endfor %}
+                        <div class="row" style="height: 100%;">      {# fill the remaining vertical space #}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="three wide column">
+    </div>
+</div>

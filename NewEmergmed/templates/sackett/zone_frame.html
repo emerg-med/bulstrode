@@ -1,0 +1,151 @@
+{% extends "sackett/site_base.html" %}
+{% load i18n %}
+
+{% block title %}{{ page_title }}{% endblock %}
+
+{# class='episode' elements are waiting list items and occupied bed items #}
+{# class='empty-bed' elements are drop targets for episodes (i.e. empty beds) #}
+{# class='waiting-list' elements are also drop targets for episodes (i.e. the waiting list) #}
+{# all the above should use the 'data-id' attribute to specify item id - set it to {{ drag_data_id }} #}
+{# and 'data-bed-id' to specify bed id - set it to {{ drag_bed_id }} #}
+
+{% block scripts %}
+<!--suppress JSUnusedLocalSymbols -->
+<script type="application/javascript" language="JavaScript">
+    // Track the element that is being dragged.
+    var current_drag_element = null;
+
+    function refresh_page() {
+        if (current_drag_element == null) {     // don't try to refresh while we're dragging
+            $.ajax({
+                type: 'GET',
+                url: '{{ refresh_url }}',
+                dataType: 'html',
+                success: function (result) {
+                    $('#zone_frame_content').html(result);
+                    configure_drag_drop_elements();
+                    activate_page_elements();
+                }
+            });
+        }
+    }
+
+    function drag_drop_form_post(evt) {
+        var drag_drop_form=$('#drag_drop_form');
+        var drag_drop_form_data = drag_drop_form.serialize();
+        $.ajax({
+            type: 'POST',
+            url: drag_drop_form.attr('action'),
+            dataType: 'html',
+            data: drag_drop_form_data,
+            success: function(result)
+            {
+                $('#zone_frame_content').html(result);
+                configure_drag_drop_elements();
+                activate_page_elements();
+                reset_drag_drop_form()
+            }
+        });
+
+        //don't submit the form
+        return false;
+    }
+
+    function reset_drag_drop_form() {
+        $('#zone_drag_drop_source_id').val('');
+        $('#zone_drag_drop_destination_id').val('');
+    }
+
+    function episode_drag_start(evt) {
+        //noinspection JSUnresolvedVariable
+        evt.originalEvent.dataTransfer.effectAllowed = 'move';
+        //noinspection JSUnresolvedVariable
+        evt.originalEvent.dataTransfer.setData('text', this.getAttribute('data-id'));
+        current_drag_element = this;
+    }
+
+    function episode_drag_end(evt) {
+        current_drag_element = null;
+    }
+
+    function drop_target_drag_over(evt) {
+        if (evt.preventDefault) {
+            evt.preventDefault();
+        }
+
+        //noinspection JSUnresolvedVariable
+        evt.originalEvent.dataTransfer.dropEffect = 'move';
+
+        return false;
+    }
+
+    function drop_target_drag_enter(evt) {
+        $(this).addClass("drag-over");
+    }
+
+    function drop_target_drag_leave(evt) {
+        $(this).removeClass("drag-over");
+    }
+
+    function drop_target_drop(evt) {
+        if (evt.preventDefault) evt.preventDefault();
+        if (evt.stopPropagation) evt.stopPropagation();
+
+        $(this).removeClass("drag-over");
+
+        //noinspection JSUnresolvedVariable
+        $('#zone_drag_drop_source_id').val(evt.originalEvent.dataTransfer.getData('text'));
+        $('#zone_drag_drop_destination_id').val(this.getAttribute('data-bed-id'));
+        $('#drag_drop_form').submit();
+
+        return false;
+    }
+
+    function configure_drag_drop_elements() {
+        // Get the draggable elements.
+        var episodes = $('.episode');
+
+        // Event Listener for when the drag interaction starts.
+        episodes.on('dragstart', episode_drag_start);
+
+        // Event Listener for when the drag interaction finishes.
+        episodes.on('dragend', episode_drag_end);
+
+        // Get drop targets
+        var drop_targets = $('.drop-target');
+
+        drop_targets.on('dragover', drop_target_drag_over);
+        drop_targets.on('dragenter', drop_target_drag_enter);
+        drop_targets.on('dragleave', drop_target_drag_leave);
+        drop_targets.on('drop', drop_target_drop);
+    }
+
+    function activate_page_elements() {
+        $('.popup').remove();
+        $('.episode.bed .icon-container i').popup();
+        $('.episode.waiting .icon-container i').popup();
+    }
+
+    $('document').ready(function() {
+        configure_drag_drop_elements();
+        activate_page_elements();
+        reset_drag_drop_form();
+
+        $('#drag_drop_form').submit(drag_drop_form_post);
+        window.setInterval(refresh_page, 5000);     // TODO this interval should at least be a constant, or configurable
+    });
+</script>
+{% endblock %}
+
+{% block body %}
+<div class="padded-frame">
+    <h2 class="ui header">{{ zone_header }}</h2>
+    <div id="zone_frame_content" class="always-left-to-right">
+        {{ content }}
+    </div>
+    <form action="{% url 'sackett:zone_overview' zone_id %}" method="post" id="drag_drop_form">
+        {% csrf_token %}
+        {{ drag_drop_form }}
+    </form>
+</div>
+{% endblock %}

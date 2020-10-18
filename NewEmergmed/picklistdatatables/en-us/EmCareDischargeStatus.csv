@@ -1,0 +1,18 @@
+ECDS_UniqueID,ECDS_Group,ECDS_Description,ECDS_Code,Sort1,Sort2
+2018111100,Discharged,Home,2018111100,11,11
+2018112100,Discharged,Residential care facility without 24 hour nursing care (e.g. Residential Home),2018112100,11,21
+2018113100,Discharged,Residential care facility with 24 hour nursing care (e.g. Nursing Home),2018113100,11,31
+2018114100,Discharged,Police / Prison / Custody Facility,2018114100,11,41
+2018211100,Admitted,Ward – physical ward bed outside ED,2018211100,21,11
+2018215100,Admitted,High Dependency Unit / Coronary Care Unit (Level 2),2018215100,21,51
+2018216100,Admitted,Intensive Care Unit (Level 3),2018216100,21,61
+2018311100,Ambulatory / Short stay,Short stay (<24hr) ward managed by ED,2018311100,31,11
+2018312100,Ambulatory / Short stay,Ambulatory Care,2018312100,31,21
+2018313100,Ambulatory / Short stay,Virtual ward e.g. ‘hospital in the home’,2018313100,31,31
+2018412100,Transfer,Transfer to another hospital,2018412100,41,21
+2018511100,Left before treatment complete,Left before initial assessment,2018511100,51,11
+2018512100,Left before treatment complete,Left after assessment to go to alternative provider,2018512100,51,21
+2018513100,Left before treatment complete,Left after assessment but before seen by clinician,2018513100,51,31
+2018514100,Left before treatment complete,Left after seen by clinician but before treatment complete,2018514100,51,41
+2018811100,Died,Dead on arrival,2018811100,81,11
+2018812100,Died,Died in the Emergency Care facility,2018812100,81,21

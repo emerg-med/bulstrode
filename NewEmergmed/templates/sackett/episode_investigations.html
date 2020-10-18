@@ -1,0 +1,13 @@
+{% load i18n %}
+
+<div class="active title">
+    <i class="dropdown icon"></i>
+    {% trans 'Investigations' %}
+</div>
+<div class="active content">
+    <div class="ui middle aligned stackable centered grid" id="investigations_grid">
+        {% for investigation in investigations %}
+            {{ investigation }}
+        {% endfor %}
+    </div>
+</div>

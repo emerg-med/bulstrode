@@ -1,0 +1,66 @@
+ECDS_UniqueID,ECDS_Group,ECDS_Description,ECDS_Code,Sort1,Sort2,ICD10_Code,SNOMED_Code
+2018111100,Circulation / blood,Hypertension,38341003,11,11,I10,38341003
+2018111500,Circulation / blood,History of anticoagulant therapy,161647008,11,15,Z291,161647008
+2018112100,Circulation / blood,Ischaemic heart disease,414545008,11,21,I251,414545008
+2018113100,Circulation / blood,Cardiac pacemaker in situ,441509002,11,31,Z950,441509002
+2018114300,Circulation / blood,Congestive heart failure,42343007,11,43,I500,42343007
+2018114500,Circulation / blood,Left heart failure,85232009,11,45,I501,85232009
+2018114900,Circulation / blood,Heart failure,84114007,11,49,I50,84114007
+2018115100,Circulation / blood,Mitral valve disorder,11851006,11,51,I059,11851006
+2018118100,Circulation / blood,Congenital cardiac failure,206586007,11,81,Q249,206586007
+2018211100,Respiratory,Asthma,195967001,21,11,J45,195967001
+2018212100,Respiratory,Chronic obstructive lung disease,13645005,21,21,J449,13645005
+2018212300,Respiratory,Chronic bronchitis,63480004,21,23,J410,63480004
+2018214100,Respiratory,Pulmonary emphysema,87433001,21,41,J439,87433001
+2018215100,Respiratory,Respiratory failure,409622000,21,51,J961,409622000
+2018311100,Gastrointestinal,Dysphagia,40739000,31,11,R13,40739000
+2018312100,Gastrointestinal,Jaundice,18165001,31,21,R17,18165001
+2018312500,Gastrointestinal,Liver function tests abnormal,166603001,31,25,R945,166603001
+2018511100,Endocrine / rheumatology,Diabetes mellitus,73211009,51,11,E148,73211009
+2018515100,Endocrine / rheumatology,Rheumatoid arthritis,69896004,51,51,M059,69896004
+2018551100,Renal / urology,Retention of urine,267064002,55,11,R33,267064002
+2018552100,Renal / urology,Renal impairment,236423003,55,21,N189,236423003
+2018553100,Renal / urology,Chronic kidney disease,709044004,55,31,N189,709044004
+2018555100,Renal / urology,Chronic interstitial nephritis,60926001,55,51,N119,60926001
+2018555500,Renal / urology,Small kidney,236448000,55,55,N279,236448000
+2018556100,Renal / urology,Multiple renal cysts,253883006,55,61,Q618,253883006
+2018556300,Renal / urology,Congenital cystic kidney disease,82525005,55,63,Q618,82525005
+2018556500,Renal / urology,"Polycystic kidney disease, adult type",28728008,55,65,Q612,28728008
+2018611100,Neurology,Epilepsy,84757009,61,11,G40,84757009
+2018612100,Neurology,Multiple sclerosis,24700007,61,21,G35,24700007
+2018613100,Neurology,Cerebral infarction,432504007,61,31,I639,432504007
+2018613300,Neurology,Cerebrovascular accident,230690007,61,33,I694,230690007
+2018613700,Neurology,Cerebrovascular disease,62914000,61,37,I679,62914000
+2018615100,Neurology,Subarachnoid haemorrhage,21454007,61,51,I609,21454007
+2018615500,Neurology,Cerebral haemorrhage,274100004,61,55,I619,274100004
+2018618100,Neurology,Aphasia,87486003,61,81,R470,87486003
+2018618100,Neurology,Hemiplegia,50582007,61,81,G81,50582007
+2018711100,Psychiatry / psychology,Anxiety disorder,197480006,71,11,F419,197480006
+2018712100,Psychiatry / psychology,Depressive disorder,35489007,71,21,F339,35489007
+2018712500,Psychiatry / psychology,History of deliberate self harm,314550003,71,25,Z915,314550003
+2018712900,Psychiatry / psychology,Bipolar disorder,13746004,71,29,F319,13746004
+2018716500,Psychiatry / psychology,Eating disorder,72366004,71,65,F509,72366004
+2018716700,Psychiatry / psychology,Schizotypal personality disorder,31027006,71,67,F21,31027006
+2018717100,Psychiatry / psychology,Schizophrenia,58214004,71,71,F209,58214004
+2018717500,Psychiatry / psychology,Psychotic disorder,69322001,71,75,F239,69322001
+2018717700,Psychiatry / psychology,Delusional disorder,48500005,71,77,F220,48500005
+2018751100,Developmental,Developmental delay,248290002,75,11,F89,248290002
+2018752100,Developmental,Autistic disorder,408856003,75,21,F84,408856003
+2018753100,Developmental,Learning difficulties,161129001,75,31,F819,161129001
+2018754100,Developmental,Developmental academic disorder,1855002,75,41,F819,1855002
+2018811100,Sensory / age related,Dementia,52448006,81,11,F03,52448006
+2018811500,Sensory / age related,Alzheimer's disease,26929004,81,15,G30,26929004
+2018812100,Sensory / age related,Elderly fall,298344006,81,21,R296,298344006
+2018814100,Sensory / age related,Blindness - both eyes,193699007,81,41,H540,193699007
+2018814500,Sensory / age related,Blindness of one eye,22950006,81,45,H544,22950006
+2018814900,Sensory / age related,Registered blind,170727003,81,49,H54,170727003
+2018815100,Sensory / age related,Complete deafness,8531006,81,51,H919,8531006
+2018815200,Sensory / age related,Bilateral deafness,162344009,81,52,H919,162344009
+2018815300,Sensory / age related,Profound acquired hearing loss,525791000000105,81,53,H919,525791000000105
+2018815400,Sensory / age related,Profound sensorineural hearing loss,700454004,81,54,H905,700454004
+2018815500,Sensory / age related,Severe hearing loss,3561000119106,81,55,H919,3561000119106
+2018911100,Social / drug / alcohol,Smoker,77176002,91,11,Z720,77176002
+2018912100,Social / drug / alcohol,Lives alone,105529008,91,21,Z602,105529008
+2018915100,Social / drug / alcohol,Alcohol abuse,15167005,91,51,Z721,15167005
+2018916100,Social / drug / alcohol,Recreational drug use,26416006,91,61,Z722,26416006
+2018916200,Social / drug / alcohol,Misuses drugs,361055000,91,62,Z722,361055000

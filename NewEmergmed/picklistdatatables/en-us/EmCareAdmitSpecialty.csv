@@ -1,0 +1,52 @@
+ECDS_UniqueID,ECDS_Group,ECDS_Description,ECDS_Code,Sort1,Sort2,SNOMED_Code,NHS_Code
+2018111100,Emergency Medicine,Emergency Medicine (A&E),180,11,11,,180
+2018151100,Surgical,General surgery,100,15,11,305423009,100
+2018152100,Surgical,Trauma & orthopaedics,110,15,21,305433001,110
+2018153100,Surgical,Plastic surgery,160,15,31,305431004,160
+2018153500,Surgical,Neurosurgery,150,15,35,305425002,150
+2018153700,Surgical,ENT,120,15,37,305417004,120
+2018153900,Surgical,Urology,101,15,39,305434007,101
+2018154100,Surgical,Cardiothoracic surgery,170,15,41,305410002,170
+2018154300,Surgical,Ophthalmology,130,15,43,305426001,130
+2018154500,Surgical,Oral surgery,140,15,45,305427005,140
+2018154600,Surgical,Oral & maxillo facial surgery,145,15,46,,145
+2018211100,Medical,Acute internal medicine,326,21,11,305368000,326
+2018212100,Medical,General medicine,300,21,21,305368000,300
+2018212300,Medical,Geriatric medicine,430,21,23,305375004,430
+2018213100,Medical,Gastroenterology,301,21,31,305367005,301
+2018213300,Medical,Cardiology,320,21,33,305357000,320
+2018213500,Medical,Respiratory medicine,340,21,35,305360007,340
+2018213700,Medical,Endocrinology,302,21,37,305366001,302
+2018213700,Medical,Infectious diseases,350,21,37,305376003,350
+2018214300,Medical,Medical oncology,370,21,43,308251003,370
+2018214300,Medical,Neurology,400,21,43,305379005,400
+2018214500,Medical,Clinical haematology,303,21,45,305396006,303
+2018214500,Medical,Genitourinary medicine,360,21,45,305374000,360
+2018214700,Medical,Nephrology,361,21,47,305378002,361
+2018217300,Medical,Rheumatology,410,21,73,305383005,410
+2018218100,Medical,Palliative medicine,315,21,81,305381007,315
+2018218200,Medical,Dermatology,330,21,82,305365002,330
+2018219100,Medical,Rehabilitation,314,21,91,305382000,314
+2018219200,Medical,Sports and exercise medicine ,325,21,92,,325
+2018311100,Critical Care,Critical care medicine,192,31,11,305352006,192
+2018411100,Paediatric,Paediatrics,420,41,11,305387006,420
+2018412100,Paediatric,Paediatric surgery,171,41,21,305430003,171
+2018413300,Paediatric,Paediatric cardiology,321,41,33,,321
+2018413900,Paediatric,Paediatric neurology,421,41,39,,421
+2018415100,Paediatric,Paediatric dentistry,142,41,51,305415007,142
+2018415500,Paediatric,Child and adolescent psychiatry,711,41,55,305401005,711
+2018451100,ObGyn,Obstetrics,501,45,11,305386002,501
+2018453100,ObGyn,Gynaecology,502,45,31,305385003,502
+2018455100,ObGyn,Obstetrics AND Gynaecology,500,45,51,,500
+2018511100,Psychiatry,Adult mental illness,710,51,11,305400006,710
+2018513500,Psychiatry,Learning disability,700,51,35,305404002,700
+2018515100,Psychiatry,Old age psychiatry,715,51,51,305403008,715
+2018516100,Psychiatry,Forensic psychiatry,712,51,61,305402003,712
+2018651100,Community,General medical practice,600,65,11,,600
+2018655100,Community,General dental practice,601,65,51,305413000,601
+2018811100,Other,Community medicine,900,81,11,,900
+2018812100,Other,Occupational medicine,901,81,21,,901
+2018813100,Other,Community health services dental,902,81,31,,902
+2018813500,Other,Allied health professional episode,960,81,35,,960
+2018911100,Overseas,Non-UK provider; specialty mainly surgical,199,91,11,,199
+2018915100,Overseas,Non-UK provider; specialty mainly medical,499,91,51,,499

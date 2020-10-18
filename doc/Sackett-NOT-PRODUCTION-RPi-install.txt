@@ -1,0 +1,163 @@
+New Emergency Medicine installation
+-----------------------------------
+1. Clean Raspbian install. Note IP address for future reference
+   ifconfig eth0 | grep 'inet addr:'
+
+2. sudo apt-get update
+
+3. Install and enable firewall:
+   sudo apt-get install ufw
+   sudo ufw limit 22/tcp
+   sudo ufw allow 80/tcp
+   sudo ufw status			# check rules are configured correctly
+   sudo ufw enable
+   
+4. Install MySQL
+   sudo apt-get install mysql-server    # you will be prompted for a root password - choose one and write it down somewhere safe
+   sudo mysql_secure_installation
+   
+5. Python 3 should already be installed, check with
+   python3 --version		# if not, install with sudo apt-get install python3
+
+6. pip should already be installed
+   pip3 --version                        # if not, install it with sudo apt-get install python3-pip
+
+7. Install apache
+   sudo apt-get install apache2
+
+8. Edit /etc/apache2/apache2.conf and change 'KeepAlive' to 'Off'
+
+9. Ensure apache is running (browse to http:%%//%%<ip-address>) and then disable the default Apache site
+   sudo a2dissite 000-default.conf
+   
+10. Tweak apache2 configuration
+   - create/edit /etc/apache2/conf-available/fqdn.conf as root, add
+      ServerName localhost
+   - edit /etc/apache2/apache2.conf, find <Directory /var/www/> section and break
+      Options Indexes FollowSymLinks
+   into
+      Options -Indexes		# note the leading '-'
+      Options FollowSymLinks
+   so it now reads 
+	<Directory /var/www/>
+		Options -Indexes
+		Options FollowSymlinks
+		AllowOverride None
+		Require all granted
+	</Directory>
+
+11. Enable new configuration
+   sudo a2enconf fqdn.conf
+
+12. Create new site definition file; edit e.g. /etc/apache2/sites-available/sackett.conf:
+	<VirtualHost *:80> 
+		ServerAdmin webmaster@localhost
+		DocumentRoot /var/www/sackett/public_html/
+		ErrorLog /var/www/sackett/logs/error.log 
+		CustomLog /var/www/sackett/logs/access.log combined
+	</VirtualHost>
+
+13. Create site directories as per config file
+   sudo mkdir -p /var/www/sackett/public_html
+   sudo touch /var/www/sackett/public_html/index.html		**** change this   
+   sudo mkdir /var/www/sackett/logs
+   
+14. Enable site
+   sudo a2ensite sackett.conf
+
+15. Install mod_wsgi
+   cd
+   wget https://github.com/GrahamDumpleton/mod_wsgi/archive/4.4.21.tar.gz
+   # latest release details available at https://github.com/GrahamDumpleton/mod_wsgi/releases - adjust the following accordingly
+   tar zvxf 4.4.21.tar.gz
+   cd mod_wsgi-4.4.21
+   sudo apt-get install apache2-dev		# required to install the apxs tool which is needed to build mod_wsgi
+   sudo apt-get install python3-dev		# this should already be installed
+   ./configure --with-python=/usr/bin/python3		# use 'which python3' to determine this path
+   make && sudo make install && make clean
+   
+   create/edit /etc/apache2/mods-available/wsgi.load as root, add
+     LoadModule wsgi_module /usr/lib/apache2/modules/mod_wsgi.so
+     
+   sudo a2enmod wsgi.load
+   
+16. Configure mod_wsgi and static content for sackett site; edit /etc/apache2/apache2.conf as root, add
+
+   Alias /robots.txt /var/www/sackett/static/robots.txt
+   Alias /favicon.ico /var/www/sackett/static/favicon.ico
+
+   Alias /media/ /var/www/sackett/media/
+   Alias /static/admin/ /usr/local/lib/python3.4/dist-packages/django/contrib/admin/static/admin/
+   Alias /static/ /var/www/sackett/static/
+
+   <Directory /var/www/sackett/static>
+      Require all granted
+   </Directory>
+
+   <Directory /var/www/sackett/media>
+      Require all granted
+   </Directory>
+   WSGIScriptAlias / /var/www/sackett/NewEmergmed/wsgi.py
+   WSGIPythonPath /var/www/sackett
+
+   <Directory /var/www/sackett/NewEmergmed>
+      <Files wsgi.py>
+         Require all granted
+      </Files>
+   </Directory>
+   
+   <Directory /usr/local/lib/python3.4/dist-packages/django/contrib/admin/static/admin>
+      Require all granted
+   </Directory>
+
+17. Install Django
+   sudo pip3 install Django
+
+18. Install mysql client libraries
+   sudo apt-get install libmysqlclient-dev
+   sudo pip3 install mysqlclient
+   
+19. Create database and user
+   mysql -u root -p
+   <enter password chosen at install time>
+   CREATE DATABASE sackett;					  // change database name as desired
+   GRANT SELECT, INSERT, UPDATE, DELETE, CREATE, DROP, INDEX, ALTER, CREATE TEMPORARY TABLES, LOCK TABLES ON sackett.* TO 'emergmed'@'localhost' IDENTIFIED BY 'emergmedpassword';			// change sackett, emergmed and emergmedpassword as appropriate - database, user, password
+   quit
+   
+20. TODO: download source code somehow - e.g. git clone
+
+21. Copy source into website directory
+   cd ~/NewEmergmed			# change as appropriate - directory should contain manage.py, sackett/, NewEmergmed/ etc.
+   sudo cp -ir * /var/www/sackett
+    
+22. Configure sackett database settings; edit /var/www/sackett/NewEmergmed/settings.py as root, in DATABASES section, change settings for default
+
+   'NAME': 'sackett'		# database name, change as appropriate
+   'USER': 'emergmed'		# change as appropriate
+   'PASSWORD': 'emergmedpassword'	# change as appropriate
+   
+23. In the same settings.py file, change
+   DEBUG = True
+   to
+   DEBUG = False
+   
+   and
+   ALLOWED_HOSTS = []
+   to
+   ALLOWED_HOSTS = ['*']    
+
+24. Install database tables
+   cd /var/www/sackett
+   python3 ./manage.py migrate
+
+25. Create a site super user
+   python3 ./manage.py createsuperuser
+   
+26. Restart apache service
+   sudo service apache2 restart
+
+27. Navigate to http://<ip-address>/sackett/arrivals/expected
+
+28. Assuming this doesn't show an error, navigate to http://<ip-address>/sackett/debug/import_datatables and click the Import button -  this will take some time and at present (this is work in progress) doesn't display any result. For now you can monitor progress by looking for a file called /tmp/sackett-pick-status.txt - the import will update this file periodically and is therefore complete when it stops changing - WAIT until it's finished before doing anything else. Do the same with http://<ip-address>/sackett/debug/import_diagnoses and /tmp/sackett-diag-status.txt.
+
+29. Profit

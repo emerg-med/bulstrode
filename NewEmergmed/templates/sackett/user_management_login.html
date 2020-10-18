@@ -1,0 +1,62 @@
+{% extends "sackett/site_base.html" %}
+{% load i18n %}
+{% load staticfiles %}
+{% load episode_locking %}
+
+{% block meta %}
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+{% endblock %}
+
+{% block title %}{% trans 'User login' %}{% endblock %}
+
+{% block scripts %}
+{% endblock %}
+
+{% block body %}
+    <div class="top-padded-frame">
+        <div class="ui text container primary-container">
+            <form action="{% url 'sackett:login' %}" method="post"
+                  id="user_management_login_form">
+                {% csrf_token %}
+                <div class="ui middle aligned grid">
+                    <div class="sixteen wide left aligned column">
+                        <span class="user-mgmt-heading">
+                            {% blocktrans %}Login{% endblocktrans %}
+                        </span>
+                    </div>
+                    <div class="sixteen wide left aligned column">
+                        <span>
+                            {% trans 'You can login here to access extra features of this site' %}
+                        </span>
+                    </div>
+                    <div class="six wide right aligned column">
+                        {{ form.username.label_tag }}
+                    </div>
+                    <div class="ten wide left aligned column">
+                        <div class="ui fluid input">
+                            {{ form.username }}
+                        </div>
+                    </div>
+                    <div class="six wide right aligned column">
+                        {{ form.password.label_tag }}
+                    </div>
+                    <div class="ten wide left aligned column">
+                        <div class="ui fluid input">
+                            {{ form.password }}
+                        </div>
+                    </div>
+                {% for err in form.non_field_errors %}
+                    <div class="six wide right aligned column">
+                    </div>
+                    <div class="ten wide left aligned column">
+                        <span class="errorlist">{{ err }}</span>
+                    </div>
+                {% endfor %}
+                    <div class="sixteen wide right aligned column">
+                        <input type="submit" class="ui primary button" value="{% trans 'Login' %}"/>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+{% endblock %}

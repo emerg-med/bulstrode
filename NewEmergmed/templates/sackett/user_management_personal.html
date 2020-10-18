@@ -1,0 +1,93 @@
+{% extends "sackett/site_base.html" %}
+{% load i18n %}
+{% load staticfiles %}
+
+{% block meta %}
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+{% endblock %}
+
+{% block title %}{% trans 'User profile management' %}{% endblock %}
+
+{% block scripts %}
+    <script type="application/javascript" language="JavaScript">
+        function do_logout() {
+            $('#logout_form').submit();
+        }
+
+        $('document').ready(function() {
+            $('#logout_button').click(do_logout);
+        });
+    </script>
+{% endblock %}
+
+{% block body %}
+    <div class="top-padded-frame">
+        <div class="ui text container primary-container">
+            <form action="{% url 'sackett:user_management_personal' %}" method="post"
+                  id="user_management_personal_form">
+                {% csrf_token %}
+                <div class="ui middle aligned grid">
+                {% if password_updated %}
+                    <div class="sixteen wide left aligned column">
+                        <div class="ui positive message">
+                            <div class="header">{% trans 'Password updated successfully' %}</div>
+                        </div>
+                    </div>
+                {% endif %}
+                    <div class="twelve wide left aligned column">
+                        <span class="user-mgmt-heading">
+                            {% blocktrans %}Logged in as '{{ current_user }}'{% endblocktrans %}
+                        </span>
+                    </div>
+                    <div class="four wide right aligned column">
+                        <button type="button" class="ui primary button" id="logout_button">
+                            {% trans 'Logout' %}
+                        </button>
+                    </div>
+                    <div class="sixteen wide left aligned column">
+                        <span>
+                            {% trans 'You can update your password by completing the details here and clicking "Update"' %}
+                        </span>
+                    </div>
+                    <div class="six wide right aligned column">
+                        {{ form.old_password.label_tag }}
+                    </div>
+                    <div class="ten wide left aligned column">
+                        <div class="ui fluid input">
+                            {{ form.old_password }}
+                        </div>
+                    </div>
+                    <div class="six wide right aligned column">
+                        {{ form.new_password.label_tag }}
+                    </div>
+                    <div class="ten wide left aligned column">
+                        <div class="ui fluid input">
+                            {{ form.new_password }}
+                        </div>
+                    </div>
+                    <div class="six wide right aligned column">
+                        {{ form.repeat_new_password.label_tag }}
+                    </div>
+                    <div class="ten wide left aligned column">
+                        <div class="ui fluid input">
+                            {{ form.repeat_new_password }}
+                        </div>
+                    </div>
+                {% for err in form.non_field_errors %}
+                    <div class="six wide right aligned column">
+                    </div>
+                    <div class="ten wide left aligned column">
+                        <span class="errorlist">{{ err }}</span>
+                    </div>
+                {% endfor %}
+                    <div class="sixteen wide right aligned column">
+                        <input type="submit" class="ui primary button" value="{% trans 'Update' %}"/>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <form action="{% url 'sackett:logout' %}" method="post" id="logout_form">
+            {% csrf_token %}
+        </form>
+    </div>
+{% endblock %}

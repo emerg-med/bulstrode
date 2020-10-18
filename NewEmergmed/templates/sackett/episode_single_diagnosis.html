@@ -1,0 +1,29 @@
+{% load i18n %}
+<div {% if hidden %}
+     style="display: none;" class="row diagnosis-item-template"
+     {% else %}
+     class="row diagnosis-item"
+     {% endif %}>
+    <div class="eight wide left aligned diagnosis-handle column">
+        <i class="bordered sidebar icon"></i>
+        <span class="diagnosis-narrative" data-id="{{ diagnosis_id }}">{{ diagnosis_name }}</span>
+    </div>
+    <div class="eight wide left aligned diagnosis-handle column">
+        <div class="ui grid">
+            <div class="twelve wide left aligned column">
+                {# TODO populate this in the code #}
+                <select class="ui fluid dropdown diagnosis-modifier">
+                    <option value="9" {% if diagnosis_proven and not hidden %}selected="selected"{% endif %}>
+                        {% trans 'Proven/confirmed' %}
+                    </option>
+                    <option value="6" {% if not diagnosis_proven and not hidden %}selected="selected"{% endif %}>
+                        {% trans 'Working diagnosis' %}
+                    </option>
+                </select>
+            </div>
+            <div class="four wide left aligned column">
+                <button type="button" class="ui button diagnosis-delete">{% trans 'Delete' %}</button>
+            </div>
+        </div>
+    </div>
+</div>

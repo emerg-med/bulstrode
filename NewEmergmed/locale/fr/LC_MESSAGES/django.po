@@ -1,0 +1,929 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-10-14 19:44+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: sackett/episodehelpers.py:12 sackett/forms.py:160
+#, python-format
+msgid "%(surname)s, %(forename)s"
+msgstr "%(surname)s, %(forename)s"
+
+#. Translators: 'Male gender' and 'Female gender' MUST match the corresponding picklist data table entries
+#: sackett/episodehelpers.py:21
+msgid "Male gender"
+msgstr "Male gender"
+
+#: sackett/episodehelpers.py:22
+msgid "Female gender"
+msgstr "Female gender"
+
+#: sackett/episodehelpers.py:76
+#, python-format
+msgid "Waiting time: %(wait_time_quantity)d minute"
+msgid_plural "Waiting time: %(wait_time_quantity)d minutes"
+msgstr[0] "Temps d'attente: %(wait_time_quantity)d minute"
+msgstr[1] "Temps d'attente: %(wait_time_quantity)d minutes"
+
+#: sackett/episodehelpers.py:83
+#, python-format
+msgid "Waiting time: %(wait_time_quantity)d hour"
+msgid_plural "Waiting time: %(wait_time_quantity)d hours"
+msgstr[0] "Temps d'attente: %(wait_time_quantity)d heure"
+msgstr[1] "Temps d'attente: %(wait_time_quantity)d heures"
+
+#: sackett/episodehelpers.py:101
+#, python-format
+msgid "Triage category %(triage_category)s"
+msgstr "Catégorie de triage %(triage_category)s"
+
+#: sackett/episodehelpers.py:102
+msgid "unknown"
+msgstr "inconnu"
+
+#: sackett/episodehelpers.py:124
+msgid "Clinician must see patient"
+msgstr "Clinicien doit voir le patient"
+
+#: sackett/episodehelpers.py:125
+msgid "Patient awaiting clinician"
+msgstr "Patient en attente de clinicien"
+
+#: sackett/episodehelpers.py:126
+msgid "Seen by clinician"
+msgstr "Vu par le clinicien"
+
+#: sackett/episodehelpers.py:144 sackett/forms.py:180
+msgid "Bed requested"
+msgstr "Chambres demandé"
+
+#: sackett/episodehelpers.py:144
+msgid "Bed not requested"
+msgstr "Chambres non demandée"
+
+#: sackett/forms.py:19
+msgid "Clinical area name"
+msgstr "Nom de zone clinique"
+
+#: sackett/forms.py:29
+msgid "Template"
+msgstr "Modèle"
+
+#: sackett/forms.py:66 sackett/forms.py:317 sackett/forms.py:331
+#: sackett/forms.py:335 sackett/widgets.py:36
+#: templates/sackett/episode_new_single_diagnosis.html:8
+msgid "type to search"
+msgstr "taper pour recherche"
+
+#: sackett/forms.py:79
+msgid "Status"
+msgstr "Situation"
+
+#: sackett/forms.py:80
+msgid "Follow up"
+msgstr "Surveiller"
+
+#: sackett/forms.py:81
+msgid "Medication"
+msgstr "Médicaments"
+
+#: sackett/forms.py:82
+msgid "Instructions"
+msgstr "Instructions"
+
+#: sackett/forms.py:83
+msgid "Safeguarding"
+msgstr "Sauvegarde"
+
+#: sackett/forms.py:84
+msgid "Destination"
+msgstr "Destination"
+
+#: sackett/forms.py:85
+msgid "Admitted to"
+msgstr "Admis à"
+
+#: sackett/forms.py:141
+#, python-format
+msgid "%(zone)s: %(bed)s"
+msgstr "%(zone)s: %(bed)s"
+
+#: sackett/forms.py:145 templates/sackett/zone/eight_bed_demo_summary.html:48
+#: templates/sackett/zone/four_bed_demo_summary.html:44
+msgid "Waiting list"
+msgstr "Liste d'attente"
+
+#: sackett/forms.py:153
+msgid "not set"
+msgstr ""
+
+#: sackett/forms.py:176 sackett/forms.py:213 sackett/forms.py:457
+msgid "Chief complaint"
+msgstr "Plainte principale"
+
+#: sackett/forms.py:177 sackett/forms.py:461
+msgid "Acuity"
+msgstr "Acuité"
+
+#: sackett/forms.py:178
+msgid "Doctor"
+msgstr "Docteur"
+
+#: sackett/forms.py:179
+msgid "Action & time"
+msgstr "Action et temps"
+
+#: sackett/forms.py:181
+msgid "Bed"
+msgstr "Lit"
+
+#: sackett/forms.py:211 sackett/forms.py:350 sackett/forms.py:452
+msgid "Given name"
+msgstr "Prénom"
+
+#: sackett/forms.py:212 sackett/forms.py:351 sackett/forms.py:453
+msgid "Family name"
+msgstr "Nom de famille"
+
+#: sackett/forms.py:214 sackett/forms.py:454
+msgid "Stated gender"
+msgstr "Sexe indiqué"
+
+#: sackett/forms.py:215 sackett/forms.py:455
+msgid "Age (approx)"
+msgstr "Âge (approx)"
+
+#: sackett/forms.py:263
+msgid "Date & time of injury"
+msgstr "Date et heure de blessure"
+
+#: sackett/forms.py:264
+msgid "Activity type"
+msgstr "Type d'activité"
+
+#: sackett/forms.py:265
+msgid "Activity detail"
+msgstr "Détail des activités"
+
+#: sackett/forms.py:266
+msgid "Mechanism"
+msgstr "Mécanisme"
+
+#: sackett/forms.py:267
+msgid "Intent"
+msgstr "Intention"
+
+#: sackett/forms.py:268
+msgid "Drugs/alcohol"
+msgstr "Drogues/alcool"
+
+#: sackett/forms.py:269
+msgid "Type of location"
+msgstr "Type de emplacement"
+
+#: sackett/forms.py:270
+msgid "Location"
+msgstr "Emplacement"
+
+#: sackett/forms.py:271
+msgid "Lat/long"
+msgstr "Lat/long"
+
+#: sackett/forms.py:292
+msgid "Phone"
+msgstr "Téléphone"
+
+#: sackett/forms.py:293
+msgid "Mobile"
+msgstr "Portable"
+
+#: sackett/forms.py:294
+msgid "Email"
+msgstr "Email"
+
+#: sackett/forms.py:295
+msgid "Withhold identity"
+msgstr "Refuser l'identité"
+
+#: sackett/forms.py:348
+msgid "NHS number"
+msgstr "Identificateur NHS"
+
+#: sackett/forms.py:349
+msgid "Local number"
+msgstr "Identificateur locale"
+
+#: sackett/forms.py:352 templates/sackett/expected_arrival.html.py:90
+msgid "Gender"
+msgstr "Sexe"
+
+#: sackett/forms.py:353
+msgid "Date of birth"
+msgstr "Date de naissance"
+
+#: sackett/forms.py:354
+msgid "Means of arrival"
+msgstr "Moyens d'arrivée"
+
+#: sackett/forms.py:355 sackett/forms.py:458
+msgid "Attendance type"
+msgstr "Type de présence"
+
+#: sackett/forms.py:356
+msgid "Referral source"
+msgstr "Source de référence"
+
+#: sackett/forms.py:357
+msgid "Transfer from"
+msgstr "Transfert à partir de"
+
+#: sackett/forms.py:358
+msgid "Preferred language"
+msgstr "Langue préférée"
+
+#: sackett/forms.py:359 sackett/forms.py:459
+msgid "Interpreter reqd."
+msgstr "Interprète req."
+
+#: sackett/forms.py:361
+msgid "Reason"
+msgstr "Raison"
+
+#: sackett/forms.py:362
+msgid "Usual address"
+msgstr "Adresse habituelle"
+
+#: sackett/forms.py:364
+msgid "Postcode"
+msgstr "Code postal"
+
+#: sackett/forms.py:365
+msgid "Residence type"
+msgstr "Type de résidence"
+
+#: sackett/forms.py:366
+msgid "Ethnic category"
+msgstr "Catégorie ethnique"
+
+#: sackett/forms.py:367
+msgid "GP"
+msgstr "MG"
+
+#: sackett/forms.py:368
+msgid "School"
+msgstr "École"
+
+#: sackett/forms.py:369
+msgid "Companion"
+msgstr "Compagnon"
+
+#: sackett/forms.py:401
+msgid "Clinical area"
+msgstr "Zone clinique"
+
+#: sackett/forms.py:405
+msgid "Expected patients"
+msgstr "Patients attendus"
+
+#: sackett/forms.py:456
+msgid "Arrival transport mode"
+msgstr "Mode de transport d'arrivée"
+
+#: sackett/forms.py:484
+#, fuzzy
+#| msgid "Family name"
+msgid "First name"
+msgstr "Nom de famille"
+
+#: sackett/forms.py:485
+#, fuzzy
+#| msgid "Family name"
+msgid "Last name"
+msgstr "Nom de famille"
+
+#: sackett/forms.py:490 sackett/forms.py:546
+#: templates/sackett/user_management_all.html:27
+msgid "Username"
+msgstr ""
+
+#: sackett/forms.py:491 sackett/forms.py:547
+msgid "Password"
+msgstr ""
+
+#: sackett/forms.py:492
+msgid "Confirm password"
+msgstr ""
+
+#: sackett/forms.py:493
+msgid "User account enabled"
+msgstr ""
+
+#: sackett/forms.py:494
+msgid "Administer other user accounts"
+msgstr ""
+
+#: sackett/forms.py:495
+msgid "Configure system settings (e.g. branding)"
+msgstr ""
+
+#: sackett/forms.py:496
+msgid "Clear the assigned doctor for a patient"
+msgstr ""
+
+#: sackett/forms.py:497
+msgid "View recent discharged patients and undo discharge"
+msgstr ""
+
+#: sackett/forms.py:498
+msgid "Review quality breach reports"
+msgstr ""
+
+#: sackett/forms.py:499
+msgid "View dashboard"
+msgstr ""
+
+#: sackett/forms.py:500
+msgid "Export anonymised data"
+msgstr ""
+
+#: sackett/forms.py:528 sackett/forms.py:538
+msgid "Passwords don't match"
+msgstr ""
+
+#: sackett/forms.py:536
+msgid "User name already in use"
+msgstr ""
+
+#: sackett/forms.py:540
+msgid "Please specify a username and password"
+msgstr ""
+
+#: sackett/forms.py:561
+msgid "Username or password incorrect, or user is disabled"
+msgstr ""
+
+#: sackett/forms.py:567
+msgid "Old password"
+msgstr ""
+
+#: sackett/forms.py:568
+msgid "New password"
+msgstr ""
+
+#: sackett/forms.py:569
+msgid "Confirm new password"
+msgstr ""
+
+#: sackett/forms.py:588
+msgid "Old password incorrect, or user is disabled"
+msgstr ""
+
+#: sackett/forms.py:591
+msgid "New passwords don't match"
+msgstr ""
+
+#: sackett/views.py:137
+msgid "??"
+msgstr "??"
+
+#: sackett/views.py:326
+msgid "Discharged at %H:%M, %d %b %Y"
+msgstr "Congé à %H:%M, %d %b %Y"
+
+#: sackett/views.py:765
+#, python-format
+msgid "%(y)d y %(m)d m"
+msgstr "%(y)d a %(m)d m"
+
+#: sackett/views.py:1228
+#, python-format
+msgid "Clinical areas :: %(zone_label)s"
+msgstr "Zones cliniques :: %(zone_label)s"
+
+#: sackett/widgets.py:35 sackett/widgets.py:99
+#: templates/sackett/injury_detail.html:98
+msgid "choose"
+msgstr "choisir"
+
+#: sackett/widgets.py:36
+msgid "choose or type to search"
+msgstr "choisir ou taper à la recherche"
+
+#: templates/sackett/add_zone.html:4 templates/sackett/add_zone.html.py:70
+msgid "Add new clinical area"
+msgstr "Ajouter un nouveau zone clinique"
+
+#: templates/sackett/add_zone.html:86
+#: templates/sackett/expected_arrival.html:77
+#: templates/sackett/user_management_add_doctor.html:52
+#: templates/sackett/user_management_add_edit_user.html:122
+msgid "Add"
+msgstr "Ajouter"
+
+#: templates/sackett/add_zone_result.html:4
+msgid "New clinical area added:"
+msgstr "Nouveau zone clinique ajouté"
+
+#: templates/sackett/add_zone_result.html:5
+msgid "Click here to view it"
+msgstr "Cliquez ici pour le voir"
+
+#: templates/sackett/add_zone_result.html:7
+msgid "Error adding new clinical area - please choose a label and a template"
+msgstr ""
+"Erreur d'ajout de nouveau zone clinique - s'il vous plaît choisir une "
+"étiquette et un modèle"
+
+#: templates/sackett/debug_import_diagnoses.html:7
+msgid "DEBUG - remove me - Import diagnoses CSV"
+msgstr "DÉBOGUER - retirer moi - Importer CSV des diagnostics"
+
+#: templates/sackett/debug_import_diagnoses.html:12
+#: templates/sackett/debug_import_tables.html:12
+msgid "Import"
+msgstr "Importer"
+
+#: templates/sackett/debug_import_tables.html:7
+msgid "DEBUG - remove me - Import data table CSVs"
+msgstr "DÉBOGUER - retirer moi - Importer CSV des tables de données"
+
+#: templates/sackett/episode.html:10
+msgid "Episode :: "
+msgstr "Épisode :: "
+
+#: templates/sackett/episode.html:100
+msgid "Breach/Incident detail"
+msgstr ""
+
+#: templates/sackett/episode.html:110
+msgid "Cancel"
+msgstr ""
+
+#: templates/sackett/episode.html:112
+msgid "Submit"
+msgstr ""
+
+#: templates/sackett/episode.html:118 templates/sackett/episode.html.py:143
+#: templates/sackett/episode.html:184
+#: templates/sackett/patient_details.html:144
+#: templates/sackett/patient_details.html:166
+#: templates/sackett/patient_details.html:220
+#: templates/sackett/user_management_add_edit_user.html:124
+msgid "Save"
+msgstr "Enregistrer"
+
+#: templates/sackett/episode.html:123
+#: templates/sackett/patient_details.html:148
+msgid "Breach"
+msgstr ""
+
+#: templates/sackett/episode.html:134 templates/sackett/episode.html.py:152
+#: templates/sackett/episode.html:171
+#: templates/sackett/patient_details.html:157
+#: templates/sackett/patient_details.html:175
+#: templates/sackett/patient_details.html:197
+#: templates/sackett/patient_details.html:210
+#, python-format
+msgid "%(full_name)s"
+msgstr "%(full_name)s"
+
+#: templates/sackett/episode.html:138 templates/sackett/episode.html.py:156
+#: templates/sackett/episode.html:175
+msgid "Registration..."
+msgstr "Enregistrement..."
+
+#: templates/sackett/episode.html:193
+#, python-format
+msgid "Unique id: %(unique_id)s"
+msgstr "Identifiant unique: %(unique_id)s"
+
+#: templates/sackett/episode.html:198
+#, python-format
+msgid "Local number: %(local_number)s"
+msgstr "Identificateur locale: %(local_number)s"
+
+#: templates/sackett/episode.html:206
+#, python-format
+msgid "%(age)s years old"
+msgstr "%(age)s ans"
+
+#: templates/sackett/episode.html:220
+msgid "Patient has been discharged - this record is read-only"
+msgstr "Patient a été congé - ce dossier est en lecture seule"
+
+#: templates/sackett/episode.html:242
+#: templates/sackett/triage_arrival.html:217
+msgid "Triage decision support"
+msgstr "Aide à la décision Triage"
+
+#: templates/sackett/episode.html:285 templates/sackett/episode.html.py:291
+msgid "Click here for patient registration"
+msgstr "Cliquez ici pour l'enregistrement du patient"
+
+#: templates/sackett/episode_clinical_narrative.html:2
+#: templates/sackett/episode_clinical_narrative.html:3
+msgid "Clinical notes:"
+msgstr "Notes cliniques:"
+
+#: templates/sackett/episode_clinical_narrative.html:17
+msgid "Add note"
+msgstr "Ajouter"
+
+#: templates/sackett/episode_diagnoses.html:5
+msgid "Diagnoses"
+msgstr "Diagnostics"
+
+#: templates/sackett/episode_discharge.html:35
+msgid "Discharge"
+msgstr "Congédier"
+
+#: templates/sackett/episode_discharge.html:106
+msgid "Undo early discharge"
+msgstr "Annuler le congédiement précoce"
+
+#: templates/sackett/episode_discharge.html:113
+msgid "Complete Discharge"
+msgstr "Compléter le congédiement"
+
+#: templates/sackett/episode_discharge.html:116
+msgid "Click Save to continue"
+msgstr "Cliquez sur Enregistrer pour continuer"
+
+#: templates/sackett/episode_discharge_early.html:4
+msgid "Discharge early"
+msgstr "Congédier tôt"
+
+#: templates/sackett/episode_investigations.html:5
+msgid "Investigations"
+msgstr "Investigations"
+
+#: templates/sackett/episode_single_diagnosis.html:17
+msgid "Proven/confirmed"
+msgstr "Proven/confirmé"
+
+#: templates/sackett/episode_single_diagnosis.html:20
+msgid "Working diagnosis"
+msgstr "Diagnostic actuel"
+
+#: templates/sackett/episode_single_diagnosis.html:25
+#: templates/sackett/episode_single_investigation.html:13
+#: templates/sackett/episode_single_treatment.html:13
+#: templates/sackett/injury_detail.html:22
+#: templates/sackett/injury_detail.html:91
+#: templates/sackett/user_management_all.html:93
+msgid "Delete"
+msgstr "Effacer"
+
+#: templates/sackett/episode_treatments.html:5
+msgid "Treatments"
+msgstr "Traitements"
+
+#: templates/sackett/expected_arrival.html:9
+#: templates/sackett/templatetags/nav_menu.html:11
+msgid "Expected patient"
+msgstr "Patient attendu"
+
+#: templates/sackett/expected_arrival.html:21
+msgid "New patient expected"
+msgstr "Nouveau patient prévu"
+
+#: templates/sackett/expected_arrival.html:83
+msgid "Other expected patients"
+msgstr "Autres patients prévu"
+
+#: templates/sackett/expected_arrival.html:88
+msgid "Name"
+msgstr "Nom"
+
+#: templates/sackett/expected_arrival.html:89
+msgid "Information"
+msgstr "Information"
+
+#: templates/sackett/expected_arrival.html:91
+msgid "Age"
+msgstr "Âge"
+
+#: templates/sackett/injury_detail.html:28
+msgid "Injury detail"
+msgstr "Détail des blessures"
+
+#: templates/sackett/patient_details.html:10
+#: templates/sackett/patient_details_overview.html:9
+msgid "Patient registration"
+msgstr "l'Enregistrement des patients"
+
+#: templates/sackett/patient_details.html:161
+#: templates/sackett/patient_details.html:179
+#: templates/sackett/patient_details.html:201
+#: templates/sackett/patient_details.html:214
+msgid "Episode..."
+msgstr "Incident..."
+
+#: templates/sackett/patient_details.html:280
+msgid "Age (est.): "
+msgstr "Âge (est.):"
+
+#: templates/sackett/patient_details.html:281
+msgid "Age: "
+msgstr "Âge:"
+
+#: templates/sackett/site_base.html:11
+#: templates/sackett/site_base_no_menu.html:10
+msgid "Site :: "
+msgstr "Site :: "
+
+#: templates/sackett/templatetags/locking_messages.html:5
+msgid "Another user is editing this record - please wait a moment"
+msgstr ""
+"Un autre utilisateur modifie ce dossier - s'il vous plaît attendez un moment"
+
+#: templates/sackett/templatetags/locking_messages.html:10
+msgid "This record is locked by another user and cannot be edited"
+msgstr ""
+"Cet dossier est verrouillé par un autre utilisateur et ne peut pas être "
+"modifié"
+
+#: templates/sackett/templatetags/locking_messages.html:14
+msgid ""
+"There was an error while locking this record - it cannot be edited and saved "
+"at this time"
+msgstr ""
+"Il y avait une erreur tout en verrouillant ce dossier - il ne peut pas être "
+"modifié et enregistré à ce moment"
+
+#: templates/sackett/templatetags/locking_messages.html:16
+msgid ""
+"Further attempts will be made automatically - this message will disappear "
+"once the record has been successfully locked"
+msgstr ""
+"D'autres tentatives seront faites automatiquement - ce message disparaîtra "
+"une fois que le dossier a été verrouillé avec succès"
+
+#: templates/sackett/templatetags/locking_messages.html:19
+msgid ""
+"This record has been locked by another user - any unsaved changes you have "
+"made will be lost"
+msgstr ""
+"Cet dossier a été verrouillé par un autre utilisateur - les modifications "
+"non enregistrées que vous avez effectués seront perdus"
+
+#: templates/sackett/templatetags/locking_messages.html:25
+msgid "Record locked"
+msgstr "Dossier est verrouillé"
+
+#: templates/sackett/templatetags/locking_messages.html:29
+msgid ""
+"Another user is editing this record. You can take control of it but they "
+"will lose any unsaved changes."
+msgstr ""
+"Un autre utilisateur modifie cet dossier. Vous pouvez prendre le contrôle de "
+"celui-ci, mais ils perdrez toutes les modifications non enregistrées."
+
+#: templates/sackett/templatetags/locking_messages.html:30
+msgid "Take control of this record?"
+msgstr "Prenez le contrôle de ce dossier?"
+
+#: templates/sackett/templatetags/locking_messages.html:36
+#: templates/sackett/user_management_all.html:36
+#: templates/sackett/user_management_all.html:74
+msgid "No"
+msgstr "Non"
+
+#: templates/sackett/templatetags/locking_messages.html:40
+#: templates/sackett/user_management_all.html:36
+#: templates/sackett/user_management_all.html:74
+msgid "Yes"
+msgstr "Oui"
+
+#: templates/sackett/templatetags/nav_menu.html:14
+#: templates/sackett/templatetags/nav_menu.html:96
+#: templates/sackett/triage_arrival.html:9
+#: templates/sackett/triage_arrival.html:117
+#: templates/sackett/triage_arrival.html:229
+msgid "Triage"
+msgstr "Triage"
+
+#: templates/sackett/templatetags/nav_menu.html:17
+msgid "Registration"
+msgstr "Enregistrement"
+
+#: templates/sackett/templatetags/nav_menu.html:29
+#: templates/sackett/templatetags/nav_menu.html:111
+msgid "Account"
+msgstr ""
+
+#: templates/sackett/templatetags/nav_menu.html:33
+#: templates/sackett/templatetags/nav_menu.html:115
+msgid "User admin"
+msgstr ""
+
+#: templates/sackett/templatetags/nav_menu.html:38
+#: templates/sackett/templatetags/nav_menu.html:120
+msgid "Export data"
+msgstr ""
+
+#: templates/sackett/templatetags/nav_menu.html:43
+#: templates/sackett/templatetags/nav_menu.html:125
+msgid "Quality review"
+msgstr ""
+
+#: templates/sackett/templatetags/nav_menu.html:48
+#: templates/sackett/templatetags/nav_menu.html:130
+msgid "Dashboard"
+msgstr ""
+
+#: templates/sackett/templatetags/nav_menu.html:53
+#: templates/sackett/templatetags/nav_menu.html:135
+#, fuzzy
+#| msgid "Expected patients"
+msgid "Discharged patients"
+msgstr "Patients attendus"
+
+#: templates/sackett/templatetags/nav_menu.html:58
+#: templates/sackett/templatetags/nav_menu.html:140
+msgid "Settings"
+msgstr ""
+
+#: templates/sackett/templatetags/nav_menu.html:69
+#: templates/sackett/zone_summary.html:27
+msgid "Clinical areas"
+msgstr "Zones clinique"
+
+#: templates/sackett/templatetags/nav_menu.html:79
+#: templates/sackett/templatetags/nav_menu.html:161
+msgid "Add new..."
+msgstr "Nouveau..."
+
+#: templates/sackett/templatetags/nav_menu.html:90
+msgid "Overview"
+msgstr "Aperçu"
+
+#: templates/sackett/templatetags/nav_menu.html:93
+msgid "Expected"
+msgstr "Attendu"
+
+#: templates/sackett/templatetags/nav_menu.html:99
+msgid "Reg"
+msgstr "Enreg"
+
+#: templates/sackett/templatetags/nav_menu.html:151
+msgid "Areas"
+msgstr "Zones"
+
+#: templates/sackett/triage_arrival.html:232
+msgid "Clear"
+msgstr "Nettoyer"
+
+#: templates/sackett/user_management_add_doctor.html:9
+#: templates/sackett/user_management_add_doctor.html:17
+#, fuzzy
+#| msgid "Add note"
+msgid "Add doctor"
+msgstr "Ajouter"
+
+#: templates/sackett/user_management_add_doctor.html:25
+#, python-format
+msgid ""
+"\n"
+"                                    Doctor '%(saved_first_name)s "
+"%(saved_last_name)s' created successfully\n"
+"                                "
+msgstr ""
+
+#: templates/sackett/user_management_add_edit_user.html:11
+#: templates/sackett/user_management_add_edit_user.html:24
+#, fuzzy
+#| msgid "Add note"
+msgid "Add user"
+msgstr "Ajouter"
+
+#: templates/sackett/user_management_add_edit_user.html:13
+#: templates/sackett/user_management_add_edit_user.html:26
+msgid "Edit user"
+msgstr ""
+
+#: templates/sackett/user_management_add_edit_user.html:36
+#, python-format
+msgid "User with username '%(saved_username)s' created successfully"
+msgstr ""
+
+#: templates/sackett/user_management_add_edit_user.html:38
+msgid "User updated successfully"
+msgstr ""
+
+#: templates/sackett/user_management_add_edit_user.html:76
+msgid "Permissions"
+msgstr ""
+
+#: templates/sackett/user_management_all.html:9
+#: templates/sackett/user_management_personal.html:9
+msgid "User profile management"
+msgstr ""
+
+#: templates/sackett/user_management_all.html:20
+msgid "Users"
+msgstr ""
+
+#: templates/sackett/user_management_all.html:28
+#: templates/sackett/user_management_all.html:65
+msgid "Enabled"
+msgstr ""
+
+#: templates/sackett/user_management_all.html:40
+msgid "Edit"
+msgstr ""
+
+#: templates/sackett/user_management_all.html:51
+#, fuzzy
+#| msgid "Add new..."
+msgid "Add new user"
+msgstr "Nouveau..."
+
+#: templates/sackett/user_management_all.html:56
+#, fuzzy
+#| msgid "Doctor"
+msgid "Doctors"
+msgstr "Docteur"
+
+#: templates/sackett/user_management_all.html:63
+#, fuzzy
+#| msgid "Name"
+msgid "Last Name"
+msgstr "Nom"
+
+#: templates/sackett/user_management_all.html:64
+msgid "First Name"
+msgstr ""
+
+#: templates/sackett/user_management_all.html:79
+msgid "Disable"
+msgstr ""
+
+#: templates/sackett/user_management_all.html:84
+msgid "Enable"
+msgstr ""
+
+#: templates/sackett/user_management_all.html:104
+#, fuzzy
+#| msgid "Add note"
+msgid "Add new doctor"
+msgstr "Ajouter"
+
+#: templates/sackett/user_management_login.html:10
+msgid "User login"
+msgstr ""
+
+#: templates/sackett/user_management_login.html:24
+#: templates/sackett/user_management_login.html:56
+msgid "Login"
+msgstr ""
+
+#: templates/sackett/user_management_login.html:29
+msgid "You can login here to access extra features of this site"
+msgstr ""
+
+#: templates/sackett/user_management_personal.html:33
+msgid "Password updated successfully"
+msgstr ""
+
+#: templates/sackett/user_management_personal.html:39
+#, python-format
+msgid "Logged in as '%(current_user)s'"
+msgstr ""
+
+#: templates/sackett/user_management_personal.html:44
+msgid "Logout"
+msgstr ""
+
+#: templates/sackett/user_management_personal.html:49
+msgid ""
+"You can update your password by completing the details here and clicking "
+"\"Update\""
+msgstr ""
+
+#: templates/sackett/user_management_personal.html:84
+msgid "Update"
+msgstr ""
+
+#: templates/sackett/zone_summary.html:4
+msgid "Clinical areas overview"
+msgstr "Aperçu des zones cliniques"
+
+#, fuzzy
+#~| msgid "Preferred language"
+#~ msgid "Set site language"
+#~ msgstr "Langue préférée"

@@ -1,0 +1,81 @@
+ECDS_UniqueID,ECDS_Group,ECDS_Description,ECDS_Code,Sort1,Sort2,SNOMED_Code
+2018111100,Airway / Breathing,Oxygen therapy,57485005,11,11,57485005
+2018112100,Airway / Breathing,Nasopharyngeal airway insertion,182692007,11,21,182692007
+2018113100,Airway / Breathing,Nebuliser therapy,56251003,11,31,56251003
+2018114100,Airway / Breathing,Noninvasive ventilation,428311008,11,41,428311008
+2018115100,Airway / Breathing,Sedation / Anaesthesia,50697003,11,51,50697003
+2018115500,Airway / Breathing,Bag valve mask ventilation,425447009,11,55,425447009
+2018116100,Airway / Breathing,Laryngeal mask airway ,424979004,11,61,424979004
+2018116500,Airway / Breathing,Endotracheal tube,112798008,11,65,112798008
+2018117100,Airway / Breathing,Chest drain,264957007,11,71,264957007
+2018211100,Circulation,Intravenous cannulation,392231009,21,11,392231009
+2018212100,Circulation,Intraosseous cannulation,430824005,21,21,430824005
+2018212500,Circulation,Blood product transfusion,116859006,21,25,116859006
+2018213100,Circulation,CVP line insertion,233527006,21,31,233527006
+2018213500,Circulation,Arterial line insertion,392247006,21,35,392247006
+2018214100,Circulation,Cardioversion,250980009,21,41,250980009
+2018214200,Circulation,Cardiac pacing,18590009,21,42,18590009
+2018312100,Resuscitation,Resuscitation,439569004,31,21,439569004
+2018312300,Resuscitation,Cardiopulmonary resuscitation,89666000,31,23,89666000
+2018313100,Resuscitation,Active warming of patient,241740008,31,31,241740008
+2018314100,Resuscitation,Active cooling of patient,182660006,31,41,182660006
+2018315100,Resuscitation,Percutaneous vascular occlusion device,240943006,31,51,240943006
+2018316100,Resuscitation,Resuscitative thoracotomy,36936009,31,61,36936009
+2018351100,Analgesia,Nitrous oxide and oxygen,427035008,35,11,427035008
+2018352100,Analgesia,Local anaesthesia,386761002,35,21,386761002
+2018355100,Analgesia,Regional anaesthesia,27372005,35,51,27372005
+2018356100,Analgesia,Local anaesthetic nerve block,265778005,35,61,265778005
+2018358100,Analgesia,Intravenous regional analgesia,278872003,35,81,278872003
+2018411100,Medication,Medication: oral,386359008,41,11,386359008
+2018411500,Medication,Medication: intramuscular / subcutaneous,76601001,41,15,76601001
+2018412100,Medication,Medication: intravenous,43060002,41,21,43060002
+2018412500,Medication,Medication: intravenous antibiotic,281790008,41,25,281790008
+2018413100,Medication,Intravenous fluid,103744005,41,31,103744005
+2018417100,Medication,Medication TTO,266712008,41,71,266712008
+2018418100,Medication,Activated charcoal,226871000000103,41,81,226871000000103
+2018419100,Medication,Thrombolysis,307521008,41,91,307521008
+2018451100,Procedures,Insertion of urinary catheter,410024004,45,11,410024004
+2018452100,Procedures,Insertion of nasogastric tube,87750000,45,21,87750000
+2018452500,Procedures,Diagnostic lumbar puncture,265232001,45,25,265232001
+2018453100,Procedures,Drainage of paronychia,241012007,45,31,241012007
+2018453200,Procedures,Evacuation of subungual haematoma,88584000,45,32,88584000
+2018453500,Procedures,Incision and drainage,56783008,45,35,56783008
+2018454100,Procedures,Pleural aspiration,91602002,45,41,91602002
+2018454500,Procedures,Aspiration of ascitic fluid,178016006,45,45,178016006
+2018454600,Procedures,Drainage of ascitic fluid,178012008,45,46,178012008
+2018457100,Procedures,Removal of foreign body from skin,302421003,45,71,302421003
+2018511100,Wound management,Closure of wound by tape strips,71810007,51,11,71810007
+2018511500,Wound management,Closure of wound by glue,284182000,51,15,284182000
+2018512100,Wound management,Closure of wound by suture,18557009,51,21,18557009
+2018512300,Wound management,Closure of wound by deep suture,71539001,51,23,71539001
+2018512500,Wound management,Closure by wound by staple,50015006,51,25,50015006
+2018513100,Wound management,Dressing change / wound review,410379003,51,31,410379003
+2018514100,Wound management,Debridement of wound of skin,85875009,51,41,85875009
+2018514300,Wound management,Tetanus toxoid vaccination,127786006,51,43,127786006
+2018515100,Wound management,Removal of sutures,30549001,51,51,30549001
+2018515500,Wound management,Removal of staples,35963001,51,55,35963001
+2018519100,Wound management,Tetanus immune globulin,117092006,51,91,117092006
+2018551100,Orthopaedic,Application of plaster cast,180289009,55,11,180289009
+2018551300,Orthopaedic,Removal of plaster cast,180291001,55,13,180291001
+2018551500,Orthopaedic,Repair of plaster cast,239698005,55,15,239698005
+2018553100,Orthopaedic,Dislocated shoulder reduction,274450004,55,31,274450004
+2018553500,Orthopaedic,Reduction of dislocation,122944000,55,35,122944000
+2018554100,Orthopaedic,Closed reduction of fracture of radius,87971000,55,41,87971000
+2018554300,Orthopaedic,Closed reduction of fracture of radius and ulna,33630008,55,43,33630008
+2018554600,Orthopaedic,Closed reduction of fracture of upper limb,267765006,55,46,267765006
+2018555100,Orthopaedic,Closed reduction of fracture of ankle,179162008,55,51,179162008
+2018555500,Orthopaedic,Closed reduction of fracture of lower limb,150617003,55,55,150617003
+2018556100,Orthopaedic,Arthrocentesis,90131007,55,61,90131007
+2018556500,Orthopaedic,Apply Thomas splint traction,179208004,55,65,179208004
+2018558100,Orthopaedic,Loan of crutches,183258006,55,81,183258006
+2018711100,ENT,Control of bleeding from nose,35807001,71,11,35807001
+2018711300,ENT,Nasal cautery,307271005,71,13,307271005
+2018712100,ENT,Removal of foreign body from nose,172828005,71,21,172828005
+2018713100,ENT,Removal of foreign body from ear,9655003,71,31,9655003
+2018717100,ENT,Splint teeth with orthodontic bands,266689003,71,71,266689003
+2018751100,Ophthalmology,Irrigation of eye,49999004,75,11,49999004
+2018752100,Ophthalmology,Removal of foreign body from cornea,172426003,75,21,172426003
+2018755100,Ophthalmology,Intravitreal injection,82036007,75,51,82036007
+2018756100,Ophthalmology,Laser treatment of eye,416376001,75,61,416376001
+2018811100,Discharge Planning,Activities of daily living assessment,304492001,81,11,304492001
+2018911100,Administration,Treatment not indicated,183964008,91,11,183964008

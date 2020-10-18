@@ -1,0 +1,8 @@
+{% load i18n %}
+
+{% if success %}
+<p style="color:forestgreen">{% trans 'New clinical area added:' %}</p>
+<p style="color:forestgreen"><a href="{{ new_zone_url }}">{% trans 'Click here to view it' %}</a></p>
+{% else %}
+<p style="color:red">{% trans 'Error adding new clinical area - please choose a label and a template' %}</p>
+{% endif %}
