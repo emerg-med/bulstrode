@@ -239,22 +239,21 @@ class Episode(models.Model):
     person_companion = models.CharField(db_column='PersonCompanion', max_length=255, null=True, blank=True)
 
     # `PersonSpecialPatientNoteLocal` NVARCHAR(4096) NULL,
-    person_special_patient_note_local = models.CharField(db_column='PersonSpecialPatientNoteLocal', max_length=4096,
-                                                         null=True, blank=True)
+    person_special_patient_note_local = models.TextField(db_column='PersonSpecialPatientNoteLocal', null=True,
+                                                         blank=True)
 
     # `PersonAdditionalInformation` NVARCHAR(4096) NULL,
-    person_additional_information = models.CharField(db_column='PersonAdditionalInformation', max_length=4096,
-                                                     null=True, blank=True)
+    person_additional_information = models.TextField(db_column='PersonAdditionalInformation', null=True, blank=True)
 
     # `PersonAllergiesAdverseReaction` NVARCHAR(4096) NULL,
-    person_allergies_adverse_reaction = models.CharField(db_column='PersonAllergiesAdverseReaction', max_length=4096,
-                                                         null=True, blank=True)
+    person_allergies_adverse_reaction = models.TextField(db_column='PersonAllergiesAdverseReaction', null=True,
+                                                         blank=True)
 
     # `PersonComorbidities` NVARCHAR(4096) NULL,
-    person_comorbidities = models.CharField(db_column='PersonComorbidities', max_length=4096, null=True, blank=True)
+    person_comorbidities = models.TextField(db_column='PersonComorbidities', null=True, blank=True)
 
     # `PersonCurrentMeds` NVARCHAR(4096) NULL,
-    person_current_meds = models.CharField(db_column='PersonCurrentMeds', max_length=4096, null=True, blank=True)
+    person_current_meds = models.TextField(db_column='PersonCurrentMeds', null=True, blank=True)
 
     # `EmCareProviderOrgCode` NVARCHAR(9) NULL,
     em_care_provider_org_code = models.CharField(db_column='EmCareProviderOrgCode', max_length=9, null=True, blank=True)
@@ -294,11 +293,10 @@ class Episode(models.Model):
     em_care_assess_date_time = models.DateTimeField(db_column='EmCareAssessDateTime', null=True, blank=True)
 
     # `EmCareClinicians` NVARCHAR(4096) NULL,
-    em_care_clinicians = models.CharField(db_column='EmCareClinicians', max_length=4096, null=True, blank=True)
+    em_care_clinicians = models.TextField(db_column='EmCareClinicians', null=True, blank=True)
 
     # `EmCareReferredService` NVARCHAR(4096) NULL,
-    em_care_referred_service = models.CharField(db_column='EmCareReferredService', max_length=4096, null=True,
-                                                blank=True)
+    em_care_referred_service = models.TextField(db_column='EmCareReferredService', null=True, blank=True)
 
     # `EmCareDtaDateTime` CHAR(19) NULL, - DATETIME NULL?
     em_care_dta_date_time = models.DateTimeField(db_column='EmCareDtaDateTime', null=True, blank=True)
@@ -325,23 +323,22 @@ class Episode(models.Model):
     em_care_chief_complaint = models.CharField(db_column='EmCareChiefComplaint', max_length=18, null=True, blank=True)
 
     # `EmCareClinicalNarrative` NVARCHAR(4096) NULL,
-    em_care_clinical_narrative = models.CharField(db_column='EmCareClinicalNarrative', max_length=4096, null=True,
-                                                  blank=True)
+    em_care_clinical_narrative = models.TextField(db_column='EmCareClinicalNarrative', null=True, blank=True)
 
     # `EmCareDiagnosis` NVARCHAR(4096) NULL,
-    em_care_diagnosis = XmlCharField(xml_tags=('DIAGS', ('DIAG', {'index': 'NUM', 'code': 'CODE', 'mod': 'MOD'})),
-                                     db_column='EmCareDiagnosis', max_length=4096, null=True, blank=True)
+    em_care_diagnosis = XmlTextField(xml_tags=('DIAGS', ('DIAG', {'index': 'NUM', 'code': 'CODE', 'mod': 'MOD'})),
+                                     db_column='EmCareDiagnosis', null=True, blank=True)
 
     # `EmCareInvestigations` NVARCHAR(4096) NULL,
-    em_care_investigations = XmlCharField(xml_tags=('INVS', 'INV'), db_column='EmCareInvestigations',
-                                          max_length=4096, null=True, blank=True)
+    em_care_investigations = XmlTextField(xml_tags=('INVS', 'INV'), db_column='EmCareInvestigations',
+                                          null=True, blank=True)
 
     # `EmCareTreatments` NVARCHAR(4096) NULL,
-    em_care_treatments = XmlCharField(xml_tags=('TRMTS', 'TRMT'), db_column='EmCareTreatments',
-                                      max_length=4096, null=True, blank=True)
+    em_care_treatments = XmlTextField(xml_tags=('TRMTS', 'TRMT'), db_column='EmCareTreatments',
+                                      null=True, blank=True)
 
     # `EmCareResearch` NVARCHAR(4096) NULL,
-    em_care_research = models.CharField(db_column='EmCareResearch', max_length=4096, null=True, blank=True)
+    em_care_research = models.TextField(db_column='EmCareResearch', null=True, blank=True)
 
     # `EmCareInjDateTime` CHAR(19) NULL, - DATETIME NULL?
     em_care_inj_date_time = models.DateTimeField(db_column='EmCareInjDateTime', null=True, blank=True)
@@ -384,12 +381,10 @@ class Episode(models.Model):
                                                    blank=True)
 
     # `EmCareDischargeMedication` NVARCHAR(4096) NULL,
-    em_care_discharge_medication = models.CharField(db_column='EmCareDischargeMedication', max_length=4096, null=True,
-                                                    blank=True)
+    em_care_discharge_medication = models.TextField(db_column='EmCareDischargeMedication', null=True, blank=True)
 
     # `EmCareDischargeInstructions` NVARCHAR(4096) NULL,
-    em_care_discharge_instructions = models.CharField(db_column='EmCareDischargeInstructions', max_length=4096,
-                                                      null=True, blank=True)
+    em_care_discharge_instructions = models.TextField(db_column='EmCareDischargeInstructions', null=True, blank=True)
 
     # `EmCareDischargeInformationGiven` NVARCHAR(18) NULL,
     # em_care_discharge_information_given = models.CharField(db_column='EmCareDischargeInformationGiven', max_length=18,
