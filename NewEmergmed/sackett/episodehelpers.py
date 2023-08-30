@@ -1,6 +1,6 @@
 from math import floor
 from django.utils import timezone
-from django.utils.translation import ugettext as _, ungettext
+from django.utils.translation import gettext as _, ngettext
 from .enumerations import PickListTableTypes
 from .picklistdataproxy import PickListDataProxy
 
@@ -72,14 +72,14 @@ def __get_full_icon_set_for_episode(episode, icon_size_base):
     #      'wait_time_label': wait_time_quantity_label}
 
     if wait_time_minutes < 60:
-        icon_tooltip['wait'] = ungettext(
+        icon_tooltip['wait'] = ngettext(
             'Waiting time: %(wait_time_quantity)d minute',
             'Waiting time: %(wait_time_quantity)d minutes',
             wait_time_minutes) % {
             'wait_time_quantity': wait_time_minutes,
         }
     else:
-        icon_tooltip['wait'] = ungettext(
+        icon_tooltip['wait'] = ngettext(
             'Waiting time: %(wait_time_quantity)d hour',
             'Waiting time: %(wait_time_quantity)d hours',
             wait_time_hours) % {

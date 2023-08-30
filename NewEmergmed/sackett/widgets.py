@@ -1,10 +1,10 @@
 from itertools import chain, groupby
 from django.forms import Select
 from django.forms.utils import flatatt
-from django.utils.encoding import force_text
+from django.utils.encoding import force_str
 from django.utils.html import format_html
 from django.utils.safestring import mark_safe
-from django.utils.translation import ugettext as _
+from django.utils.translation import gettext as _
 from .utils import multi_group_by
 
 
@@ -19,10 +19,11 @@ class SUSelect(Select):
         self.default_text = default_text
         self.index_items = index_items
 
-    def render(self, name, value, attrs=None, choices=()):
+    def render(self, name, value, attrs=None, choices=(), renderer=None):
+        print(attrs.keys())
         if value is None:
             value = ''
-        final_attrs = self.build_attrs(attrs, name=name)
+        final_attrs = self.build_attrs(self.attrs if 'id' not in attrs.keys() else attrs, {'name': name})
         control_id = final_attrs['id']
 
         output = [format_html('<div class="ui{} inline{} dropdown" id="{}_outer_dropdown">',
@@ -30,13 +31,12 @@ class SUSelect(Select):
                               ' search' if self.searchable else '',
                               control_id),
                   format_html('<input type="hidden"{} value="{}">', flatatt(final_attrs), value),
-                  # '<div class="default text"></div>',
                   format_html('<div class="default text">{}</div>', self.default_text or
                               _('choose') if not self.searchable
                               else (_('choose or type to search') if len(choices) > 0 else _('type to search'))),
                   '<i class="dropdown icon"></i>']
 
-        options = self.render_options(choices, [value])     # chain(self.choices, choices), [value])
+        options = self.render_options(choices, [value])
         if options:
             output.append(options)
         output.append('</div>')
@@ -45,7 +45,7 @@ class SUSelect(Select):
     def render_option(self, selected_choices, option_value, option_label, option_index):    # TODO method signature
         if option_value is None:
             option_value = ''
-        option_value = force_text(option_value)
+        option_value = force_str(option_value)
 
         if self.index_items:
             index_text = format_html(' data-index="{}"', option_index)
@@ -55,11 +55,11 @@ class SUSelect(Select):
         return format_html('<div class="item" data-value="{}"{}>{}</div>',
                            option_value,
                            index_text,
-                           force_text(option_label))
+                           force_str(option_label))
 
     def render_options(self, choices, selected_choices):
         # Normalize to strings.
-        selected_choices = set(force_text(v) for v in selected_choices)
+        selected_choices = set(force_str(v) for v in selected_choices)
         output = ['<div class="right menu">']
         option_index = 0
         for option_value, option_label in chain(self.choices, choices):
@@ -76,7 +76,10 @@ class MultiLevelSUSelect(Select):
 
     def __init__(self, levels=(), display_members=(), value_member='', item_data_members=(),
                  searchable=False, fill_parent=True, attrs=None, choices=()):
-        super(MultiLevelSUSelect, self).__init__(attrs, choices)
+        # passing [("null", "null")] here because the input choices value is not a list of tuples so we can't use that;
+        # the value we pass in here doesn't matter otherwise, because we are using custom render code
+        super(MultiLevelSUSelect, self).__init__(attrs, [("null", "null")])
+        self.choices_raw = choices
         self.levels = levels        # e.g. ['group', 'description']
         self.display_members = display_members
         self.value_member = value_member
@@ -84,10 +87,10 @@ class MultiLevelSUSelect(Select):
         self.searchable = searchable
         self.fill_parent = fill_parent
 
-    def render(self, name, value, attrs=None, choices=()):
+    def render(self, name, value, attrs=None, choices=(), renderer=None):
         if value is None:
             value = ''
-        final_attrs = self.build_attrs(attrs, name=name)
+        final_attrs = self.build_attrs(attrs, {'name': name})
         control_id = final_attrs['id']
 
         output = [format_html('<div class="ui{} inline{} dropdown" id="{}_outer_dropdown">',
@@ -95,18 +98,17 @@ class MultiLevelSUSelect(Select):
                               ' search' if self.searchable else '',
                               control_id),
                   format_html('<input type="hidden"{}>', flatatt(final_attrs)),
-                  # '<div class="default text"></div>',
                   format_html('<div class="default text">{}</div>', _('choose')),
                   '<i class="dropdown icon"></i>']
 
-        options = self.render_options(chain(self.choices, choices), [value])
+        options = self.render_options(chain(self.choices_raw, choices), [value])
         if options:
             output.append(options)
         output.append('</div>')
         return mark_safe('\n'.join(output))
 
     def render_options(self, choices, selected_choices):
-        grouped_choices = multi_group_by(choices, self.levels, self.display_members)     # self.group_by(choices, 0)
+        grouped_choices = multi_group_by(choices, self.levels, self.display_members)
         output = self.render_sub_menu(grouped_choices, selected_choices)
 
         return '\n'.join(output)
@@ -156,18 +158,24 @@ class MultiLevelSUSelect(Select):
 
 
 class SelectWithData(Select):
+    def __init__(self, attrs=None, choices=()):
+        # passing [("null", "null")] here because the input choices value is not a list of tuples so we can't use that;
+        # the value we pass in here doesn't matter otherwise, because we are using custom render code
+        super(SelectWithData, self).__init__(attrs, [("null", "null")])
+        self.choices_raw = choices
+
     """ A variant of the Select widget that includes data-* attributes on the generated <option>s """
     def render_options(self, choices, selected_choices):
         # Normalize to strings.
-        selected_choices = set(force_text(v) for v in selected_choices)
+        selected_choices = set(force_str(v) for v in selected_choices)
         output = []
-        for single_option in chain(self.choices, choices):
+        for single_option in chain(self.choices_raw, choices):
             option_value = single_option['value']
             option_label = single_option['label']
             option_data = single_option['data']
 
             if isinstance(option_label, (list, tuple)):
-                output.append(format_html('<optgroup label="{}">', force_text(option_value)))
+                output.append(format_html('<optgroup label="{}">', force_str(option_value)))
                 for option in option_label:
                     output.append(self.render_option(selected_choices, option['value'],
                                                      option['label'],
@@ -180,7 +188,7 @@ class SelectWithData(Select):
     def render_option(self, selected_choices, option_value, option_label, option_data=()):
         if option_value is None:
             option_value = ''
-        option_value = force_text(option_value)
+        option_value = force_str(option_value)
         if option_value in selected_choices:
             selected_html = mark_safe(' selected="selected"')
             if not self.allow_multiple_selected:
@@ -198,4 +206,4 @@ class SelectWithData(Select):
                            option_value,
                            selected_html,
                            data_html,
-                           force_text(option_label))
+                           force_str(option_label))

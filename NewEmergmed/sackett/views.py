@@ -7,13 +7,13 @@ from django.contrib.auth.hashers import make_password
 from django.contrib.auth.models import Permission
 from django.contrib.contenttypes.models import ContentType
 from django.core.exceptions import PermissionDenied
-from django.core.urlresolvers import reverse
 from django.http import HttpResponse, HttpResponseBadRequest, HttpResponseRedirect, Http404
 from django.shortcuts import get_object_or_404, redirect, render
 from django.template import loader
+from django.urls import reverse
 from django.utils.safestring import SafeString
 from django.utils.translation import get_language
-from django.utils.translation import ugettext as _
+from django.utils.translation import gettext as _
 from itertools import groupby
 import sackett.recordlocking as recordlocking
 from NewEmergmed import settings

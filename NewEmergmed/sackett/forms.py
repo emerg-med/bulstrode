@@ -2,7 +2,7 @@ import json
 from django import forms
 from django.contrib.auth import authenticate, get_user_model
 from django.forms import CheckboxInput, HiddenInput, TextInput
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 from itertools import chain
 from .constants import ZONE_WAITING_LIST_BED_INDEX
 from .databasehelpers import get_field_max_length
@@ -54,18 +54,17 @@ class EpisodeDischargeForm(forms.ModelForm):
                  # if int(x.code) >= 71
                  ]
         else:
-            self.fields['em_care_discharge_status'].widget.choices = PickListDataProxy.load_raw_for_choice_field(
+            self.fields['em_care_discharge_status'].widget.choices_raw = PickListDataProxy.load_raw_for_choice_field(
                     PickListTableTypes.EmCareDischargeStatus.value)
-        self.fields['em_care_discharge_follow_up'].widget.choices = PickListDataProxy.load_raw_for_choice_field(
+        self.fields['em_care_discharge_follow_up'].widget.choices_raw = PickListDataProxy.load_raw_for_choice_field(
                 PickListTableTypes.EmCareDischargeFollowUp.value)
-        self.fields['em_care_discharge_safeguarding'].widget.choices = PickListDataProxy.load_raw_for_choice_field(
+        self.fields['em_care_discharge_safeguarding'].widget.choices_raw = PickListDataProxy.load_raw_for_choice_field(
                 PickListTableTypes.EmCareDischargeSafeguarding.value)
         self.fields['em_care_transfer_destination'].widget.default_text =\
             PickListDataProxy.lookup_code(
                     PickListTableTypes.HealthCareFacility.value, self.instance.em_care_transfer_destination) or\
             _('type to search')
-        # self.fields['em_care_transfer_destination'].widget.attrs.update({'class': 'track-value-changes'})
-        self.fields['em_care_admit_speciality'].widget.choices = PickListDataProxy.load_raw_for_choice_field(
+        self.fields['em_care_admit_speciality'].widget.choices_raw = PickListDataProxy.load_raw_for_choice_field(
                 PickListTableTypes.EmCareAdmitSpecialty.value)
         self.fields['em_care_discharge_medication'].widget.attrs.update({'class': 'track-value-changes'})
         self.fields['em_care_discharge_instructions'].widget.attrs.update({'class': 'track-value-changes'})
@@ -112,7 +111,7 @@ class EpisodeInvestigationForm(forms.Form):
 
     def __init__(self, *args, **kwargs):
         super(EpisodeInvestigationForm, self).__init__(*args, **kwargs)
-        self.fields['investigation'].widget.choices = PickListDataProxy.load_raw_for_choice_field(
+        self.fields['investigation'].widget.choices_raw = PickListDataProxy.load_raw_for_choice_field(
                 PickListTableTypes.EmCareInvestigations.value)
 
 
@@ -125,7 +124,7 @@ class EpisodeTreatmentForm(forms.Form):
 
     def __init__(self, *args, **kwargs):
         super(EpisodeTreatmentForm, self).__init__(*args, **kwargs)
-        self.fields['treatment'].widget.choices = PickListDataProxy.load_raw_for_choice_field(
+        self.fields['treatment'].widget.choices_raw = PickListDataProxy.load_raw_for_choice_field(
                 PickListTableTypes.EmCareTreatments.value)
 
 
@@ -135,9 +134,9 @@ class EpisodePreDiagnosisForm(forms.ModelForm):
         instance = kwargs.get('instance', None)     # get it but leave it there for super()
 
         super(EpisodePreDiagnosisForm, self).__init__(*args, **kwargs)
-        self.fields['em_care_chief_complaint'].widget.choices = PickListDataProxy.load_raw_for_choice_field(
+        self.fields['em_care_chief_complaint'].widget.choices_raw = PickListDataProxy.load_raw_for_choice_field(
                 PickListTableTypes.EmCareChiefComplaint.value)
-        self.fields['bed'].widget.choices = [Expando(zone_label=b.zone.label,
+        self.fields['bed'].widget.choices_raw = [Expando(zone_label=b.zone.label,
                                                      bed_label=_("%(zone)s: %(bed)s") %
                                                                {'zone': b.zone.label,
                                                                 'bed': b.label
@@ -199,9 +198,9 @@ class EpisodePreDiagnosisForm(forms.ModelForm):
 class ExpectedArrivalForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):
         super(ExpectedArrivalForm, self).__init__(*args, **kwargs)
-        self.fields['person_stated_gender'].widget.choices = PickListDataProxy.load_raw_for_choice_field(
+        self.fields['person_stated_gender'].widget.choices_raw = PickListDataProxy.load_raw_for_choice_field(
                 PickListTableTypes.PersonStatedGender.value)
-        self.fields['em_care_chief_complaint'].widget.choices = PickListDataProxy.load_raw_for_choice_field(
+        self.fields['em_care_chief_complaint'].widget.choices_raw = PickListDataProxy.load_raw_for_choice_field(
                 PickListTableTypes.EmCareChiefComplaint.value)
 
     class Meta:
@@ -231,13 +230,13 @@ class InjuryDetailForm(forms.ModelForm):
                 ['sort1', 'sort2'],
                 ['group', 'description'])
 
-        self.fields['em_care_inj_activity_type'].widget.choices = PickListDataProxy.load_raw_for_choice_field(
+        self.fields['em_care_inj_activity_type'].widget.choices_raw = PickListDataProxy.load_raw_for_choice_field(
                 PickListTableTypes.EmCareInjActivity.value)
-        self.fields['em_care_inj_mechanism'].widget.choices = PickListDataProxy.load_raw_for_choice_field(
+        self.fields['em_care_inj_mechanism'].widget.choices_raw = PickListDataProxy.load_raw_for_choice_field(
                 PickListTableTypes.EmCareInjMechanism.value)
-        self.fields['em_care_inj_intent'].widget.choices = PickListDataProxy.load_raw_for_choice_field(
+        self.fields['em_care_inj_intent'].widget.choices_raw = PickListDataProxy.load_raw_for_choice_field(
                 PickListTableTypes.EmCareInjIntent.value)
-        self.fields['em_care_inj_place_type'].widget.choices = PickListDataProxy.load_raw_for_choice_field(
+        self.fields['em_care_inj_place_type'].widget.choices_raw = PickListDataProxy.load_raw_for_choice_field(
                 PickListTableTypes.EmCareInjPlaceType.value)
         self.fields['em_care_inj_date_time'].widget.attrs.update({'class': 'track-value-changes'})
         self.fields['em_care_inj_activity_detail'].widget.attrs.update({'class': 'track-value-changes'})
@@ -419,28 +418,29 @@ class TriageArrivalForm(forms.ModelForm):
                                    ('age', x.person_age_at_attendance),
                                    ]} for x in expected_models]      # TODO leaking db ids
 
-        self.fields['expected_arrival'].widget.choices = expected_list
+        self.fields['expected_arrival'].widget.choices_raw = expected_list
         self.fields['expected_arrival'].widget.attrs.update({
             'id': 'triage_expected_list'
         })
-        self.fields['person_stated_gender'].widget.choices =\
+        self.fields['person_stated_gender'].widget.choices_raw =\
             PickListDataProxy.load_raw_for_choice_field(PickListTableTypes.PersonStatedGender.value)
-        self.fields['em_care_chief_complaint'].widget.choices =\
+        self.fields['em_care_chief_complaint'].widget.choices_raw =\
             PickListDataProxy.load_raw_for_choice_field(PickListTableTypes.EmCareChiefComplaint.value)
-        self.fields['em_care_arrive_transport_mode'].widget.choices =\
+        self.fields['em_care_arrive_transport_mode'].widget.choices_raw =\
             PickListDataProxy.load_raw_for_choice_field(PickListTableTypes.EmCareArriveTransportMode.value)
-        self.fields['em_care_attendance_type'].widget.choices =\
+        self.fields['em_care_attendance_type'].widget.choices_raw =\
             PickListDataProxy.load_raw_for_choice_field(PickListTableTypes.EmCareAttendanceType.value)
         # self.fields['person_interpreter_lang'].widget.choices =\
         #     PickListDataProxy.load_raw_for_choice_field(PickListTableTypes.PersonInterpreterLang.value)
         self.fields['person_interpreter_lang'].widget.choices = PickListDataProxy.load_for_choice_field(
                 PickListTableTypes.PersonInterpreterLang.value)
-        self.fields['zone_id'].widget.choices = get_zones_list()
+        self.fields['zone_id'].widget.choices_raw = get_zones_list()
         self.fields['em_care_assessment'].required = True
 
     def clean_person_interpreter_lang(self):
+        print(self.cleaned_data['person_interpreter_lang'])
         return self.cleaned_data['person_interpreter_lang']\
-                if len(self.cleaned_data['person_interpreter_lang']) > 0\
+                if self.cleaned_data['person_interpreter_lang'] is not None and len(self.cleaned_data['person_interpreter_lang']) > 0\
                 else None
 
     class Meta:
@@ -473,8 +473,6 @@ class TriageArrivalForm(forms.ModelForm):
             'em_care_attendance_type': MultiLevelSUSelect(levels=['description'], value_member='code',
                                                           display_members=['description']),
             'person_interpreter_rqd': forms.CheckboxInput(),    # attrs={'id': 'triage_person_interpreter_rqd'}),
-            # 'person_interpreter_lang': MultiLevelSUSelect(levels=['sort1'], value_member='code',
-            #                                               display_members=['description'], searchable=True),
             'person_interpreter_lang': SUSelect(searchable=True, attrs={'class': 'track-value-changes'}),
             'em_care_assessment': SUSelect(choices=[(str(n), str(n)) for n in range(1, 6)]),
         }
