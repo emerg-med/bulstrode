@@ -1,6 +1,6 @@
 {% extends "sackett/site_base.html" %}
 {% load i18n %}
-{% load staticfiles %}
+{% load static %}
 
 {% block meta %}
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
@@ -83,7 +83,6 @@
                 var expected_list = $('#triage_expected_list');
                 expected_list.find('option:selected').prop('selected', false);
                 expected_list.selectedIndex = -1;
-
                 return false;
             });
 

@@ -60,11 +60,11 @@ class PickListData(models.Model):
 
     # char2 = models.CharField(max_length=256, null=True)
 
-    bool1 = models.NullBooleanField()
+    bool1 = models.BooleanField(null = True)
 
-    bool2 = models.NullBooleanField()
+    bool2 = models.BooleanField(null = True)
 
-    bool3 = models.NullBooleanField()
+    bool3 = models.BooleanField(null = True)
 
     language_code = models.CharField(max_length=6, null=False)
 
@@ -413,7 +413,7 @@ class Episode(models.Model):
     action = models.CharField(max_length=255, null=True, blank=True)
 
     # `BedRequested` TINYINT(1) NULL,
-    bed_requested = models.NullBooleanField()
+    bed_requested = models.BooleanField(null = True)
 
     # `PersonSpecialPatientNoteLocalReviewDueDate` DATETIME NULL,
     person_special_patient_note_local_review_due_date = models.DateTimeField(null=True, blank=True)
@@ -421,7 +421,7 @@ class Episode(models.Model):
     # `PersonSpecialPatientNoteLocalReviewedDate` DATETIME NULL,
     person_special_patient_note_local_review_date = models.DateTimeField(null=True, blank=True)
 
-    early_discharge = models.NullBooleanField()
+    early_discharge = models.BooleanField(null = True)
 
     def __str__(self):
         return self.person_family_name + " " + self.person_given_name + " (" + str(self.em_care_unique_id) + ")"

@@ -2,7 +2,7 @@ import json
 from django import forms
 from django.contrib.auth import authenticate, get_user_model
 from django.forms import CheckboxInput, HiddenInput, TextInput
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 from itertools import chain
 from .constants import ZONE_WAITING_LIST_BED_INDEX
 from .databasehelpers import get_field_max_length
@@ -400,7 +400,6 @@ class TriageArrivalForm(forms.ModelForm):
     zone_id = forms.IntegerField(label=_('Clinical area'),
                                  widget=MultiLevelSUSelect(levels=['label'], value_member='id',
                                                            display_members=['label']))
-
     expected_arrival = forms.IntegerField(label=_('Expected patients'),
                                           widget=SelectWithData(attrs={'size': '10'}),
                                           required=False)
@@ -408,7 +407,6 @@ class TriageArrivalForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):
         super(TriageArrivalForm, self).__init__(*args, **kwargs)
         expected_models = Expected.objects.filter(removed=False, linked_episode__isnull=True)
-
         expected_list = [{'value': x.id,
                           'label': x.person_family_name + ", " + x.person_given_name,   # TODO name combiner function
                           'data': [('given-name', x.person_given_name),
@@ -417,7 +415,6 @@ class TriageArrivalForm(forms.ModelForm):
                                    ('gender', x.person_stated_gender),
                                    ('age', x.person_age_at_attendance),
                                    ]} for x in expected_models]      # TODO leaking db ids
-
         self.fields['expected_arrival'].widget.choices_raw = expected_list
         self.fields['expected_arrival'].widget.attrs.update({
             'id': 'triage_expected_list'
@@ -439,7 +436,7 @@ class TriageArrivalForm(forms.ModelForm):
 
     def clean_person_interpreter_lang(self):
         return self.cleaned_data['person_interpreter_lang']\
-                if len(self.cleaned_data['person_interpreter_lang']) > 0\
+                if self.cleaned_data['person_interpreter_lang'] is not None and len(self.cleaned_data['person_interpreter_lang']) > 0\
                 else None
 
     class Meta:

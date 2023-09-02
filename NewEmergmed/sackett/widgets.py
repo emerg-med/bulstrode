@@ -1,10 +1,10 @@
 from itertools import chain, groupby
 from django.forms import Select
 from django.forms.utils import flatatt
-from django.utils.encoding import force_text
+from django.utils.encoding import force_str
 from django.utils.html import format_html
 from django.utils.safestring import mark_safe
-from django.utils.translation import ugettext as _
+from django.utils.translation import gettext as _
 from .utils import multi_group_by
 
 
@@ -22,7 +22,7 @@ class SUSelect(Select):
     def render(self, name, value, attrs=None, choices=(), renderer=None):
         if value is None:
             value = ''
-        final_attrs = self.build_attrs(attrs, {'name': name})
+        final_attrs = self.build_attrs(self.attrs if 'id' not in attrs.keys() else attrs, {'name': name})
         control_id = final_attrs['id']
 
         output = [format_html('<div class="ui{} inline{} dropdown" id="{}_outer_dropdown">',
@@ -44,7 +44,7 @@ class SUSelect(Select):
     def render_option(self, selected_choices, option_value, option_label, option_index):    # TODO method signature
         if option_value is None:
             option_value = ''
-        option_value = force_text(option_value)
+        option_value = force_str(option_value)
 
         if self.index_items:
             index_text = format_html(' data-index="{}"', option_index)
@@ -54,11 +54,11 @@ class SUSelect(Select):
         return format_html('<div class="item" data-value="{}"{}>{}</div>',
                            option_value,
                            index_text,
-                           force_text(option_label))
+                           force_str(option_label))
 
     def render_options(self, choices, selected_choices):
         # Normalize to strings.
-        selected_choices = set(force_text(v) for v in selected_choices)
+        selected_choices = set(force_str(v) for v in selected_choices)
         output = ['<div class="right menu">']
         option_index = 0
         for option_value, option_label in chain(self.choices, choices):
@@ -166,7 +166,7 @@ class SelectWithData(Select):
     """ A variant of the Select widget that includes data-* attributes on the generated <option>s """
     def render_options(self, choices, selected_choices):
         # Normalize to strings.
-        selected_choices = set(force_text(v) for v in selected_choices)
+        selected_choices = set(force_str(v) for v in selected_choices)
         output = []
         for single_option in chain(self.choices_raw, choices):
             option_value = single_option['value']
@@ -174,7 +174,7 @@ class SelectWithData(Select):
             option_data = single_option['data']
 
             if isinstance(option_label, (list, tuple)):
-                output.append(format_html('<optgroup label="{}">', force_text(option_value)))
+                output.append(format_html('<optgroup label="{}">', force_str(option_value)))
                 for option in option_label:
                     output.append(self.render_option(selected_choices, option['value'],
                                                      option['label'],
@@ -187,7 +187,7 @@ class SelectWithData(Select):
     def render_option(self, selected_choices, option_value, option_label, option_data=()):
         if option_value is None:
             option_value = ''
-        option_value = force_text(option_value)
+        option_value = force_str(option_value)
         if option_value in selected_choices:
             selected_html = mark_safe(' selected="selected"')
             if not self.allow_multiple_selected:
@@ -205,4 +205,25 @@ class SelectWithData(Select):
                            option_value,
                            selected_html,
                            data_html,
-                           force_text(option_label))
+                           force_str(option_label))
+
+
+    def render(self, name, value, attrs=None, choices=(), renderer=None):
+        if value is None:
+            value = ''
+        final_attrs = self.build_attrs(self.attrs if 'id' not in attrs.keys() else attrs, {'name': name})
+        control_id = final_attrs['id']
+
+        output = [format_html('<div class="ui{} inline{} dropdown" id="{}_outer_dropdown">',
+                              '',
+                              '',
+                              control_id),
+                  format_html('<input type="hidden"{} value="{}">', flatatt(final_attrs), value),
+                  format_html('<div class="default text">{}</div>', ('choose')),
+                  '<i class="dropdown icon"></i>']
+
+        options = self.render_options(choices, [value])
+        if options:
+            output.append(options)
+        output.append('</div>')
+        return mark_safe('\n'.join(output))

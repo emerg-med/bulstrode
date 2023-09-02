@@ -13,7 +13,7 @@ from django.template import loader
 from django.urls import reverse
 from django.utils.safestring import SafeString
 from django.utils.translation import get_language
-from django.utils.translation import ugettext as _
+from django.utils.translation import gettext as _
 from itertools import groupby
 import sackett.recordlocking as recordlocking
 from NewEmergmed import settings
@@ -817,7 +817,6 @@ def triage_arrival(request):
         # injury_form = InjuryDetailForm(request.POST)
         # injury_context = {'form': injury_form}
         form = TriageArrivalForm(request.POST)
-
         if form.is_valid():
             zone = Zone.objects.get(id=int(form.cleaned_data['zone_id']))   # TODO validate
             waiting_list_bed = zone.bed_set.get(template_index=ZONE_WAITING_LIST_BED_INDEX)

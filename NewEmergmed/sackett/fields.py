@@ -132,7 +132,7 @@ class XmlCharField(models.CharField):
         kwargs['xml_tags'] = self.node_def
         return name, path, args, kwargs
 
-    def from_db_value(self, value, expression, connection, context):
+    def from_db_value(self, value, expression, connection, context=None):
         if value is None:
             return value
 
@@ -172,7 +172,7 @@ class XmlTextField(models.TextField):
         kwargs['xml_tags'] = self.node_def
         return name, path, args, kwargs
 
-    def from_db_value(self, value, expression, connection, context):
+    def from_db_value(self, value, expression, connection, context=None):
         if value is None:
             return value
 
@@ -214,7 +214,7 @@ class ValueConverterCharField(models.CharField):
         # kwargs['coerce_ui_value'] = self.coerce_ui_value
         return name, path, args, kwargs
 
-    def from_db_value(self, value, expression, connection, context):
+    def from_db_value(self, value, expression, connection, context=None):
         if value is None:
             return value
 
