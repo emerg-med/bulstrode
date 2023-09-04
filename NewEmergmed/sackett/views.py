@@ -131,7 +131,6 @@ def episode(request, episode_id):
     additional_content = __episode_additional(request, episode_object)
     accordion_content, collapsed_panels = __episode_accordion(request, episode_object)
     state_icon_content = __episode_state_icons(request, episode_object)
-
     return render(request, 'sackett/episode.html', {'full_name': get_display_name(episode_object),
                                                     'gender': get_gender_icon(episode_object),
                                                     'age': episode_object.person_age_at_attendance or _("??"),
@@ -202,7 +201,6 @@ def episode_update(request, episode_id):
                 'bed': lambda f, p, pf: setattr(episode_object, f,
                                                 Bed.objects.get(id=p[pf]))
         }
-
         def default_field_fn(f, p, pf): setattr(episode_object, f, p[pf])
 
         updated_field_names = set()
@@ -326,6 +324,7 @@ def __episode_accordion(request, episode_object):
                     _('Discharged at %H:%M, %d %b %Y')),
             'is_early_discharge': episode_object.early_discharge,
         }
+
         expanded_panels.append(len(accordion_content))        # 'discharge')
         accordion_content.append(discharge_template.render(discharge_context, request))
         is_discharging = True

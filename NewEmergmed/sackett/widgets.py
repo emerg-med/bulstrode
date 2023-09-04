@@ -7,6 +7,9 @@ from django.utils.safestring import mark_safe
 from django.utils.translation import gettext as _
 from .utils import multi_group_by
 
+import logging
+logger = logging.getLogger("widgets")
+logger.setLevel("INFO")
 
 class SUSelect(Select):
     """ A variant of the Select widget that renders as a SemanticUI menu dropdown """
@@ -19,10 +22,13 @@ class SUSelect(Select):
         self.default_text = default_text
         self.index_items = index_items
 
+
+
     def render(self, name, value, attrs=None, choices=(), renderer=None):
         if value is None:
             value = ''
-        final_attrs = self.build_attrs(self.attrs if 'id' not in attrs.keys() else attrs, {'name': name})
+        #final_attrs = self.build_attrs(self.attrs if 'id' not in attrs.keys() else attrs, {'name': name})
+        final_attrs = {**self.attrs, **attrs, **{'name': name}}
         control_id = final_attrs['id']
 
         output = [format_html('<div class="ui{} inline{} dropdown" id="{}_outer_dropdown">',
@@ -89,7 +95,9 @@ class MultiLevelSUSelect(Select):
     def render(self, name, value, attrs=None, choices=(), renderer=None):
         if value is None:
             value = ''
-        final_attrs = self.build_attrs(attrs, {'name': name})
+        #final_attrs = self.build_attrs(attrs, {'name': name})
+        final_attrs = {**self.attrs, **attrs, **{'name': name}}
+
         control_id = final_attrs['id']
 
         output = [format_html('<div class="ui{} inline{} dropdown" id="{}_outer_dropdown">',
@@ -208,22 +216,3 @@ class SelectWithData(Select):
                            force_str(option_label))
 
 
-    def render(self, name, value, attrs=None, choices=(), renderer=None):
-        if value is None:
-            value = ''
-        final_attrs = self.build_attrs(self.attrs if 'id' not in attrs.keys() else attrs, {'name': name})
-        control_id = final_attrs['id']
-
-        output = [format_html('<div class="ui{} inline{} dropdown" id="{}_outer_dropdown">',
-                              '',
-                              '',
-                              control_id),
-                  format_html('<input type="hidden"{} value="{}">', flatatt(final_attrs), value),
-                  format_html('<div class="default text">{}</div>', ('choose')),
-                  '<i class="dropdown icon"></i>']
-
-        options = self.render_options(choices, [value])
-        if options:
-            output.append(options)
-        output.append('</div>')
-        return mark_safe('\n'.join(output))

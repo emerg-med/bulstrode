@@ -46,7 +46,7 @@ class EpisodeDischargeForm(forms.ModelForm):
         super(EpisodeDischargeForm, self).__init__(*args, **kwargs)
 
         if self.instance.early_discharge:
-            self.fields['em_care_discharge_status'].widget.choices =\
+            self.fields['em_care_discharge_status'].widget.choices_raw =\
                 [x for x in
                  PickListDataProxy.load_raw_for_choice_field(
                          PickListTableTypes.EmCareDischargeStatus.value)
