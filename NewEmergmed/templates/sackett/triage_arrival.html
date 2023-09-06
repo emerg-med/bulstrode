@@ -89,6 +89,7 @@
             var expected_list = $('#triage_expected_list');
             expected_list.selectedIndex = -1;
 
+            console.log("We are ready now")
             expected_list.change(function() {
                 var selected_item = $('#triage_expected_list').find('option:selected');
 
@@ -233,7 +234,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="ui form" style="position: fixed; top: 60px; right: 10px;">
+                <div class="ui form" style="position: fixed; top: 60px; right: 5px;">
                     {{ form.expected_arrival.label_tag }}
                     <div class="field">
                         {{ form.expected_arrival }}

@@ -315,11 +315,10 @@
     {#        <form action="{% url 'sackett:episode_update' episode_id %}" method="post"#}
     {#              id="episode_form" class="episode-save-form">#}
     {#            {% csrf_token %}#}
-    {#            <input class="ui primary button save-button" type="submit" value="{% trans 'Save here' %}"#}
+    {#            <input class="ui primary button save-button" type="submit" value="{% trans 'Save' %}"#}
     {#                   id="episode_save_button" />#}
     {#        </form>#}
     {#    {% endif %}#}
         {% locking_forms episode_id %}
     </div>
 {% endblock %}
-
