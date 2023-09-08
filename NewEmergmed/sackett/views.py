@@ -86,8 +86,7 @@ def add_zone(request):
                                   label=bed['label'])   # zone_template['beds'][bed])
                     new_bed.save()
                     bed_count += 1
-                print(request)
-                print('sackett/area/' + str(new_zone.id))
+                    
                 return HttpResponse(result_template.render({'new_zone_url': '/sackett/area/' + str(new_zone.id),
                                                             'success': True},
                                                            request))
