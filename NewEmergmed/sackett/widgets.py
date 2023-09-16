@@ -223,7 +223,7 @@ class SelectWithData(Select):
                                 name,
                               control_id,
                               value), 
-                  format_html('<option value="">choose</option>')]
+                  format_html('<option value="">{}</option>', _('choose'))]
 
         options = self.render_options(choices, [value])
         if options:
