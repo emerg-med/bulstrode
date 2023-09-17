@@ -102,12 +102,12 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='episode',
             name='em_care_clinical_narrative',
-            field=models.CharField(blank=True, db_column='EmCareClinicalNarrative', max_length=4096, null=True),
+            field=models.TextField(blank=True, db_column='EmCareClinicalNarrative', null=True),
         ),
         migrations.AlterField(
             model_name='episode',
             name='em_care_clinicians',
-            field=models.CharField(blank=True, db_column='EmCareClinicians', max_length=4096, null=True),
+            field=models.TextField(blank=True, db_column='EmCareClinicians', null=True),
         ),
         migrations.AlterField(
             model_name='episode',
@@ -122,7 +122,7 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='episode',
             name='em_care_diagnosis',
-            field=models.CharField(blank=True, db_column='EmCareDiagnosis', max_length=4096, null=True),
+            field=models.TextField(blank=True, db_column='EmCareDiagnosis', null=True),
         ),
         migrations.AlterField(
             model_name='episode',
@@ -137,12 +137,12 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='episode',
             name='em_care_discharge_instructions',
-            field=models.CharField(blank=True, db_column='EmCareDischargeInstructions', max_length=4096, null=True),
+            field=models.TextField(blank=True, db_column='EmCareDischargeInstructions', null=True),
         ),
         migrations.AlterField(
             model_name='episode',
             name='em_care_discharge_medication',
-            field=models.CharField(blank=True, db_column='EmCareDischargeMedication', max_length=4096, null=True),
+            field=models.TextField(blank=True, db_column='EmCareDischargeMedication', null=True),
         ),
         migrations.AlterField(
             model_name='episode',
@@ -207,7 +207,7 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='episode',
             name='em_care_investigations',
-            field=models.CharField(blank=True, db_column='EmCareInvestigations', max_length=4096, null=True),
+            field=models.TextField(blank=True, db_column='EmCareInvestigations', null=True),
         ),
         migrations.AlterField(
             model_name='episode',
@@ -232,12 +232,12 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='episode',
             name='em_care_referred_service',
-            field=models.CharField(blank=True, db_column='EmCareReferredService', max_length=4096, null=True),
+            field=models.TextField(blank=True, db_column='EmCareReferredService', null=True),
         ),
         migrations.AlterField(
             model_name='episode',
             name='em_care_research',
-            field=models.CharField(blank=True, db_column='EmCareResearch', max_length=4096, null=True),
+            field=models.TextField(blank=True, db_column='EmCareResearch', null=True),
         ),
         migrations.AlterField(
             model_name='episode',
@@ -247,7 +247,7 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='episode',
             name='em_care_treatments',
-            field=models.CharField(blank=True, db_column='EmCareTreatments', max_length=4096, null=True),
+            field=models.TextField(blank=True, db_column='EmCareTreatments', null=True),
         ),
         migrations.AlterField(
             model_name='episode',
@@ -257,7 +257,7 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='episode',
             name='person_additional_information',
-            field=models.CharField(blank=True, db_column='PersonAdditionalInformation', max_length=4096, null=True),
+            field=models.TextField(blank=True, db_column='PersonAdditionalInformation', null=True),
         ),
         migrations.AlterField(
             model_name='episode',
@@ -267,7 +267,7 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='episode',
             name='person_allergies_adverse_reaction',
-            field=models.CharField(blank=True, db_column='PersonAllergiesAdverseReaction', max_length=4096, null=True),
+            field=models.TextField(blank=True, db_column='PersonAllergiesAdverseReaction', null=True),
         ),
         migrations.AlterField(
             model_name='episode',
@@ -282,7 +282,7 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='episode',
             name='person_comorbidities',
-            field=models.CharField(blank=True, db_column='PersonComorbidities', max_length=4096, null=True),
+            field=models.TextField(blank=True, db_column='PersonComorbidities', null=True),
         ),
         migrations.AlterField(
             model_name='episode',
@@ -292,7 +292,7 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='episode',
             name='person_current_meds',
-            field=models.CharField(blank=True, db_column='PersonCurrentMeds', max_length=4096, null=True),
+            field=models.TextField(blank=True, db_column='PersonCurrentMeds', null=True),
         ),
         migrations.AlterField(
             model_name='episode',
@@ -367,7 +367,7 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='episode',
             name='person_special_patient_note_local',
-            field=models.CharField(blank=True, db_column='PersonSpecialPatientNoteLocal', max_length=4096, null=True),
+            field=models.TextField(blank=True, db_column='PersonSpecialPatientNoteLocal', null=True),
         ),
         migrations.AlterField(
             model_name='episode',

@@ -16,6 +16,6 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='episode',
             name='em_care_diagnosis',
-            field=sackett.fields.XmlCharField(blank=True, db_column='EmCareDiagnosis', max_length=4096, null=True, xml_tags=('DIAGS', ('DIAG', {'id': 'CODE', 'index': 'NUM', 'mod': 'MOD'}))),
+            field=sackett.fields.XmlTextField(blank=True, db_column='EmCareDiagnosis', null=True, xml_tags=('DIAGS', ('DIAG', {'id': 'CODE', 'index': 'NUM', 'mod': 'MOD'}))),
         ),
     ]

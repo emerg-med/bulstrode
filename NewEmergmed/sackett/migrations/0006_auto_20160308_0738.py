@@ -16,11 +16,11 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='episode',
             name='em_care_investigations',
-            field=sackett.fields.XmlCharField(blank=True, db_column='EmCareInvestigations', max_length=4096, null=True, xml_tags=('INVS', 'INV')),
+            field=sackett.fields.XmlTextField(blank=True, db_column='EmCareInvestigations', null=True, xml_tags=('INVS', 'INV')),
         ),
         migrations.AlterField(
             model_name='episode',
             name='em_care_treatments',
-            field=sackett.fields.XmlCharField(blank=True, db_column='EmCareTreatments', max_length=4096, null=True, xml_tags=('TRMTS', 'TRMT')),
+            field=sackett.fields.XmlTextField(blank=True, db_column='EmCareTreatments', null=True, xml_tags=('TRMTS', 'TRMT')),
         ),
     ]

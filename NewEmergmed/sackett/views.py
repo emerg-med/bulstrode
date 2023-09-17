@@ -7,13 +7,13 @@ from django.contrib.auth.hashers import make_password
 from django.contrib.auth.models import Permission
 from django.contrib.contenttypes.models import ContentType
 from django.core.exceptions import PermissionDenied
-from django.core.urlresolvers import reverse
 from django.http import HttpResponse, HttpResponseBadRequest, HttpResponseRedirect, Http404
 from django.shortcuts import get_object_or_404, redirect, render
 from django.template import loader
+from django.urls import reverse
 from django.utils.safestring import SafeString
 from django.utils.translation import get_language
-from django.utils.translation import ugettext as _
+from django.utils.translation import gettext as _
 from itertools import groupby
 import sackett.recordlocking as recordlocking
 from NewEmergmed import settings
@@ -86,8 +86,8 @@ def add_zone(request):
                                   label=bed['label'])   # zone_template['beds'][bed])
                     new_bed.save()
                     bed_count += 1
-
-                return HttpResponse(result_template.render({'new_zone_url': 'sackett/area/' + str(new_zone.id),
+                    
+                return HttpResponse(result_template.render({'new_zone_url': '/sackett/area/' + str(new_zone.id),
                                                             'success': True},
                                                            request))
             # TODO: report error
@@ -817,7 +817,6 @@ def triage_arrival(request):
         # injury_form = InjuryDetailForm(request.POST)
         # injury_context = {'form': injury_form}
         form = TriageArrivalForm(request.POST)
-
         if form.is_valid():
             zone = Zone.objects.get(id=int(form.cleaned_data['zone_id']))   # TODO validate
             waiting_list_bed = zone.bed_set.get(template_index=ZONE_WAITING_LIST_BED_INDEX)
@@ -874,7 +873,7 @@ def triage_arrival(request):
 
             # if data_valid:
             new_episode.save()
-
+            
             if form.cleaned_data['expected_arrival'] is not None:   # \
                     # and form.cleaned_data['expected_arrival'].isdecimal():
                 # TODO validate
@@ -892,7 +891,6 @@ def triage_arrival(request):
 
     # injury_panel_template = loader.get_template('sackett/injury_detail.html')
     # injury_panel = injury_panel_template.render(injury_context, request)
-
     return render(request, 'sackett/triage_arrival.html', {'form': form})   # , 'injury_panel': injury_panel})
 
 

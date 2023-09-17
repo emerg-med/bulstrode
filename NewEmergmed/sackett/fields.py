@@ -33,67 +33,28 @@ from django.db import models
 #                 </injs>
 #                 <dtls><name_parts><name_part>Rita</name_part><name_part>Jones</name_part></name_parts><age>35</age></dtls>
 #                </record>
-class XmlCharField(models.CharField):
-    def __init__(self, xml_tags, populate_fully=False, *args, **kwargs):
-        self.node_def = xml_tags
-        self.populate_fully = populate_fully
-        self.inverse_node_def = XmlCharField.__invert_node_definition(xml_tags)
-        super(XmlCharField, self).__init__(*args, **kwargs)
-
-    def deconstruct(self):
-        name, path, args, kwargs = super(XmlCharField, self).deconstruct()
-        # Only include kwarg if it's not the default
-        kwargs['xml_tags'] = self.node_def
-        return name, path, args, kwargs
-
-    def from_db_value(self, value, expression, connection, context):
-        if value is None:
-            return value
-
-        return XmlCharField.__build_python_object(self.inverse_node_def, eT.fromstring(value), self.populate_fully)
-
-    def to_python(self, value):
-        if not isinstance(value, str):
-            return value
-
-        if value is None:
-            return value
-
-        return json.loads(value)
-        # return XmlCharField.__build_python_object(self.inverse_node_def, eT.fromstring(value))
-
-    def value_to_string(self, obj):
-        value = self.value_from_object(obj)
-        return json.dumps(value)
-
-    def get_prep_value(self, value):
-        if value is None:
-            return None
-
-        node = XmlCharField.__build_node(self.node_def, value)
-        return eT.tostring(node, encoding='unicode')
-
+class MappedXmlField():
     # converts a python object (probably a collection of some sort) into an XML node according to the node definition
     # TODO very optimistic coding here at the moment - throw some errors when the data and the schema don't match
     @staticmethod
-    def __build_node(node_def, data, populate_fully=False):
+    def build_node(node_def, data, populate_fully=False):
         if isinstance(node_def, tuple):
             if isinstance(node_def[1], dict):
                 node = eT.Element(node_def[0])
                 for key in data:        # TODO assuming data is also a dictionary
                     child_node_def = node_def[1][key]       # TODO ...and that the keys match
-                    node.append(XmlCharField.__build_node(child_node_def, data[key]))
+                    node.append(MappedXmlField.build_node(child_node_def, data[key]))
                 if populate_fully:
                     # add blank entries for every remaining node tag in the result:
                     for node_def_key in node_def[1]:
                         if node_def_key not in data:
                             child_node_def = node_def[1][node_def_key]
-                            node.append(XmlCharField.__build_node(child_node_def, None))
+                            node.append(MappedXmlField.build_node(child_node_def, None))
             else:
                 node = eT.Element(node_def[0])
                 item_child_node_def = node_def[1]
                 for item in data:       # TODO assuming data is a list
-                    node.append(XmlCharField.__build_node(item_child_node_def, item))
+                    node.append(MappedXmlField.build_node(item_child_node_def, item))
         else:
             node = eT.Element(node_def)
             node.text = '' if data is None else str(data)
@@ -102,11 +63,11 @@ class XmlCharField(models.CharField):
 
     # converts an XML node into a python object according to the node definition; inverse of __build_node().
     @staticmethod
-    def __build_python_object(node_def, node, populate_fully=False):
-        return XmlCharField.__build_python_object_and_key(node_def, node, populate_fully)[1]
+    def build_python_object(node_def, node, populate_fully=False):
+        return MappedXmlField.build_python_object_and_key(node_def, node, populate_fully)[1]
 
     @staticmethod
-    def __build_python_object_and_key(node_def, node, populate_fully=False):
+    def build_python_object_and_key(node_def, node, populate_fully=False):
         if isinstance(node_def, tuple):
             key = node_def[0]
             if isinstance(node_def[1], dict):
@@ -115,20 +76,20 @@ class XmlCharField(models.CharField):
                     # first add blank entries for every possible key in the result:
                     for node_def_key in node_def[1]:
                         child_node_def = node_def[1][node_def_key]
-                        child_key, child_obj = XmlCharField.__build_python_object_and_key(child_node_def,
+                        child_key, child_obj = MappedXmlField.build_python_object_and_key(child_node_def,
                                                                                           eT.Element(node_def_key))
                         obj[child_key] = child_obj
 
                 # now process the actual XML
                 for child_node in node:
                     child_node_def = node_def[1][child_node.tag]
-                    child_key, child_obj = XmlCharField.__build_python_object_and_key(child_node_def, child_node)
+                    child_key, child_obj = MappedXmlField.build_python_object_and_key(child_node_def, child_node)
                     obj[child_key] = child_obj
             else:
                 obj = []
                 item_child_node_def = node_def[1]
                 for child_node in node:
-                    child_key, child_obj = XmlCharField.__build_python_object_and_key(item_child_node_def, child_node)
+                    child_key, child_obj = MappedXmlField.build_python_object_and_key(item_child_node_def, child_node)
                     obj.append(child_obj)
         else:
             key = node_def
@@ -138,9 +99,9 @@ class XmlCharField(models.CharField):
 
     # takes a node definition and inverts it to make it suitable for use in __build_python_object()
     @staticmethod
-    def __invert_node_definition(node_def):
+    def invert_node_definition(node_def):
         if isinstance(node_def, tuple):
-            new_node_def = (node_def[0], XmlCharField.__invert_node_definition(node_def[1]))
+            new_node_def = (node_def[0], MappedXmlField.invert_node_definition(node_def[1]))
         elif isinstance(node_def, dict):
             new_node_def = {}
 
@@ -149,13 +110,93 @@ class XmlCharField(models.CharField):
 
                 if isinstance(sub_node_def, tuple):
                     new_node_def[sub_node_def[0]] = (node_def_key,
-                                                     XmlCharField.__invert_node_definition(sub_node_def[1]))
+                                                     MappedXmlField.invert_node_definition(sub_node_def[1]))
                 else:
                     new_node_def[node_def[node_def_key]] = node_def_key         # exchange key and value
         else:
             new_node_def = ''
 
         return new_node_def
+
+
+class XmlCharField(models.CharField):
+    def __init__(self, xml_tags, populate_fully=False, *args, **kwargs):
+        self.node_def = xml_tags
+        self.populate_fully = populate_fully
+        self.inverse_node_def = MappedXmlField.invert_node_definition(xml_tags)
+        super(XmlCharField, self).__init__(*args, **kwargs)
+
+    def deconstruct(self):
+        name, path, args, kwargs = super(XmlCharField, self).deconstruct()
+        # Only include kwarg if it's not the default
+        kwargs['xml_tags'] = self.node_def
+        return name, path, args, kwargs
+
+    def from_db_value(self, value, expression, connection, context=None):
+        if value is None:
+            return value
+
+        return MappedXmlField.build_python_object(self.inverse_node_def, eT.fromstring(value), self.populate_fully)
+
+    def to_python(self, value):
+        if not isinstance(value, str):
+            return value
+
+        if value is None:
+            return value
+
+        return json.loads(value)
+
+    def value_to_string(self, obj):
+        value = self.value_from_object(obj)
+        return json.dumps(value)
+
+    def get_prep_value(self, value):
+        if value is None:
+            return None
+
+        node = MappedXmlField.build_node(self.node_def, value)
+        return eT.tostring(node, encoding='unicode')
+
+
+class XmlTextField(models.TextField):
+    def __init__(self, xml_tags, populate_fully=False, *args, **kwargs):
+        self.node_def = xml_tags
+        self.populate_fully = populate_fully
+        self.inverse_node_def = MappedXmlField.invert_node_definition(xml_tags)
+        super(XmlTextField, self).__init__(*args, **kwargs)
+
+    def deconstruct(self):
+        name, path, args, kwargs = super(XmlTextField, self).deconstruct()
+        # Only include kwarg if it's not the default
+        kwargs['xml_tags'] = self.node_def
+        return name, path, args, kwargs
+
+    def from_db_value(self, value, expression, connection, context=None):
+        if value is None:
+            return value
+
+        return MappedXmlField.build_python_object(self.inverse_node_def, eT.fromstring(value), self.populate_fully)
+
+    def to_python(self, value):
+        if not isinstance(value, str):
+            return value
+
+        if value is None:
+            return value
+
+        return json.loads(value)
+
+    def value_to_string(self, obj):
+        value = self.value_from_object(obj)
+        return json.dumps(value)
+
+    def get_prep_value(self, value):
+        if value is None:
+            return None
+
+        node = MappedXmlField.build_node(self.node_def, value)
+        return eT.tostring(node, encoding='unicode')
 
 
 class ValueConverterCharField(models.CharField):
@@ -173,7 +214,7 @@ class ValueConverterCharField(models.CharField):
         # kwargs['coerce_ui_value'] = self.coerce_ui_value
         return name, path, args, kwargs
 
-    def from_db_value(self, value, expression, connection, context):
+    def from_db_value(self, value, expression, connection, context=None):
         if value is None:
             return value
 

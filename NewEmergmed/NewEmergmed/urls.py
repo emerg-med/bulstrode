@@ -14,15 +14,15 @@ Including another URLconf
     2. Import the include() function: from django.conf.urls import url, include
     3. Add a URL to urlpatterns:  url(r'^blog/', include(blog_urls))
 """
-from django.conf.urls import include, url
+from django.urls import include, re_path
 from django.contrib import admin
 from django.conf.urls.i18n import i18n_patterns
 
 urlpatterns = [
-    url(r'^admin/', admin.site.urls),
-    url(r'^i18n/', include('django.conf.urls.i18n')),
+    re_path(r'^admin/', admin.site.urls),
+    re_path(r'^i18n/', include('django.conf.urls.i18n')),
 ]
 
 urlpatterns += i18n_patterns(
-    url(r'^sackett/', include('sackett.urls')),
+    re_path(r'^sackett/', include('sackett.urls')),
 )

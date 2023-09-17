@@ -5,7 +5,7 @@ function post_data_changes(evt) {
     if (Object.keys(data_changes).length > 0) {
         var data_changes_in_flight = data_changes;      // keep a local copy in case we need to revert
         data_changes = {};
-
+        
         $.each(data_changes_in_flight, function(key, value) {
             if ((value.constructor === Array) &&
                 (value.length == 0)) {
