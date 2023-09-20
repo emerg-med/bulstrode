@@ -1,3 +1,5 @@
+"Adapted from https://github.com/ankitpopli1891/django-autotranslate/"
+
 from deep_translator import GoogleTranslator
 import polib
 import re
