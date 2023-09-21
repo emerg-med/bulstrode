@@ -1,24 +1,34 @@
-ECDS_UniqueID,ECDS_Group,ECDS_Description,ECDS_Code,Sort1,Sort2
-2018111100,Personal,"Self, family, friends",2018111100,11,11
-2018113100,Personal,"Carer (external, not family or friend)",2018113100,11,31
-2018115100,Personal,Non-NHS telephone / internet advice,2018115100,11,51
-2018311100,Primary care,GP / practice nurse,2018311100,31,11
-2018313100,Primary care,Out of hours GP service,2018313100,31,31
-2018315100,Primary care,NHS telephone / internet advice e.g. NHS 111,2018315100,31,51
-2018316100,Primary care,Urgent care centre / minor injuries unit / walk-in centre,2018316100,31,61
-2018511100,Hospital,Planned review / ambulatory care patient ,2018511100,51,11
-2018513100,Hospital,Inpatient - this hospital / organisation,2018513100,51,31
-2018513500,Hospital,Outpatient - this hospital / organisation,2018513500,51,35
-2018515100,Hospital,Inpatient - another hospital / organisation,2018515100,51,51
-2018515500,Hospital,Outpatient - another hospital / organisation,2018515500,51,55
-2018518100,Hospital,Private specialist,2018518100,51,81
-2018611100,Community,"Nurse (not practice nurse) e.g. school nurse, community midwife, health visitor",2018611100,61,11
-2018612100,Community,Mental health assessment team,2018612100,61,21
-2018613100,Community,Social services,2018613100,61,31
-2018614100,Community,Pharmacist (including community pharmacist),2018614100,61,41
-2018615100,Community,Dentist (including community dentist),2018615100,61,51
-2018616100,Community,Optician / optometrist,2018616100,61,61
-2018811100,Emergency Services,Advanced care practitioner (community based),2018811100,81,11
-2018813100,Emergency Services,Police service / forensic medical officer / prison,2018813100,81,31
-2018815100,Emergency Services,Fire service,2018815100,81,51
-2018818100,Emergency Services,Search and rescue / coastguard / mountain rescue,2018818100,81,81
+ECDS_UniqueID,Sort1,Sort2,ECDS_Group1,ECDS_Description,SNOMED_Code
+UEC04ATS1111111000,11,11,Personal,Self / family / friends / education / work colleague,1991000124105
+UEC04ATS1131111000,11,31,Personal,"Carer (external, not family / friend)",1065391000000104
+UEC04ATS1171111000,11,71,Personal,Non-NHS telephone / internet advice,315261000000101
+UEC04ATS3111111000,31,11,Primary care,GP / practice nurse,276491000
+UEC04ATS3121111000,31,21,Primary care,Out of hours GP service,1082331000000106
+UEC04ATS3151111000,31,51,Primary care,NHS telephone / internet advice e.g. NHS 111,879591000000102
+UEC04ATS5131111000,51,31,Hospital,Emergency department,1066431000000102
+UEC04ATS5141111000,51,41,Hospital,Urgent care service,1066441000000106
+UEC04ATS5151111000,51,51,Hospital,Outpatient service including SDEC,835091000000109
+UEC04ATS5161111000,51,61,Hospital,Inpatient,835101000000101
+UEC04ATS5171111000,51,71,Hospital,Extended Care Episode,1465211000000108
+UEC04ATS5191111000,51,91,Hospital,Private specialist,1079521000000104
+UEC04ATS6111111000,61,11,Community,Community nurse (not practice nurse),1077191000000103
+UEC04ATS6115111000,61,15,Community,Health visitor,1052681000000105
+UEC04ATS6121111000,61,21,Community,Midwife,185363009
+UEC04ATS6125111000,61,25,Community,School nurse,1065401000000101
+UEC04ATS6131111000,61,31,Community,Community mental health nurse,1077201000000101
+UEC04ATS6137111000,61,37,Community,Mental health assessment team,1065991000000100
+UEC04ATS6141111000,61,41,Community,Social services,877171000000103
+UEC04ATS6145111000,61,45,Community,Older persons day care centre,1077761000000105
+UEC04ATS6147111000,61,47,Community,Homeless persons drop in centre,1077211000000104
+UEC04ATS6151111000,61,51,Community,Custodial services : prison,1066011000000104
+UEC04ATS6155111000,61,55,Community,Custodial services : detention centre,1066001000000101
+UEC04ATS6161111000,61,61,Community,Pharmacist (including community pharmacist),185369008
+UEC04ATS6171111000,61,71,Community,Dentist (including community dentist),185366001
+UEC04ATS6181111000,61,81,Community,Optician / optometrist,185368000
+UEC04ATS8121111000,81,21,Emergency Services,Advanced care practitioner,1066021000000105
+UEC04ATS8131111000,81,31,Emergency Services,Ambulance service,198261000000104
+UEC04ATS8151111000,81,51,Emergency Services,Police service / forensic medical officer,889801000000100
+UEC04ATS8171111000,81,71,Emergency Services,Fire service,1066031000000107
+UEC04ATS8181111000,81,81,Emergency Services,Search and rescue,1066061000000102
+UEC04ATS8183111000,81,83,Emergency Services,Coastguard,1066041000000103
+UEC04ATS8185111000,81,85,Emergency Services,Mountain rescue,1066051000000100

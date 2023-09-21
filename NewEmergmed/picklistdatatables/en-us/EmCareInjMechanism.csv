@@ -1,30 +1,48 @@
-ECDS_UniqueID,ECDS_Group,ECDS_Description,ECDS_Code,Sort1,Sort2
-2018111100,Fall,Slipping,54670004,11,11
-2018111200,Fall,Tripping,75941004,11,12
-2018114100,Fall,Fall from height of less than one metre,240871000000104,11,41
-2018115100,Fall,Fall from height of more than one metre,429482004,11,51
-2018211100,Blunt injury,Blunt force / pushed,425359009,21,11
-2018212100,Blunt injury,Punch with fist,242890000,21,21
-2018212200,Blunt injury,Kick with foot,242892008,21,22
-2018215100,Blunt injury,Blow from blunt object,219236005,21,51
-2018216100,Blunt injury,Crushing injury,125665001,21,61
-2018311100,Sharp injury,Stabbed / cut with knife,425322008,31,11
-2018312100,Sharp injury,Stabbed / cut with glass,426058000,31,21
-2018411100,Firearm / explosion,Gunshot wound,283545005,41,11
-2018412100,Firearm / explosion,Injury due to projectile,242999003,41,21
-2018413100,Firearm / explosion,Injury due to explosion,397996002,41,31
-2018451100,Poisoning,Poisoning / overdose,75478009,45,11
-2018511100,Threat to breathing,Respiratory obstruction due to inhaled foreign body,242669005,51,11
-2018512100,Threat to breathing,Patient found hanging,241121000000102,51,21
-2018513100,Threat to breathing,Asphyxia by obstruction of mouth and nose,242020007,51,31
-2018514100,Threat to breathing,Asphyxiation - other,66466001,51,41
-2018611100,Environment,Burn - thermal,125666000,61,11
-2018611300,Environment,Burn - chemical,371704001,61,13
-2018611700,Environment,Burn - electrical,371708003,61,17
-2018611900,Environment,Burn - radiation,24803000,61,19
-2018614100,Environment,Hyperthermia,409702008,61,41
-2018614200,Environment,Hypothermia,386689009,61,42
-2018615100,Environment,Physical exertion,64113006,61,51
-2018616100,Environment,Near drowning,87970004,61,61
-2018616200,Environment,Diving barotrauma,241977008,61,62
-2018999900,Not applicable,not applicable,[null],99,99
+ECDS_UniqueID,Sort1,Sort2,ECDS_Group1,ECDS_Description,SNOMED_Code
+UEC04IJM1111111000,11,11,Fall,Slipping,54670004
+UEC04IJM1112111000,11,12,Fall,Tripping,75941004
+UEC04IJM1141111000,11,41,Fall,Fall from height of less than one metre,240871000000104
+UEC04IJM1151111000,11,51,Fall,Fall from height of more than one metre,429482004
+UEC04IJM2111111000,21,11,Blunt injury,Blunt force / pushed,425359009
+UEC04IJM2121111000,21,21,Blunt injury,Punch with fist,242890000
+UEC04IJM2124111000,21,24,Blunt injury,Kick with foot,242892008
+UEC04IJM2127111000,21,27,Blunt injury,Hit with head (head butt),242895005
+UEC04IJM2131111000,21,31,Blunt injury,Human bite,262555007
+UEC04IJM2141111000,21,41,Blunt injury,Blow from blunt object [specify],219236005
+UEC04IJM2171111000,21,71,Blunt injury,Crushing injury,125665001
+UEC04IJM3111111000,31,11,Sharp injury,Stabbed / cut with knife,425322008
+UEC04IJM3121111000,31,21,Sharp injury,Stabbed / cut with glass / bottle,1234836004
+UEC04IJM3131111000,31,31,Sharp injury,Penetrating wound,262560006
+UEC04IJM4111111000,41,11,Firearm / explosion,Gunshot wound,283545005
+UEC04IJM4121111000,41,21,Firearm / explosion,Injury due to projectile,242999003
+UEC04IJM4151111000,41,51,Firearm / explosion,Injury due to firework,1083271000000105
+UEC04IJM4161111000,41,61,Firearm / explosion,Injury due to explosion,397996002
+UEC04IJM5111111000,51,11,Threat to breathing,Respiratory obstruction due to inhaled foreign body,1231592006
+UEC04IJM5121111000,51,21,Threat to breathing,Patient found hanging,241121000000102
+UEC04IJM5131111000,51,31,Threat to breathing,Asphyxia by obstruction of mouth and nose,242020007
+UEC04IJM5141111000,51,41,Threat to breathing,Asphyxiation : other,66466001
+UEC04IJM6111111000,61,11,Environment,Poisoning / overdose,75478009
+UEC04IJM6121111000,61,21,Environment,Injury from foreign body,274224000
+UEC04IJM6131111000,61,31,Environment,Exposure to blood / body fluid,417981005
+UEC04IJM6151111000,61,51,Environment,Burn : thermal,314534006
+UEC04IJM6153111000,61,53,Environment,Burn : chemical,371704001
+UEC04IJM6155111000,61,55,Environment,Burn : electrical,371708003
+UEC04IJM6157111000,61,57,Environment,Burn : radiation,24803000
+UEC04IJM6159111000,61,59,Environment,Burn : ultraviolet / sunlight,402165001
+UEC04IJM6171111000,61,71,Environment,Hyperthermia,409702008
+UEC04IJM6175111000,61,75,Environment,Hypothermia,386689009
+UEC04IJM6181111000,61,81,Environment,Physical exertion,64113006
+UEC04IJM6191111000,61,91,Environment,Near drowning,87970004
+UEC04IJM6192111000,61,92,Environment,Diving barotrauma,241977008
+UEC04IJM7111111000,71,11,Animal related,Injury from dog,283734005
+UEC04IJM7121111000,71,21,Animal related,Injury from cat,283782004
+UEC04IJM7131111000,71,31,Animal related,Injury from horse,283784003
+UEC04IJM7135111000,71,35,Animal related,Injury from cow / bull,1083281000000107
+UEC04IJM7149111000,71,49,Animal related,Injury from mammal - other [specify],283683002
+UEC04IJM7151111000,71,51,Animal related,Injury from reptile (e.g. snake),283838000
+UEC04IJM7155111000,71,55,Animal related,Injury from bird,217716004
+UEC04IJM7161111000,71,61,Animal related,Injury from spider,403149008
+UEC04IJM7171111000,71,71,Animal related,Injury from insect,276433004
+UEC04IJM7181111000,71,81,Animal related,Injury from aquatic animal,283837005
+UEC04IJM9111111000,91,11,Not applicable,Patient refuses to disclose,1077171000000102
+UEC04IJM9151111000,91,51,Not applicable,"Patient cannot disclose e.g. coma, intubated",1077161000000109

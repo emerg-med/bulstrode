@@ -1,30 +1,47 @@
-ECDS_UniqueID,ECDS_Group,ECDS_Description,ECDS_Code,Sort1,Sort2,SNOMED_Code
-2018111100,No safeguarding concern,No safeguarding concern,2018111100,11,11,861931000000100
-2018211100,Child - this attendance ,Repeated attendances to ED,2018211100,21,11,826931000000104
-2018212100,Child - this attendance ,Delay in presentation,2018212100,21,21,423217007
-2018213100,Child - this attendance ,Self harm,2018213100,21,31,401206008
-2018214100,Child - this attendance ,Significant injury,2018214100,21,41,
-2018214500,Child - this attendance ,Genital injury (not FGM) ,2018214500,21,45,
-2018215100,Child - this attendance ,Disclosure of abuse,2018215100,21,51,162596006
-2018216100,Child - this attendance ,Suspected drug use,2018216100,21,61,
-2018216500,Child - this attendance ,Suspected alcohol use,2018216500,21,65,
-2018217100,Child - this attendance ,Worrying parent/ child interaction,2018217100,21,71,
-2018217500,Child - this attendance ,Worrying child behaviour,2018217500,21,75,
-2018218100,Child - this attendance ,Worrying parental behaviour,2018218100,21,81,
-2018218500,Child - this attendance ,Worrying parental mental health,2018218500,21,85,
-2018311100,Child - environment,Possible neglect,2018311100,31,11,704658004
-2018312100,Child - environment,Risk to sibling,2018312100,31,21,160891002
-2018312500,Child - environment,Bullying,2018312500,31,25,
-2018313100,Child - environment,Possible grooming target,2018313100,31,31,
-2018314100,Child - environment,Radicalisation,2018314100,31,41,
-2018315100,Child - environment,Female Genital Mutilation,2018315100,31,51,
-2018315500,Child - environment,Chlld sexual exploitation,2018315500,31,55,
-2018316100,Child - environment,Child’s environment (general),2018316100,31,61,
-2018611100,Adult,Alcohol use,2018611100,61,11,
-2018612100,Adult,Drug use,2018612100,61,21,
-2018613100,Adult,Domestic Violence,2018613100,61,31,707087005
-2018613500,Adult,Adult sexual eploitation,2018613500,61,35,
-2018614100,Adult,Elder abuse,2018614100,61,41,704349002
-2018615100,Adult,Risk to carer,2018615100,61,51,
-2018616100,Adult,Modern slavery,2018616100,61,61,
-2018616500,Adult,Adult exploitation (non sexual),2018616500,61,65,
+ECDS_UniqueID,Sort1,Sort2,ECDS_Group1,ECDS_Description,SNOMED_Code
+UEC04SFG1111111000,11,11,No safeguarding issue,No safeguarding issues identified,861931000000100
+UEC04SFG2211111000,22,11,Concern,Frequent attender of emergency department,826931000000104
+UEC04SFG2215111000,22,15,Concern,Delay in seeking medical advice,449889006
+UEC04SFG2221111000,22,21,Concern,Child is cause for safeguarding concern,836881000000105
+UEC04SFG2231111000,22,31,Concern,Adult safeguarding concern,766561000000109
+UEC04SFG2241111000,22,41,Concern,Family is cause for concern,300731000000106
+UEC04SFG2251111000,22,51,Concern,Carer behaviour is cause for safeguarding concern,1076171000000104
+UEC04SFG2261111000,22,61,Concern,Unborn child is cause for safeguarding concern,878111000000109
+UEC04SFG3111111000,31,11,At risk - general,At risk for deliberate self harm,401206008
+UEC04SFG3121111000,31,21,At risk - general,At risk of physical abuse,416936003
+UEC04SFG3123111000,31,23,At risk - general,At risk for other-directed violence,129707006
+UEC04SFG3131111000,31,31,At risk - general,Child at risk,160877008
+UEC04SFG3133111000,31,33,At risk - general,Vulnerable adult,417430008
+UEC04SFG3151111000,31,51,At risk - general,At risk of financial abuse,761571000000106
+UEC04SFG3155111000,31,55,At risk - general,At risk of discriminatory abuse,417427001
+UEC04SFG3161111000,31,61,At risk - general,At risk of institutional abuse,838481000000106
+UEC04SFG3171111000,31,71,At risk - general,At risk of human trafficking,1045861000000108
+UEC04SFG3181111000,31,81,At risk - general,Has child subject of child protection plan,864491000000105
+UEC04SFG3183111000,31,83,At risk - general,Family member subject of child protection plan,375041000000100
+UEC04SFG3187111000,31,87,At risk - general,Domestic abuse victim in household,881081000000100
+UEC04SFG3511111000,35,11,At risk - psychological / sexual,At risk of domestic violence,707087005
+UEC04SFG3531111000,35,31,At risk - psychological / sexual,At risk of sexual abuse,417361000
+UEC04SFG3535111000,35,35,At risk - psychological / sexual,At risk of sexual exploitation,919461000000108
+UEC04SFG3555111000,35,55,At risk - psychological / sexual,At risk of radicalisation,766969008
+UEC04SFG3561111000,35,61,At risk - psychological / sexual,At risk of female genital mutilation,713201008
+UEC04SFG3565111000,35,65,At risk - psychological / sexual,At risk of honour based violence,736792008
+UEC04SFG3569111000,35,69,At risk - psychological / sexual,At risk of forced marriage,1054321000000107
+UEC04SFG3571111000,35,71,At risk - psychological / sexual,At risk of emotional abuse,771984002
+UEC04SFG3575111000,35,75,At risk - psychological / sexual,At risk of psychological abuse,771983008
+UEC04SFG5111111000,51,11,Drug / alcohol / neglect,Suspected alcohol abuse,415685003
+UEC04SFG5115111000,51,15,Drug / alcohol / neglect,Family history of alcohol misuse,293161000000103
+UEC04SFG5121111000,51,21,Drug / alcohol / neglect,Suspected drug abuse,162591001
+UEC04SFG5125111000,51,25,Drug / alcohol / neglect,Family history of substance misuse,287351000000105
+UEC04SFG5141111000,51,41,Drug / alcohol / neglect,Suspected victim of child neglect,702953007
+UEC04SFG5151111000,51,51,Drug / alcohol / neglect,Self-neglect,248054003
+UEC04SFG5511111000,55,11,Psychological / sexual,Suspected victim of emotional abuse,697951004
+UEC04SFG5521111000,55,21,Psychological / sexual,Suspected victim of sexual abuse,702579009
+UEC04SFG5522111000,55,22,Psychological / sexual,Suspected victim of child sexual abuse,700254002
+UEC04SFG5525111000,55,25,Psychological / sexual,Suspected victim of sexual grooming,700253008
+UEC04SFG5551111000,55,51,Psychological / sexual,Alleged victim of sexual assault,297591000000108
+UEC04SFG6611111000,66,11,General / physical,Suspected non-accidental injury to child,700255001
+UEC04SFG6615111000,66,15,General / physical,Suspected victim of child abuse,162596006
+UEC04SFG6631111000,66,31,General / physical,Suspected domestic abuse,697950003
+UEC04SFG6651111000,66,51,General / physical,Suspected victim of physical abuse,697949003
+UEC04SFG6655111000,66,55,General / physical,Suspected victim of bullying,771385008
+UEC04SFG6691111000,66,91,General / physical,Alleged being subjected to abuse,777996001

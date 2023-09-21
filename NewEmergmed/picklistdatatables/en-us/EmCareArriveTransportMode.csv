@@ -1,12 +1,10 @@
-ECDS_UniqueID,ECDS_Description,ECDS_Code,Sort1
-2018010000,Patient’s own transport,2018010000,1
-2018020000,Public transport,2018020000,2
-2018030000,Emergency road ambulance ,2018030000,3
-2018040000,Emergency road ambulance with medical escort,2018040000,4
-2018050000,Air Ambulance - helicopter ,2018050000,5
-2018060000,Fixed Wing/ Medical repatriation by air,2018060000,6
-2018070000,Non-emergency road ambulance ,2018070000,7
-2018080000,Prison ,2018080000,8
-2018090000,Police,2018090000,9
-2018970000,Other specified,2018970000,97
-2018990000,Unspecified,2018990000,99
+ECDS_UniqueID,Sort1,ECDS_Description,SNOMED_Code
+UEC04ARV1111111000,11,Patient arranged own transport / walk-in,1048071000000103
+UEC04ARV2111111000,21,Public transport / taxi,1048061000000105
+UEC04ARV3111111000,31,Emergency road ambulance,1048031000000100
+UEC04ARV3511111000,35,Emergency road ambulance with medical escort,1048041000000109
+UEC04ARV3711111000,37,Non-emergency road ambulance,1048021000000102
+UEC04ARV5111111000,51,Helicopter,1048051000000107
+UEC04ARV5511111000,55,Fixed wing / medical repatriation by air,1048081000000101
+UEC04ARV6111111000,61,Custodial services : prison / detention centre transport,1047991000000102
+UEC04ARV6611111000,66,Police transport,1048001000000106

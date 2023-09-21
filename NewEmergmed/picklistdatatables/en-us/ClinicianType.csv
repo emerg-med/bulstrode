@@ -1,5 +1,7 @@
-ECDS_UniqueID,ECDS_Description,ECDS_Code,Sort1
-2018110000,General Medical Council,3,11
-2018210000,Nursing and Midwifery Council,9,21
-2018310000,Health and Care Professions Council,9,31
-2018510000,General Dental Council,2,51
+ECDS_Description,ECDS_Code,Sort1
+General Medical Council,3,11
+Nursing and Midwifery Council,9,21
+Health and Care Professions Council,8,31
+General Dental Council,2,41
+General Optical Council,4,51
+General Pharmaceutical Council,16,61

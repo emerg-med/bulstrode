@@ -1,3 +1,3 @@
-ECDS_UniqueID,ECDS_Description,ECDS_Code
-2018111100,Responsible for discharge,1
-2018211100,Not responsible for discharge,2
+ECDS_Description,ECDS_Code
+Responsible for discharge,Y
+Not responsible for discharge,N

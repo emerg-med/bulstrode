@@ -1,81 +1,80 @@
-ECDS_UniqueID,ECDS_Group,ECDS_Description,ECDS_Code,Sort1,Sort2,SNOMED_Code
-2018111100,Airway / Breathing,Oxygen therapy,57485005,11,11,57485005
-2018112100,Airway / Breathing,Nasopharyngeal airway insertion,182692007,11,21,182692007
-2018113100,Airway / Breathing,Nebuliser therapy,56251003,11,31,56251003
-2018114100,Airway / Breathing,Noninvasive ventilation,428311008,11,41,428311008
-2018115100,Airway / Breathing,Sedation / Anaesthesia,50697003,11,51,50697003
-2018115500,Airway / Breathing,Bag valve mask ventilation,425447009,11,55,425447009
-2018116100,Airway / Breathing,Laryngeal mask airway ,424979004,11,61,424979004
-2018116500,Airway / Breathing,Endotracheal tube,112798008,11,65,112798008
-2018117100,Airway / Breathing,Chest drain,264957007,11,71,264957007
-2018211100,Circulation,Intravenous cannulation,392231009,21,11,392231009
-2018212100,Circulation,Intraosseous cannulation,430824005,21,21,430824005
-2018212500,Circulation,Blood product transfusion,116859006,21,25,116859006
-2018213100,Circulation,CVP line insertion,233527006,21,31,233527006
-2018213500,Circulation,Arterial line insertion,392247006,21,35,392247006
-2018214100,Circulation,Cardioversion,250980009,21,41,250980009
-2018214200,Circulation,Cardiac pacing,18590009,21,42,18590009
-2018312100,Resuscitation,Resuscitation,439569004,31,21,439569004
-2018312300,Resuscitation,Cardiopulmonary resuscitation,89666000,31,23,89666000
-2018313100,Resuscitation,Active warming of patient,241740008,31,31,241740008
-2018314100,Resuscitation,Active cooling of patient,182660006,31,41,182660006
-2018315100,Resuscitation,Percutaneous vascular occlusion device,240943006,31,51,240943006
-2018316100,Resuscitation,Resuscitative thoracotomy,36936009,31,61,36936009
-2018351100,Analgesia,Nitrous oxide and oxygen,427035008,35,11,427035008
-2018352100,Analgesia,Local anaesthesia,386761002,35,21,386761002
-2018355100,Analgesia,Regional anaesthesia,27372005,35,51,27372005
-2018356100,Analgesia,Local anaesthetic nerve block,265778005,35,61,265778005
-2018358100,Analgesia,Intravenous regional analgesia,278872003,35,81,278872003
-2018411100,Medication,Medication: oral,386359008,41,11,386359008
-2018411500,Medication,Medication: intramuscular / subcutaneous,76601001,41,15,76601001
-2018412100,Medication,Medication: intravenous,43060002,41,21,43060002
-2018412500,Medication,Medication: intravenous antibiotic,281790008,41,25,281790008
-2018413100,Medication,Intravenous fluid,103744005,41,31,103744005
-2018417100,Medication,Medication TTO,266712008,41,71,266712008
-2018418100,Medication,Activated charcoal,226871000000103,41,81,226871000000103
-2018419100,Medication,Thrombolysis,307521008,41,91,307521008
-2018451100,Procedures,Insertion of urinary catheter,410024004,45,11,410024004
-2018452100,Procedures,Insertion of nasogastric tube,87750000,45,21,87750000
-2018452500,Procedures,Diagnostic lumbar puncture,265232001,45,25,265232001
-2018453100,Procedures,Drainage of paronychia,241012007,45,31,241012007
-2018453200,Procedures,Evacuation of subungual haematoma,88584000,45,32,88584000
-2018453500,Procedures,Incision and drainage,56783008,45,35,56783008
-2018454100,Procedures,Pleural aspiration,91602002,45,41,91602002
-2018454500,Procedures,Aspiration of ascitic fluid,178016006,45,45,178016006
-2018454600,Procedures,Drainage of ascitic fluid,178012008,45,46,178012008
-2018457100,Procedures,Removal of foreign body from skin,302421003,45,71,302421003
-2018511100,Wound management,Closure of wound by tape strips,71810007,51,11,71810007
-2018511500,Wound management,Closure of wound by glue,284182000,51,15,284182000
-2018512100,Wound management,Closure of wound by suture,18557009,51,21,18557009
-2018512300,Wound management,Closure of wound by deep suture,71539001,51,23,71539001
-2018512500,Wound management,Closure by wound by staple,50015006,51,25,50015006
-2018513100,Wound management,Dressing change / wound review,410379003,51,31,410379003
-2018514100,Wound management,Debridement of wound of skin,85875009,51,41,85875009
-2018514300,Wound management,Tetanus toxoid vaccination,127786006,51,43,127786006
-2018515100,Wound management,Removal of sutures,30549001,51,51,30549001
-2018515500,Wound management,Removal of staples,35963001,51,55,35963001
-2018519100,Wound management,Tetanus immune globulin,117092006,51,91,117092006
-2018551100,Orthopaedic,Application of plaster cast,180289009,55,11,180289009
-2018551300,Orthopaedic,Removal of plaster cast,180291001,55,13,180291001
-2018551500,Orthopaedic,Repair of plaster cast,239698005,55,15,239698005
-2018553100,Orthopaedic,Dislocated shoulder reduction,274450004,55,31,274450004
-2018553500,Orthopaedic,Reduction of dislocation,122944000,55,35,122944000
-2018554100,Orthopaedic,Closed reduction of fracture of radius,87971000,55,41,87971000
-2018554300,Orthopaedic,Closed reduction of fracture of radius and ulna,33630008,55,43,33630008
-2018554600,Orthopaedic,Closed reduction of fracture of upper limb,267765006,55,46,267765006
-2018555100,Orthopaedic,Closed reduction of fracture of ankle,179162008,55,51,179162008
-2018555500,Orthopaedic,Closed reduction of fracture of lower limb,150617003,55,55,150617003
-2018556100,Orthopaedic,Arthrocentesis,90131007,55,61,90131007
-2018556500,Orthopaedic,Apply Thomas splint traction,179208004,55,65,179208004
-2018558100,Orthopaedic,Loan of crutches,183258006,55,81,183258006
-2018711100,ENT,Control of bleeding from nose,35807001,71,11,35807001
-2018711300,ENT,Nasal cautery,307271005,71,13,307271005
-2018712100,ENT,Removal of foreign body from nose,172828005,71,21,172828005
-2018713100,ENT,Removal of foreign body from ear,9655003,71,31,9655003
-2018717100,ENT,Splint teeth with orthodontic bands,266689003,71,71,266689003
-2018751100,Ophthalmology,Irrigation of eye,49999004,75,11,49999004
-2018752100,Ophthalmology,Removal of foreign body from cornea,172426003,75,21,172426003
-2018755100,Ophthalmology,Intravitreal injection,82036007,75,51,82036007
-2018756100,Ophthalmology,Laser treatment of eye,416376001,75,61,416376001
-2018811100,Discharge Planning,Activities of daily living assessment,304492001,81,11,304492001
-2018911100,Administration,Treatment not indicated,183964008,91,11,183964008
+ECDS_UniqueID,Sort1,Sort2,ECDS_Group1,ECDS_Description,SNOMED_Code
+UEC04TRT1111111000,11,11,Airway / Breathing,Supplemental oxygen,57485005
+UEC04TRT1131111000,11,31,Airway / Breathing,Nebuliser / spacer,56251003
+UEC04TRT1135111000,11,35,Airway / Breathing,Metered dose inhaler + spacer,243132000
+UEC04TRT1141111000,11,41,Airway / Breathing,Nasal airway,182692007
+UEC04TRT1161111000,11,61,Airway / Breathing,Anaesthesia : general anaesthetic,50697003
+UEC04TRT1151111000,11,51,Airway / Breathing,Non-invasive ventilation,428311008
+UEC04TRT1165111000,11,65,Airway / Breathing,Intubation : ETT or LMA,112798008
+UEC04TRT1181111000,11,81,Airway / Breathing,Chest drain,264957007
+UEC04TRT2111111000,21,11,Circulation,Cardiac monitor surveillance (regime/therapy),88140007
+UEC04TRT2113111000,21,13,Circulation,Intravenous cannula,392231009
+UEC04TRT2115111000,21,15,Circulation,Intraosseous cannula,430824005
+UEC04TRT2121111000,21,21,Circulation,Infusion fluids,103744005
+UEC04TRT2131111000,21,31,Circulation,Blood product transfusion,116859006
+UEC04TRT2151111000,21,51,Circulation,Arterial line,392247006
+UEC04TRT2161111000,21,61,Circulation,Central line,233527006
+UEC04TRT2171111000,21,71,Circulation,External pacing,18590009
+UEC04TRT3111111000,31,11,Resuscitation,Defibrillation,250980009
+UEC04TRT3121111000,31,21,Resuscitation,Cardiopulmonary resuscitation not attempted,428348004
+UEC04TRT3131111000,31,31,Resuscitation,Resuscitation / cardiopulmonary resuscitation,439569004
+UEC04TRT3171111000,31,71,Resuscitation,Active rewarming of the hypothermic patient,241740008
+UEC04TRT3175111000,31,75,Resuscitation,Cooling : control body temperature,182660006
+UEC04TRT3181111000,31,81,Resuscitation,Percutaneous vascular occlusion (e.g.REBOA),240943006
+UEC04TRT3191111000,31,91,Resuscitation,Resuscitative thoracotomy,36936009
+UEC04TRT3511111000,35,11,Analgesia,Anaesthesia : local anaesthetic,386761002
+UEC04TRT3521111000,35,21,Analgesia,Anaesthesia : entonox,427035008
+UEC04TRT3541111000,35,41,Analgesia,Anaesthesia : regional block,27372005
+UEC04TRT3561111000,35,61,Analgesia,Anaesthesia; sedation monitored,398239001
+UEC04TRT4111111000,41,11,Medication,Administration of medication,18629005
+UEC04TRT4121111000,41,21,Medication,Intravenous drug : bolus,433215005
+UEC04TRT4123111000,41,23,Medication,Intravenous antibiotics,281790008
+UEC04TRT4125111000,41,25,Medication,Intravenous drug : infusion,432054008
+UEC04TRT4131111000,41,31,Medication,Prescription / medicines prepared to take away,266712008
+UEC04TRT4161111000,41,61,Medication,Lavage / emesis / charcoal / eye irrigation,226871000000103
+UEC04TRT4181111000,41,81,Medication,Parenteral thrombolysis : tPA,307521008
+UEC04TRT4511111000,45,11,Procedures,Urinary catheter / suprapubic,410024004
+UEC04TRT4521111000,45,21,Procedures,Nasogastric tube,87750000
+UEC04TRT4531111000,45,31,Procedures,Minor surgery,711580002
+UEC04TRT4541111000,45,41,Procedures,Lumbar puncture,265232001
+UEC04TRT4551111000,45,51,Procedures,Removal foreign body,10849003
+UEC04TRT4561111000,45,61,Procedures,Pleural aspiration,91602002
+UEC04TRT4562111000,45,62,Procedures,Pleural drainage,278296000
+UEC04TRT4565111000,45,65,Procedures,Ascitic aspiration,178016006
+UEC04TRT4566111000,45,66,Procedures,Ascitic drainage,178012008
+UEC04TRT4569111000,45,69,Procedures,Gastrostomy tube change,6125005
+UEC04TRT5111111000,51,11,Wound Management,Dressing : wound / burn / eye,15631002
+UEC04TRT5131111000,51,31,Wound Management,Wound closure : steristrips,71810007
+UEC04TRT5135111000,51,35,Wound Management,Wound closure : glue,284182000
+UEC04TRT5139111000,51,39,Wound Management,Wound closure : other e.g. staples,50015006
+UEC04TRT5151111000,51,51,Wound Management,Sutures : primary,18557009
+UEC04TRT5155111000,51,55,Wound Management,Sutures : complex / secondary,71539001
+UEC04TRT5159111000,51,59,Wound Management,Removal of sutures / clips,30549001
+UEC04TRT5171111000,51,71,Wound Management,Tetanus : toxoid - booster,127786006
+UEC04TRT5175111000,51,75,Wound Management,Administration of human tetanus immune globulin,572261000119106
+UEC04TRT5511111000,55,11,Orthopaedic,Plaster of Paris : applied,180289009
+UEC04TRT5515111000,55,15,Orthopaedic,Plaster of Paris : removed,180291001
+UEC04TRT5521111000,55,21,Orthopaedic,Application of splint,79321009
+UEC04TRT5523111000,55,23,Orthopaedic,Sling / collar cuff / broad arm sling,52037006
+UEC04TRT5525111000,55,25,Orthopaedic,Provision of walking aid (e.g. crutches),243751002
+UEC04TRT5531111000,55,31,Orthopaedic,Manipulation upper limb fracture,267765006
+UEC04TRT5535111000,55,35,Orthopaedic,Manipulation lower limb fracture,150617003
+UEC04TRT5541111000,55,41,Orthopaedic,Manipulation dislocation,122944000
+UEC04TRT5581111000,55,81,Orthopaedic,Joint aspiration,90131007
+UEC04TRT7111111000,71,11,ENT / eye / dental,Epistaxis control,35807001
+UEC04TRT7131111000,71,31,ENT / eye / dental,Dental treatment,81733005
+UEC04TRT7151111000,71,51,ENT / eye / dental,Eye : irrigation,49999004
+UEC04TRT7155111000,71,55,ENT / eye / dental,Eye : orthoptic exercises,266740003
+UEC04TRT7161111000,71,61,ENT / eye / dental,Eye : epilation of lashes,74004007
+UEC04TRT7171111000,71,71,ENT / eye / dental,Eye : laser of retina / iris or posterior capsule,35631009
+UEC04TRT7181111000,71,81,ENT / eye / dental,Eye : subconjunctival injection,74410004
+UEC04TRT7185111000,71,85,ENT / eye / dental,Eye : retrobulbar injection,1217317000
+UEC04TRT8111111000,81,11,Discharge Planning,Guidance / advice - written,413334001
+UEC04TRT8115111000,81,15,Discharge Planning,Psychosocial assessment,371585000
+UEC04TRT8121111000,81,21,Discharge Planning,Occupational therapy : functional assessment,304492001
+UEC04TRT8125111000,81,25,Discharge Planning,Occupational therapy : equipment provision / training,410267000
+UEC04TRT8131111000,81,31,Discharge Planning,Physiotherapy : falls prevention,391027005
+UEC04TRT8141111000,81,41,Discharge Planning,Physiotherapy : general,430481008
+UEC04TRT8151111000,81,51,Discharge Planning,Medication review,182836005
+UEC04TRT8161111000,81,61,Discharge Planning,Social work intervention,406551008
+UEC04TRT9911111000,99,11,Administration,Treatment not indicated,183964008

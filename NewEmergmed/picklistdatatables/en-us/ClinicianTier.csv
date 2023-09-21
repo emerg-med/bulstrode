@@ -1,6 +1,6 @@
-ECDS_UniqueID,ECDS_Description,ECDS_Code,Sort1,Notes
-2018111100,Require complete supervision. All patients must be signed off by a senior before admission or discharge. ,1,11,"F1 doctors, trainee practitioners"
-2018211100,"Require access to advice or direct supervision, or practice independently but with limited scope",2,21,"ENPs, ANPs / ACPs, PAs, ESPs, F2 doctors, CT1-2 doctors, some primary care clinicians"
-2018311100,"More senior / experienced clinicians, requiring less direct supervision. Fewer limitations in scope of practice",3,31,"CT3 in EM, junior Speciality Doctors, some ANPs / ACPs and PAs, some primary care clinicians"
-2018411100,Senior clinicians able to supervise an Emergency Department alone with remote support. Possess some extended skills. Possess some extended skills. Full scope of practice.,4,41,"CT4 and above, senior Speciality Doctors"
-2018511100,Senior clinicians with accredited advanced qualifications in EM. Full set of extended skills. Full scope of practice.,5,51,Consultants in EM
+ECDS_Description,ECDS_Code,Sort1,Notes
+Require complete supervision. All PATIENTS must be signed off by a senior CARE PROFESSIONAL before admission or discharge.,1,11,"F1 doctors, trainee practitioners"
+"Require access to advice or direct supervision, or practice independently but with limited scope.",2,21,"ENPs, ANPs / ACPs, PAs, ESPs, F2 doctors, CT1-2 doctors, some primary care clinicians"
+"More senior/experienced CARE PROFESSIONALS, requiring less direct supervision. Fewer limitations in scope of practice.",3,31,"CT3 in EM, junior Speciality Doctors, some ANPs / ACPs and PAs, some primary care clinicians"
+Senior CARE PROFESSIONALS able to supervise an Emergency Care Department alone with remote support. Possess some extended skills. Full scope of practice.,4,41,"CT4 and above, senior Speciality Doctors"
+Senior CARE PROFESSIONALS (CONSULTANTS) with accredited advanced qualifications in Emergency Medicine. Full set of extended skills. Full scope of practice.,5,51,Consultants in EM
