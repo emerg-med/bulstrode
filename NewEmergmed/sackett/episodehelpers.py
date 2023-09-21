@@ -17,9 +17,9 @@ def get_gender_icon(episode):
     gender_label = PickListDataProxy.lookup_code(PickListTableTypes.PersonStatedGender.value,
                                                  episode.person_stated_gender)
 
-    # Translators: 'Male gender' and 'Female gender' MUST match the corresponding picklist data table entries
-    return ({_('Male gender'): 'man icon',
-             _('Female gender'): 'woman icon'}.get(gender_label, 'other gender icon'),
+    # Translators: 'Male' and 'Female' MUST match the corresponding picklist data table entries
+    return ({_('Male'): 'man icon',
+             _('Female'): 'woman icon'}.get(gender_label, 'other gender icon'),
             gender_label)
 
 

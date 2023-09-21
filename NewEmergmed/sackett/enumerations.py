@@ -29,7 +29,7 @@ class PickListTableTypes(Enum):
     PersonEthnicCategory = 3
     PersonComorbidities = 4
     EmCareReferredService = 5
-    EmCareAdmitSpecialty = 6
+    EmCareAdmitSpecialty = 6    # up-to-date file not available
     EmCareChiefComplaint = 7
     EmCareTreatments = 8
     EmCareInjActivity = 9
@@ -39,7 +39,7 @@ class PickListTableTypes(Enum):
     PersonIdentityWithheldReason = 102
     PersonUsualResidenceType = 103
     PersonInterpreterReqd = 104
-    EmCareProviderSiteType = 105
+    EmCareProviderSiteType = 105    # up-to-date file not available
     EmCareArriveTransportMode = 106
     EmCareAttendanceType = 107
     EmCareReferralSource = 108
@@ -47,7 +47,7 @@ class PickListTableTypes(Enum):
     ClinicianType = 109             # used in EmCareClinicians, part of a compound field
     ClinicianTier = 110             # used in EmCareClinicians, part of a compound field
     ClinicianDischarge = 111        # used in EmCareClinicians, part of a compound field
-    EmCareAssessmentType = 112      # TODO possibly unused at present
+    EmCareAssessmentType = 112      # TODO possibly unused at present; up-to-date file not available
     DiagnosisModerator = 113        # used in EmCareDiagnosis, part of a compound field
     EmCareInvestigations = 114
     EmCareInjPlaceType = 115
@@ -59,6 +59,9 @@ class PickListTableTypes(Enum):
     EmCareDischargeInformationGiven = 121
     EmCareDischargeSafeguarding = 122
     # coded locations - e.g. hospitals
+    # updated lists available here:
+    #   https://digital.nhs.uk/services/organisation-data-service/export-data-files/csv-downloads
+    # (alternatively also see here: https://odsdatapoint.digital.nhs.uk/predefined - no school list though)
     HealthCareFacility = 900                # http://systems.hscic.gov.uk/data/ods/datadownloads/data-files/etr.zip
     School = 901                            # http://systems.hscic.gov.uk/data/ods/datadownloads/data-files/eschools.zip
     GeneralPractice = 902                   # http://systems.hscic.gov.uk/data/ods/datadownloads/data-files/epraccur.zip

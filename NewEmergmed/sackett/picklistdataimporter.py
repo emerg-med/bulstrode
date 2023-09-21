@@ -8,9 +8,10 @@ from NewEmergmed import settings
 
 
 class PickListDataImporter:
-    column_name_mappings = {'ECDS_Group': 'group',
+    column_name_mappings = {'ECDS_Group1': 'group',
                             'ECDS_Description': 'description',
                             'ECDS_Code': 'code',
+                            'SNOMED_Code': 'code',
                             'Sort1': 'sort1',
                             'Sort2': 'sort2',
                             'Injury_Flag': 'bool1',
@@ -56,6 +57,8 @@ class PickListDataImporter:
 
     @staticmethod
     def import_to_db(table_number, lang_code, filename):
+        print("Loading picklist datafile: " + filename)
+
         PickListDataImporter.update_status(action=1)   # TODO: magic constant: 1 = loading rows
 
         rows = PickListDataImporter.read_from_file(filename)

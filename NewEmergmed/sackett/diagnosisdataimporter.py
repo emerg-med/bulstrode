@@ -15,11 +15,10 @@ class DiagnosisDataImporter:
                             'Sort2': 'sort2',
                             'Sort3': 'sort3',
                             'ECDS_Description': 'description',
-                            'ECDS_Code': 'code',
+                            'SNOMED_Code': 'code',
                             'Inj_Flag': 'injury',
                             'AEC_Flag': 'aec',
-                            'NotifiableDisease_Flag': 'notifiable_disease',
-                            'Notes': 'post_macro'
+                            'NotifiableDisease_Flag': 'notifiable_disease'
                             }
 
     @staticmethod
