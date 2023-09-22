@@ -1,0 +1,12 @@
+version: '3.7'
+
+services:
+  app:
+    image: bulstrode:latest
+    ports:
+      - "80:8000"
+    networks:
+      - bulstrode-net
+
+networks:
+  bulstrode-net:

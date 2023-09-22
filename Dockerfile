@@ -13,8 +13,8 @@ RUN apk add --update --no-cache python3 \
  && ln -sf python3 /usr/bin/python \
  && python3 -m ensurepip
 
-COPY ./NewEmergmed $BaseDir
-COPY ./requirements.txt $BaseDir
+ADD ./NewEmergmed $BaseDir/NewEmergmed
+ADD ./requirements.txt $BaseDir
 
 RUN apk add --update --no-cache pkgconfig \
  && apk add --update --no-cache --virtual build-deps gcc python3-dev musl-dev \
@@ -28,4 +28,4 @@ EXPOSE 8000
 
 WORKDIR $BaseDir/NewEmergmed
 
-CMD ../python3 manage.py runserver
+CMD python3 manage.py runserver
