@@ -1,42 +1,50 @@
-ECDS_UniqueID,ECDS_Group,ECDS_Description,ECDS_Code,Sort1,Sort2
-2018111100,Bedside,Arterial blood gases,60170009,11,11
-2018112100,Bedside,Venous Blood gases,61911006,11,21
-2018113100,Bedside,Glucose,275810004,11,31
-2018114100,Bedside,Urinalysis,27171005,11,41
-2018115100,Bedside,ECG,29303009,11,51
-2018116100,Bedside,Peak expiratory flow ,29893006,11,61
-2018117100,Bedside,Dementia test,165320004,11,71
-2018211100,Biochemistry,Urea and electrolytes,252167001,21,11
-2018211300,Biochemistry,Liver function tests,26958001,21,13
-2018211500,Biochemistry,Amylase ,89659001,21,15
-2018211600,Biochemistry,Lipase,271232007,21,16
-2018212100,Biochemistry,Troponin,105000003,21,21
-2018212400,Biochemistry,Beta HCG,67900009,21,24
-2018213100,Biochemistry,Paracetamol level,250597008,21,31
-2018213500,Biochemistry,Bone profile,167036008,21,35
-2018214100,Biochemistry,Cardiac enzymes,74500006,21,41
-2018214500,Biochemistry,C-reactive protein ,55235003,21,45
-2018215100,Biochemistry,Creatine kinase,397798009,21,51
-2018216100,Biochemistry,Thyroid function tests,35650009,21,61
-2018218100,Biochemistry,Mast cell tryptase,62847008,21,81
-2018219100,Biochemistry,Serology,68793005,21,91
-2018411100,Haematology,Full blood count,26604007,41,11
-2018412100,Haematology,Coagulation screen,3116009,41,21
-2018413100,Haematology,D-dimer,70648006,41,31
-2018414100,Haematology,Group and save,252316009,41,41
-2018414300,Heamatology,Cross match blood,41902000,41,43
-2018415100,Heamatology,Thromboelastography,45027003,41,51
-2018511100,Microbiology,Blood culture,30088009,51,11
-2018513100,Microbiology,Urinary culture and sensitivities,401324008,51,31
-2018514100,Microbiology,Swab for culture and sensitivities,401294003,51,41
-2018611100,Ophthalmology,Visual acuity testing,16830007,61,11
-2018612100,Ophthalmology,Visual field testing,86944008,61,21
-2018613100,Ophthalmology,Intra-ocular fluid sampling,395007,61,31
-2018614100,Ophthalmology,Ocular coherence tomography,392010000,61,41
-2018615100,Ophthalmology,Ocular photography,282096008,61,51
-2018711100,Radiology,Plain radiography,168537006,71,11
-2018712100,Radiology,Ultrasonography,16310003,71,21
-2018713100,Radiology,Echocardiography,40701008,71,31
-2018714100,Radiology,CT scan,77477000,71,41
-2018715100,Radiology,MR scan,113091000,71,51
-2018716100,Radiology,Image intensifier,179929004,71,61
+ECDS_UniqueID,Sort1,Sort2,ECDS_Group1,ECDS_Description,SNOMED_Code
+UEC04INV1111111000,11,11,Bedside,Urinalysis,27171005
+UEC04INV1113111000,11,13,Bedside,Urine pregnancy test,167252002
+UEC04INV1121111000,11,21,Bedside,Electrocardiogram,29303009
+UEC04INV1131111000,11,31,Bedside,Glucose,104686004
+UEC04INV1141111000,11,41,Bedside,Peak expiratory flow,29893006
+UEC04INV1151111000,11,51,Bedside,Venous blood gas,61911006
+UEC04INV1155111000,11,55,Bedside,Arterial / capillary blood gas,60170009
+UEC04INV1159111000,11,59,Bedside,Lactate,270982000
+UEC04INV1171111000,11,71,Bedside,Dementia screening test,165320004
+UEC04INV2111111000,21,11,Biochemistry,Urea & Electrolytes (U&Es),252167001
+UEC04INV2113111000,21,13,Biochemistry,Liver function tests (LFTs),26958001
+UEC04INV2115111000,21,15,Biochemistry,Amylase,89659001
+UEC04INV2116111000,21,16,Biochemistry,Lipase,271232007
+UEC04INV2121111000,21,21,Biochemistry,Troponin,105000003
+UEC04INV2125111000,21,25,Biochemistry,Cardiac enzymes,74500006
+UEC04INV2129111000,21,29,Biochemistry,Bone profile,167036008
+UEC04INV2131111000,21,31,Biochemistry,Toxicology,269874008
+UEC04INV2139111000,21,39,Biochemistry,Pregnancy test,67900009
+UEC04INV2141111000,21,41,Biochemistry,Lipid profile,16254007
+UEC04INV2145111000,21,45,Biochemistry,Glycosolated haemoglobin (HbA1c),43396009
+UEC04INV2151111000,21,51,Biochemistry,C reactive protein (CRP),55235003
+UEC04INV2155111000,21,55,Biochemistry,Creatine kinase,397798009
+UEC04INV2161111000,21,61,Biochemistry,Thyroid function tests,35650009
+UEC04INV2181111000,21,81,Biochemistry,Immunology,252375001
+UEC04INV2183111000,21,83,Biochemistry,Mast cell tryptase,62847008
+UEC04INV2191111000,21,91,Biochemistry,Serology,68793005
+UEC04INV4111111000,41,11,Haematology,Full blood count (FBC),26604007
+UEC04INV4121111000,41,21,Haematology,Clotting studies,3116009
+UEC04INV4141111000,41,41,Haematology,Cross match blood / group and save serum for later cross match,252316009
+UEC04INV4151111000,41,51,Haematology,D-dimer,70648006
+UEC04INV4181111000,41,81,Haematology,Erythrocyte sedimentation rate (ESR),416838001
+UEC04INV4191111000,41,91,Haematology,Thromboelastography,56027003
+UEC04INV5111111000,51,11,Microbiology,Bacteriology,168338000
+UEC04INV5121111000,51,21,Microbiology,Swab for culture and sensitivities,401294003
+UEC04INV5131111000,51,31,Microbiology,Blood culture,30088009
+UEC04INV6111111000,61,11,Eyes / dental,Visual acuity testing,16830007
+UEC04INV6115111000,61,15,Eyes / dental,Tonometry,164729009
+UEC04INV6121111000,61,21,Eyes / dental,"Refraction, orthoptic tests and computerised visual fields",86944008
+UEC04INV6151111000,61,51,Eyes / dental,Intra-ocular fluid sampling,363255004
+UEC04INV6161111000,61,61,Eyes / dental,Ocular coherence tomography,392010000
+UEC04INV6171111000,61,71,Eyes / dental,Ocular photography,282096008
+UEC04INV6181111000,61,81,Eyes / dental,Dental investigation,53115007
+UEC04INV7111111000,71,11,Radiology,X-ray plain film,168537006
+UEC04INV7121111000,71,21,Radiology,Ultrasound,16310003
+UEC04INV7125111000,71,25,Radiology,Echocardiography,40701008
+UEC04INV7141111000,71,41,Radiology,Computerised Tomography,77477000
+UEC04INV7151111000,71,51,Radiology,Magnetic Resonance Imaging,113091000
+UEC04INV7161111000,71,61,Radiology,Image intensifier,179929004
+UEC04INV9911111000,99,11,Admin,Investigation not indicated,1088291000000101

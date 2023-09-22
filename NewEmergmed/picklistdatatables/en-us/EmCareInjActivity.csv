@@ -1,141 +1,148 @@
-ECDS_UniqueID,ECDS_Group,ECDS_Description,ECDS_Code,Sort1,Sort2,SNOMED_Code
-2018112100,Leisure at home,Recreation in lounge / sitting room,2018112100,11,21,
-2018112200,Leisure at home,Using electronic device - game / computer etc,2018112200,11,22,
-2018113100,Leisure at home,In bedroom / sleeping,2018113100,11,31,
-2018113500,Leisure at home,Bathing / showering,2018113500,11,35,
-2018114100,Leisure at home,Ascending / descending stairs,2018114100,11,41,
-2018114500,Leisure at home,Walking indoors,2018114500,11,45,
-2018114600,Leisure at home,Walking outdoors,2018114600,11,46,
-2018115100,Leisure at home,Play,2018115100,11,51,
-2018116100,Leisure at home,DIY/ garage / workshop ,2018116100,11,61,
-2018117100,Leisure at home,Gardening,2018117100,11,71,
-2018118100,Leisure at home,Crafts and hobbies,2018118100,11,81,
-2018151100,Leisure outside home,Social - non-food - pub / club,2018151100,15,11,
-2018152100,Leisure outside home,Social - food (restaurant / café),2018152100,15,21,
-2018153100,Leisure outside home,Entertainment - cinema / theatre / bingo etc.,2018153100,15,31,
-2018154100,Leisure outside home,Fishing,2018154100,15,41,
-2018154500,Leisure outside home,Hunting,2018154500,15,45,
-2018155100,Leisure outside home,Hobby,2018155100,15,51,
-2018211100,Transport,Pedestrian,2018211100,21,11,
-2018211100,Transport,Passenger ,2018211100,21,11,
-2018212100,Transport,Cyclist,2018212100,21,21,
-2018213100,Transport,Motorcycle rider,2018213100,21,31,
-2018213200,Transport,Motorcycle passenger,2018213200,21,32,
-2018214100,Transport,Motor vehicle driver,2018214100,21,41,
-2018214200,Transport,Motor vehicle passenger (not public transport),2018214200,21,42,
-2018311100,Institutional care,Prison / custodial / detention centre / police custody,2018311100,31,11,
-2018312100,Institutional care,Being nursed / cared for in residential facility,2018312100,31,21,
-2018351100,Food related,Food preparation,2018351100,35,11,
-2018352100,Food related,Food consumption,2018352100,35,21,
-2018411100,Work,Manual / unskilled / labour,2018411100,41,11,
-2018411500,Work,Carer,2018411500,41,15,
-2018412100,Work,Mining,2018412100,41,21,
-2018412200,Work,Farming,2018412200,41,22,
-2018412300,Work,"Construction, maintenance",2018412300,41,23,
-2018413100,Work,Factory work,2018413100,41,31,
-2018413200,Work,Transport / maintenance,2018413200,41,32,
-2018414100,Work,Administration / clerical,2018414100,41,41,
-2018414200,Work,Analysis / investigation,2018414200,41,42,
-2018414300,Work,Communications,2018414300,41,43,
-2018414500,Work,Engineering / technolgy,2018414500,41,45,
-2018414900,Work,Entertainment / creative,2018414900,41,49,
-2018415100,Work,Environmental,2018415100,41,51,
-2018415500,Work,Finance,2018415500,41,55,
-2018416100,Work,Management,2018416100,41,61,
-2018417100,Work,Professional,2018417100,41,71,
-2018417500,Work,Science / research,2018417500,41,75,
-2018417900,Work,Teaching,2018417900,41,79,
-2018419100,Work,Trade / retail,2018419100,41,91,
-2018611100,Sports - football,Football (soccer),2018611100,61,11,
-2018612100,Sports - football,Rugby union,2018612100,61,21,
-2018613100,Sports - football,Rugby league,2018613100,61,31,
-2018614100,Sports - football,Gaelic football / Australian rules,2018614100,61,41,
-2018615100,Sports - football,American football,2018615100,61,51,
-2018631100,Sports - stick sports,Hockey,2018631100,63,11,
-2018632100,Sports - stick sports,Lacrosse,2018632100,63,21,
-2018633100,Sports - stick sports,Hurling,2018633100,63,31,
-2018651100,Sports - ball,Basketball,2018651100,65,11,
-2018652100,Sports - ball,Netball,2018652100,65,21,
-2018653100,Sports - ball,Volleyball,2018653100,65,31,
-2018654100,Sports - ball,Korfball,2018654100,65,41,
-2018655100,Sports - ball,Handball,2018655100,65,51,
-2018656100,Sports - ball,Fives,2018656100,65,61,
-2018657100,Sports - ball,Ten pin bowling,2018657100,65,71,
-2018657200,Sports - ball,Bowls,2018657200,65,72,
-2018657300,Sports - ball,Boules,2018657300,65,73,
-2018671100,Sports - hitting,Golf,2018671100,67,11,
-2018672100,Sports - hitting,Cricket,2018672100,67,21,
-2018673100,Sports - hitting,Baseball,2018673100,67,31,
-2018673500,Sports - hitting,Softball,2018673500,67,35,
-2018674100,Sports - hitting,Croquet / roque,2018674100,67,41,
-2018691100,Sports - racquet,Tennis,2018691100,69,11,
-2018692100,Sports - racquet,Squash,2018692100,69,21,
-2018693100,Sports - racquet,Badminton,2018693100,69,31,
-2018694100,Sports - racquet,Table tennis,2018694100,69,41,
-2018695100,Sports - racquet,Real tennis,2018695100,69,51,
-2018711100,Sports - combat,Judo,2018711100,71,11,
-2018711500,Sports - combat,Taekwondo,2018711500,71,15,
-2018712100,Sports - combat,Martial arts,2018712100,71,21,
-2018714100,Sports - combat,Boxing,2018714100,71,41,
-2018714500,Sports - combat,Kick-boxing,2018714500,71,45,
-2018715100,Sports - combat,Wrestling,2018715100,71,51,
-2018716100,Sports - combat,Fencing,2018716100,71,61,
-2018731100,Sports - athletics,Running / jogging / race walking,2018731100,73,11,
-2018732100,Sports - athletics,Long distance running (>20km / 13 miles),2018732100,73,21,
-2018732500,Sports - athletics,Fell / mountain running,2018732500,73,25,
-2018734100,Sports - athletics,Jumping sports,2018734100,73,41,
-2018735100,Sports - athletics,Throwing sports,2018735100,73,51,
-2018751100,Sports - gym,Trampoline,2018751100,75,11,
-2018752100,Sports - gym,Gymnastics ,2018752100,75,21,
-2018752500,Sports - gym,Cheerleading,2018752500,75,25,
-2018753100,Sports - gym,"Gym class (aerobics, circuit training etc.)",2018753100,75,31,
-2018754100,Sports - gym,Indoor gym equipment,2018754100,75,41,
-2018755100,Sports - gym,Weightlifting / body building,2018755100,75,51,
-2018771100,Sports - swimming,Swimming,2018771100,77,11,
-2018772100,Sports - swimming,Water polo,2018772100,77,21,
-2018773100,Sports - swimming,Synchronised swimming,2018773100,77,31,
-2018774100,Sports - swimming,Diving,2018774100,77,41,
-2018775100,Sports - swimming,SCUBA diving (recreational),2018775100,77,51,
-2018791100,Sports - wheeled,Cycling - road / track,2018791100,79,11,
-2018792100,Sports - wheeled,Cycling - mountain biking,2018792100,79,21,
-2018793100,Sports - wheeled,Cycling - BMX ,2018793100,79,31,
-2018794100,Sports - wheeled,Skateboarding,2018794100,79,41,
-2018795100,Sports - wheeled,Rollerblades / skates,2018795100,79,51,
-2018811100,Sports - winter,Ice-skating,2018811100,81,11,
-2018812100,Sports - winter,Ice hockey,2018812100,81,21,
-2018813100,Sports - winter,Skiing - downhill,2018813100,81,31,
-2018813500,Sports - winter,Skiing - cross country,2018813500,81,35,
-2018814100,Sports - winter,Snowboarding,2018814100,81,41,
-2018815100,Sports - winter,Snow walking,2018815100,81,51,
-2018816100,Sports - winter,Motorised snow vehicle,2018816100,81,61,
-2018831100,Sports - outdoor,Hiking / hill-walking,2018831100,83,11,
-2018832100,Sports - outdoor,Climbing / mountaineering,2018832100,83,21,
-2018833100,Sports - outdoor,Caving / pot-holing,2018833100,83,31,
-2018851100,Sports - equestrian,Horse riding (recreational),2018851100,85,11,
-2018854100,Sports - equestrian,Horse riding (competition),2018854100,85,41,
-2018871100,Sports - watercraft,Rowing,2018871100,87,11,
-2018872100,Sports - watercraft,Canoeing,2018872100,87,21,
-2018873100,Sports - watercraft,Sailing,2018873100,87,31,
-2018874100,Sports - watercraft,Windsurfing,2018874100,87,41,
-2018875100,Sports - watercraft,Kite surfing,2018875100,87,51,
-2018891100,Sports - watercraft - powered,Water skiing,2018891100,89,11,
-2018892100,Sports - watercraft - powered,Powered boat,2018892100,89,21,
-2018893100,Sports - watercraft - powered,Towed behind power boat,2018893100,89,31,
-2018895100,Sports - watercraft - powered,Personal watercraft,2018895100,89,51,
-2018911100,Motorsports,Off road motorcycle ,2018911100,91,11,
-2018913100,Motorsports,Road / track motorcycle ,2018913100,91,31,
-2018915100,Motorsports,Off road car,2018915100,91,51,
-2018917100,Motorsports,Road / track car,2018917100,91,71,
-2018931100,Airsports - non-powered,Gliding,2018931100,93,11,
-2018932100,Airsports - non-powered,Hang-gliding,2018932100,93,21,
-2018933100,Airsports - non-powered,Parachuting,2018933100,93,31,
-2018933500,Airsports - non-powered,BASE jumping,2018933500,93,35,
-2018934100,Airsports - non-powered,Paragliding (non powered),2018934100,93,41,
-2018951100,Airsports - powered,Paragliding (powered),2018951100,95,11,
-2018952100,Airsports - powered,Ultralight aircraft,2018952100,95,21,
-2018953100,Airsports - powered,Fixed wing aircraft,2018953100,95,31,
-2018954100,Airsports - powered,Helicopter,2018954100,95,41,
-2018971100,Weapon sports,Archery,2018971100,97,11,
-2018972100,Weapon sports,Target shooting,2018972100,97,21,
-2018973100,Weapon sports,Clay pigeon shooting,2018973100,97,31,
-2018999900,Not applicable,Not applicable,2018999900,99,99,
+ECDS_UniqueID,Sort1,Sort2,ECDS_Group1,ECDS_Description,SNOMED_Code
+UEC04IJT1121111000,11,21,Leisure at home,Indoor recreation,1068401000000109
+UEC04IJT1125111000,11,25,Leisure at home,Using electronic device - TV / game / computer,1068291000000103
+UEC04IJT1141111000,11,41,Leisure at home,Ascending stairs,1068301000000104
+UEC04IJT1142111000,11,42,Leisure at home,Descending stairs,1068311000000102
+UEC04IJT1145111000,11,45,Leisure at home,Walking indoors,1068321000000108
+UEC04IJT1211111000,12,11,Essential activities,Food preparation (inc. as work),1068341000000101
+UEC04IJT1221111000,12,21,Essential activities,Food consumption,1068351000000103
+UEC04IJT1241111000,12,41,Essential activities,In bedroom / sleeping,1068421000000100
+UEC04IJT1261111000,12,61,Essential activities,Bathing,1068371000000107
+UEC04IJT1262111000,12,62,Essential activities,Showering,1068381000000109
+UEC04IJT1265111000,12,65,Essential activities,Using toilet facility,1068791000000107
+UEC04IJT1271111000,12,71,Essential activities,Being nursed / cared for,1068361000000100
+UEC04IJT1361111000,13,61,Leisure,DIY / maintenance,1068411000000106
+UEC04IJT1371111000,13,71,Leisure,Gardening,1068391000000106
+UEC04IJT1381111000,13,81,Leisure,Crafts,1068001000000102
+UEC04IJT1385111000,13,85,Leisure,Hobbies,1068061000000103
+UEC04IJT1511111000,15,11,Leisure outside home,Shopping,1082511000000106
+UEC04IJT1521111000,15,21,Leisure outside home,Social : restaurant / cafe / pub / club,1068281000000100
+UEC04IJT1531111000,15,31,Leisure outside home,Social : play / recreation,1068271000000102
+UEC04IJT1541111000,15,41,Leisure outside home,Entertainment : cinema,1068031000000108
+UEC04IJT1543111000,15,43,Leisure outside home,Entertainment : theatre,1068051000000101
+UEC04IJT1551111000,15,51,Leisure outside home,Entertainment : music,1068041000000104
+UEC04IJT1581111000,15,81,Leisure outside home,Fishing,1068811000000108
+UEC04IJT1585111000,15,85,Leisure outside home,Hunting,1068801000000106
+UEC04IJT2111111000,21,11,Transport,Walking outdoors,1068331000000105
+UEC04IJT2115111000,21,15,Transport,Pedestrian crossing road,1068651000000108
+UEC04IJT2121111000,21,21,Transport,Cyclist on road / public highway,1068431000000103
+UEC04IJT2131111000,21,31,Transport,Motorcycle rider,1068681000000102
+UEC04IJT2132111000,21,32,Transport,Motorcycle passenger,1068731000000106
+UEC04IJT2141111000,21,41,Transport,Motor vehicle driver,1068741000000102
+UEC04IJT2142111000,21,42,Transport,Motor vehicle passenger (not public transport),1068751000000104
+UEC04IJT2161111000,21,61,Transport,Passenger (public transport),1068781000000105
+UEC04IJT2171111000,21,71,Transport,Electric personal mobility device,1076901000000105
+UEC04IJT4111111000,41,11,Work,Manual / unskilled / labour,1068591000000101
+UEC04IJT4115111000,41,15,Work,Trade / retail,1068621000000103
+UEC04IJT4121111000,41,21,Work,Administration / clerical / professional,1068581000000103
+UEC04IJT4131111000,41,31,Work,Healthcare / caring,1068531000000102
+UEC04IJT4135111000,41,35,Work,Teaching,1068641000000105
+UEC04IJT4141111000,41,41,Work,Entertainment / creative,1068661000000106
+UEC04IJT4145111000,41,45,Work,Security work,1068631000000101
+UEC04IJT4155111000,41,55,Work,Factory work,1068551000000109
+UEC04IJT4161111000,41,61,Work,Environmental,1068611000000109
+UEC04IJT4165111000,41,65,Work,Engineering / technology,1068601000000107
+UEC04IJT4167111000,41,67,Work,Science / research,1068671000000104
+UEC04IJT4171111000,41,71,Work,Construction / maintenance,1068571000000100
+UEC04IJT4175111000,41,75,Work,Farming,1068541000000106
+UEC04IJT4177111000,41,77,Work,Mining,1068561000000107
+UEC04IJT6111111000,61,11,Sports : team : ball,Football (soccer),1067311000000103
+UEC04IJT6121111000,61,21,Sports : team : ball,Rugby union,1067331000000106
+UEC04IJT6122111000,61,22,Sports : team : ball,Rugby league,1067321000000109
+UEC04IJT6131111000,61,31,Sports : team : ball,Australian rules football,1067591000000102
+UEC04IJT6132111000,61,32,Sports : team : ball,Gaelic football,1067581000000104
+UEC04IJT6135111000,61,35,Sports : team : ball,American football,1067391000000107
+UEC04IJT6141111000,61,41,Sports : team : ball,Basketball,1067341000000102
+UEC04IJT6143111000,61,43,Sports : team : ball,Netball,1067351000000104
+UEC04IJT6145111000,61,45,Sports : team : ball,Volleyball,1067371000000108
+UEC04IJT6147111000,61,47,Sports : team : ball,Korfball,1067381000000105
+UEC04IJT6191111000,61,91,Sports : team : ball,Handball,1067361000000101
+UEC04IJT6311111000,63,11,Sports : team : bat / stick,Hockey,1067401000000105
+UEC04IJT6321111000,63,21,Sports : team : bat / stick,Cricket,1067421000000101
+UEC04IJT6331111000,63,31,Sports : team : bat / stick,Baseball,1067431000000104
+UEC04IJT6335111000,63,35,Sports : team : bat / stick,Softball,1067441000000108
+UEC04IJT6341111000,63,41,Sports : team : bat / stick,Lacrosse,1067411000000107
+UEC04IJT6345111000,63,45,Sports : team : bat / stick,Hurling,1068011000000100
+UEC04IJT6911111000,69,11,Sports : racquet,Tennis,1067451000000106
+UEC04IJT6921111000,69,21,Sports : racquet,Squash,1067461000000109
+UEC04IJT6931111000,69,31,Sports : racquet,Badminton,1067471000000102
+UEC04IJT6941111000,69,41,Sports : racquet,Table tennis,1067481000000100
+UEC04IJT6951111000,69,51,Sports : racquet,Real tennis,1068021000000106
+UEC04IJT7011111000,70,11,Sports : target / precision,Golf,1067491000000103
+UEC04IJT7021111000,70,21,Sports : target / precision,Pool,1067501000000109
+UEC04IJT7022111000,70,22,Sports : target / precision,Snooker,1067511000000106
+UEC04IJT7031111000,70,31,Sports : target / precision,Darts,1067521000000100
+UEC04IJT7041111000,70,41,Sports : target / precision,Croquet / roque,1067531000000103
+UEC04IJT7045111000,70,45,Sports : target / precision,Bowls,1067541000000107
+UEC04IJT7047111000,70,47,Sports : target / precision,Ten pin bowling,1067551000000105
+UEC04IJT7071111000,70,71,Sports : target / precision,Archery,1068071000000105
+UEC04IJT7073111000,70,73,Sports : target / precision,Boules,1068261000000109
+UEC04IJT7075111000,70,75,Sports : target / precision,Clay pigeon shooting,1067561000000108
+UEC04IJT7077111000,70,77,Sports : target / precision,Target shooting,1067571000000101
+UEC04IJT7311111000,73,11,Sports : athletics,Jogging,1068091000000109
+UEC04IJT7321111000,73,21,Sports : athletics,Running,1068081000000107
+UEC04IJT7331111000,73,31,Sports : athletics,Fell / mountain running,1067611000000105
+UEC04IJT7341111000,73,41,Sports : athletics,Power-walking / race-walking,1068101000000101
+UEC04IJT7351111000,73,51,Sports : athletics,Jumping sports,1068111000000104
+UEC04IJT7361111000,73,61,Sports : athletics,Throwing sports,1068121000000105
+UEC04IJT7511111000,75,11,Sports : gym / acrobatic / aesthetic,Trampoline,1068131000000107
+UEC04IJT7521111000,75,21,Sports : gym / acrobatic / aesthetic,Gymnastics,1067621000000104
+UEC04IJT7523111000,75,23,Sports : gym / acrobatic / aesthetic,Gym : aerobics,1067631000000102
+UEC04IJT7525111000,75,25,Sports : gym / acrobatic / aesthetic,Gym : circuit training,1067641000000106
+UEC04IJT7527111000,75,27,Sports : gym / acrobatic / aesthetic,Yoga,1068491000000102
+UEC04IJT7528111000,75,28,Sports : gym / acrobatic / aesthetic,Tai chi,1068511000000105
+UEC04IJT7529111000,75,29,Sports : gym / acrobatic / aesthetic,Pilates,1068501000000108
+UEC04IJT7541111000,75,41,Sports : gym / acrobatic / aesthetic,Cheerleading,1068821000000102
+UEC04IJT7545111000,75,45,Sports : gym / acrobatic / aesthetic,Dancing,1068471000000101
+UEC04IJT7561111000,75,61,Sports : gym / acrobatic / aesthetic,Indoor gym equipment,1067651000000109
+UEC04IJT7565111000,75,65,Sports : gym / acrobatic / aesthetic,Weightlifting / body building,1067661000000107
+UEC04IJT7711111000,77,11,Sports : combat,Judo,1068151000000100
+UEC04IJT7715111000,77,15,Sports : combat,Taekwondo,1068161000000102
+UEC04IJT7721111000,77,21,Sports : combat,Martial arts,1068171000000109
+UEC04IJT7741111000,77,41,Sports : combat,Boxing,1067671000000100
+UEC04IJT7745111000,77,45,Sports : combat,Kick-boxing,1067681000000103
+UEC04IJT7751111000,77,51,Sports : combat,Wrestling,1067691000000101
+UEC04IJT7761111000,77,61,Sports : combat,Fencing,1068141000000103
+UEC04IJT7911111000,79,11,Sports : wheeled,Cycling : track,1068451000000105
+UEC04IJT7921111000,79,21,Sports : wheeled,Cycling : mountain biking,1068461000000108
+UEC04IJT7931111000,79,31,Sports : wheeled,Cycling : BMX,1068481000000104
+UEC04IJT7941111000,79,41,Sports : wheeled,Skateboarding,1067721000000105
+UEC04IJT7951111000,79,51,Sports : wheeled,Rollerskates,1067711000000104
+UEC04IJT7952111000,79,52,Sports : wheeled,Rollerblades,1067701000000101
+UEC04IJT8121111000,81,21,Sports : wheeled : powered,Off road motorcycle,1068711000000103
+UEC04IJT8125111000,81,25,Sports : wheeled : powered,Off road quad bike,1068251000000106
+UEC04IJT8171111000,81,71,Sports : wheeled : powered,Off-road car / buggy,1068761000000101
+UEC04IJT8181111000,81,81,Sports : wheeled : powered,Car / motor vehicle on track,1068771000000108
+UEC04IJT8185111000,81,85,Sports : wheeled : powered,Motorcycle on track,1068701000000100
+UEC04IJT8611111000,86,11,Sports : swimming,Swimming,1067731000000107
+UEC04IJT8621111000,86,21,Sports : swimming,Water polo,1067741000000103
+UEC04IJT8631111000,86,31,Sports : swimming,Synchronised swimming,1068181000000106
+UEC04IJT8641111000,86,41,Sports : swimming,Diving,1067751000000100
+UEC04IJT8651111000,86,51,Sports : swimming,SCUBA diving,1067761000000102
+UEC04IJT8711111000,87,11,Sports : water-based,Rowing,1067771000000109
+UEC04IJT8721111000,87,21,Sports : water-based,Canoeing,1067781000000106
+UEC04IJT8731111000,87,31,Sports : water-based,Sailing,1067791000000108
+UEC04IJT8741111000,87,41,Sports : water-based,Windsurfing,1067811000000109
+UEC04IJT8745111000,87,45,Sports : water-based,Surfing,1067801000000107
+UEC04IJT8751111000,87,51,Sports : water-based,Kite surfing,1068191000000108
+UEC04IJT8771111000,87,71,Sports : water-based,Powered boat,1068231000000104
+UEC04IJT8773111000,87,73,Sports : water-based,Water-skiing,1067821000000103
+UEC04IJT8777111000,87,77,Sports : water-based,Towed behind power boat,1068241000000108
+UEC04IJT8791111000,87,91,Sports : water-based,Personal motorised watercraft,1068221000000101
+UEC04IJT9111111000,91,11,Sports : winter,Ice-skating,1067831000000101
+UEC04IJT9121111000,91,21,Sports : winter,Ice hockey,1067841000000105
+UEC04IJT9131111000,91,31,Sports : winter,Skiing : downhill,1067851000000108
+UEC04IJT9135111000,91,35,Sports : winter,Skiing : cross country,1067861000000106
+UEC04IJT9141111000,91,41,Sports : winter,Snowboarding,1067871000000104
+UEC04IJT9151111000,91,51,Sports : winter,Snow walking,1067881000000102
+UEC04IJT9161111000,91,61,Sports : winter,Motorised snow vehicle,1068201000000105
+UEC04IJT9171111000,91,71,Sports : winter,Curling,1068211000000107
+UEC04IJT9311111000,93,11,Sports : equestrian / adventure,Horse riding,1067991000000106
+UEC04IJT9351111000,93,51,Sports : equestrian / adventure,Hiking / hill-walking,1067981000000109
+UEC04IJT9361111000,93,61,Sports : equestrian / adventure,Climbing / mountaineering,1067961000000100
+UEC04IJT9371111000,93,71,Sports : equestrian / adventure,Caving / pot-holing,1067891000000100
+UEC04IJT9511111000,95,11,Sports : aero,Gliding,1067921000000108
+UEC04IJT9521111000,95,21,Sports : aero,Hang-gliding,1067911000000102
+UEC04IJT9531111000,95,31,Sports : aero,Parachuting,1067931000000105
+UEC04IJT9535111000,95,35,Sports : aero,BASE jumping,1067941000000101
+UEC04IJT9541111000,95,41,Sports : aero,Paragliding,1067951000000103

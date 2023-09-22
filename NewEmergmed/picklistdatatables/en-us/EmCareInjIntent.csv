@@ -1,8 +1,9 @@
-ECDS_UniqueID,ECDS_Description,ECDS_Code,Sort1,SNOMED_Code
-2018110000,Non-intentional injury,242056005,11,242056005
-2018210000,Self inflicted injury,276853009,21,276853009
-2018310000,Apparent assault,298231000000106,31,298231000000106
-2018410000,Complication of medical care,35688006,41,35688006
-2018510000,Injury caused by animal,242651001,51,242651001
-2018610000,Injury due to legal intervention,219256006,61,219256006
-2018710000,Undetermined / no information available,269735005,71,269735005
+ECDS_UniqueID,Sort1,ECDS_Description,SNOMED_Code
+UEC04IJI1111111000,11,Non-intentional injury,242056005
+UEC04IJI2111111000,21,Self inflicted injury,276853009
+UEC04IJI3111111000,31,Apparent assault (single assailant),1082491000000103
+UEC04IJI3511111000,35,Apparent assault (multiple assailants),1082501000000109
+UEC04IJI4111111000,41,Complication of medical care,35688006
+UEC04IJI5111111000,51,Injury caused by animal,242651001
+UEC04IJI6111111000,61,Injury due to legal intervention,219256006
+UEC04IJI7111111000,71,Undetermined / no information available,269735005

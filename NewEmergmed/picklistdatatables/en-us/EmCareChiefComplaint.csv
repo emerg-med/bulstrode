@@ -1,134 +1,195 @@
-ECDS_UniqueID,ECDS_Group,ECDS_Description,ECDS_Code,Sort1,Sort2,SNOMED_Code,ICD10_Code,Injury_Flag,Male_Flag,Female_Flag
-2018111100,Cardiovascular,Chest pain,29857009,11,11,29857009,R074,0,1,1
-2018111200,Cardiovascular,Palpitations,80313002,11,12,80313002,R002,0,1,1
-2018112300,Cardiovascular,Fainting episode,427461000,11,23,427461000,R55,0,1,1
-2018112400,Cardiovascular,Fainting episode with loss of consciousness,271594007,11,24,271594007,R55,0,1,1
-2018113500,Cardiovascular,Swollen legs (both),275319005,11,35,275319005,R601,0,1,1
-2018113600,Cardiovascular,Swollen leg (single),162784002,11,36,162784002,R600,0,1,1
-2018114400,Cardiovascular,Cold painful limb,21631000119105,11,44,2.1631E+13,I744,0,1,1
-2018115100,Cardiovascular,Cardiac arrest,410429000,11,51,410429000,I469,0,1,1
-2018115200,Cardiovascular,Cardiac arrest due to trauma,422970001,11,52,422970001,S269,1,1,1
-2018211100,Respiratory,Short of breath,267036007,21,11,267036007,R060,0,1,1
-2018211200,Respiratory,Difficulty breathing,230145002,21,12,230145002,R060,0,1,1
-2018211300,Respiratory,Noisy breathing,70407001,21,13,70407001,R061,0,1,1
-2018213100,Respiratory,Coughing up blood (haemoptysis),66857006,21,31,66857006,R042,0,1,1
-2018215100,Respiratory,Foreign body - respiratory tract,262599003,21,51,262599003,T178,1,1,1
-2018216100,Respiratory,Infant with episodes not breathing (apnoea),13094009,21,61,13094009,P285,0,1,1
-2018217100,Respiratory,Respiratory arrest,87317003,21,71,87317003,R092,0,1,1
-2018311100,Gastrointestinal,Abdominal pain,21522001,31,11,21522001,R10,0,1,1
-2018311200,Gastrointestinal,Constipation,14760008,31,12,14760008,K590,0,1,1
-2018311300,Gastrointestinal,Diarrhoea,62315008,31,13,62315008,K529,0,1,1
-2018311400,Gastrointestinal,Vomiting + / - nausea,422400008,31,14,422400008,R11,0,1,1
-2018311500,Gastrointestinal,Nausea without vomiting,422587007,31,15,422587007,R11,0,1,1
-2018311600,Gastrointestinal,Abdominal distension,41931001,31,16,41931001,R190,0,1,1
-2018311700,Gastrointestinal,Hiccoughs,65958008,31,17,65958008,R066,0,1,1
-2018311800,Gastrointestinal,Jaundice,18165001,31,18,18165001,R17,0,1,1
-2018312100,Gastrointestinal,Loss of appetite,79890006,31,21,79890006,R63,0,1,1
-2018313100,Gastrointestinal,Vomiting blood,8765009,31,31,8765009,K920,0,1,1
-2018313200,Gastrointestinal,Rectal pain,77880009,31,32,77880009,R102,0,1,1
-2018313300,Gastrointestinal,Blood in stools,249624003,31,33,249624003,K921,0,1,1
-2018314100,Gastrointestinal,Injury of anus,276464002,31,41,276464002,S366,1,1,1
-2018315200,Gastrointestinal,Food / foreign body in oesophagus,47609003,31,52,47609003,T181,1,1,1
-2018315500,Gastrointestinal,Foreign body in digestive tract,33334006,31,55,33334006,T18,1,1,1
-2018315900,Gastrointestinal,Foreign body in rectum,70176004,31,59,70176004,T185,1,1,1
-2018351100,Neurological,Headache,25064002,35,11,25064002,R51,0,1,1
-2018351200,Neurological,Drowsy (altered level of consciousness),3006004,35,12,3006004,R401,0,1,1
-2018351300,Neurological,Confusion,40917007,35,13,40917007,R410,0,1,1
-2018351400,Neurological,Limb weakness,309774006,35,14,309774006,R298,0,1,1
-2018351500,Neurological,Facial weakness,95666008,35,15,95666008,R298,0,1,1
-2018351600,Neurological,Dizziness,404640003,35,16,404640003,R42,0,1,1
-2018351700,Neurological,Seizure (fit),91175000,35,17,91175000,G406,0,1,1
-2018351800,Neurological,Numbness / tingling (parasthesia),44077006,35,18,44077006,R202,0,1,1
-2018351900,Neurological,Tremor,26079004,35,19,26079004,R251,0,1,1
-2018352000,Neurological,Unsteady on feet,25136009,35,20,25136009,R260,0,1,1
-2018352100,Neurological,Insomnia,193462001,35,21,193462001,G470,0,1,1
-2018411100,Skin,Wound - abrasion,399963005,41,11,399963005,T140,1,1,1
-2018411200,Skin,Wound - laceration,312608009,41,12,312608009,T141,1,1,1
-2018411300,Skin,Wound - puncture,312609001,41,13,312609001,T141,1,1,1
-2018411400,Skin,Wound - sting,299972003,41,14,299972003,T639,1,1,1
-2018411500,Skin,Wound - bite,283682007,41,15,283682007,T181,1,1,1
-2018412100,Skin,Burn,125666000,41,21,125666000,T300,1,1,1
-2018413100,Skin,Rash,271807003,41,31,271807003,R21,0,1,1
-2018413200,Skin,Localised swelling / redness / lumps / bumps,95320005,41,32,95320005,R229,0,1,1
-2018414200,Skin,Itching,418363000,41,42,418363000,L298,0,1,1
-2018416100,Skin,Spontaneous bruising,161887000,41,61,161887000,R233,0,1,1
-2018417100,Skin,Foreign body in skin / subcutaneous tissue,93459000,41,71,93459000,M795,1,1,1
-2018511300,Head and neck,Facial pain (inc. toothache),95668009,51,13,95668009,R520,0,1,1
-2018511800,Head and neck,Neck pain,81680005,51,18,81680005,R221,0,1,1
-2018512100,Head and neck,Ear - pain,162356005,51,21,162356005,H920,0,1,1
-2018512200,Head and neck,Ear - injury,2999009,51,22,2999009,S004,1,1,1
-2018512300,Head and neck,Ear - discharge,300132001,51,23,300132001,H921,0,1,1
-2018512400,Head and neck,Ear - hearing loss,15188001,51,24,15188001,H919,0,1,1
-2018512500,Head and neck,Ear - ringing in ears (tinnitus),60862001,51,25,60862001,H931,0,1,1
-2018512900,Head and neck,Ear - foreign body,75441006,51,29,75441006,T16,1,1,1
-2018513100,Head and neck,Nose - bleeding from nose,12441001,51,31,12441001,R040,0,1,1
-2018513200,Head and neck,Nose - injury,19491003,51,32,19491003,S003,1,1,1
-2018513400,Head and neck,Nose -  congestion,68235000,51,34,68235000,J30,0,1,1
-2018513900,Head and neck,Nose - foreign body,74699008,51,39,74699008,T171,0,1,1
-2018514100,Head and neck,Throat - sore,267102003,51,41,267102003,J029,0,1,1
-2018514200,Head and neck,Throat - cough,49727002,51,42,49727002,R05,0,1,1
-2018514900,Head and neck,Throat - foreign body in throat / mouth,14380007,51,49,14380007,T172,1,1,1
-2018551100,Eye,Red eye,75705005,55,11,75705005,H579,0,1,1
-2018551200,Eye,Foreign body on eye,55899000,55,12,55899000,T159,1,1,1
-2018552100,Eye,Pain in / around eye,41652007,55,21,41652007,H571,0,1,1
-2018552200,Eye,Discharge from eye,246679005,55,22,246679005,H579,0,1,1
-2018553200,Eye,Visual disturbance,63102001,55,32,63102001,H539,0,1,1
-2018553300,Eye,Photophobia,409668002,55,33,409668002,H531,0,1,1
-2018554100,Eye,Eye injury,282752000,55,41,282752000,S059,1,1,1
-2018555100,Eye,Eye review,170720001,55,51,170720001,Z099,0,1,1
-2018611100,Trauma / musculoskeletal,Head injury,82271004,61,11,82271004,S069,1,1,1
-2018611300,Trauma / musculoskeletal,Facial injury,125593007,61,13,125593007,S008,1,1,1
-2018611800,Trauma / musculoskeletal,Injury of neck,90460009,61,18,90460009,S199,1,1,1
-2018612100,Trauma / musculoskeletal,Injury of shoulder / arm / elbow / wrist/ hand,127278005,61,21,127278005,T119,1,1,1
-2018613100,Trauma / musculoskeletal,Injury of hip / leg / knee / ankle / foot,127279002,61,31,127279002,T139,1,1,1
-2018614100,Trauma / musculoskeletal,Injury of back,81102000,61,41,81102000,S399,1,1,1
-2018614200,Trauma / musculoskeletal,Backache (no recent injury),161891005,61,42,161891005,M545,0,1,1
-2018615100,Trauma / musculoskeletal,Pain in shoulder / arm / elbow / wrist / hand,102556003,61,51,102556003,M7960,0,1,1
-2018615500,Trauma / musculoskeletal,Pain in hip / leg / knee / ankle / foot,10601006,61,55,10601006,M7961,0,1,1
-2018616100,Trauma / musculoskeletal,Joint swelling,271771009,61,61,271771009,M259,0,1,1
-2018617100,Trauma / musculoskeletal,Major trauma,417746004,61,71,417746004,T07,1,1,1
-2018619100,Trauma / musculoskeletal,Traumatic amputation,262595009,61,91,262595009,T147,1,1,1
-2018711100,Genitourinary,Pain on passing urine,49650001,71,11,49650001,R300,0,1,1
-2018711300,Genitourinary,Frequent urination,28442001,71,13,28442001,R35,0,1,1
-2018711400,Genitourinary,Unable to pass urine,267064002,71,14,267064002,R33,0,1,1
-2018711500,Genitourinary,Low urine output,83128009,71,15,83128009,R34,0,1,1
-2018711600,Genitourinary,Blood in urine,34436003,71,16,34436003,R31,0,1,1
-2018712100,Genitourinary,Flank pain,247355005,71,21,247355005,R103,0,1,1
-2018712200,Genitourinary,Pain in scrotum / testes,20502007,71,22,20502007,N509,0,1,0
-2018714100,Genitourinary,Abnormal swelling groin area,281398003,71,41,281398003,R190,0,1,1
-2018716100,Genitourinary,Pain in genital area (generalised),225565007,71,61,225565007,R102,0,1,1
-2018716200,Genitourinary,Injury to genital area,6923002,71,62,6923002,S302,1,1,1
-2018718100,Genitourinary,Problem related to penis,33958003,71,81,33958003,N489,0,1,0
-2018719100,Genitourinary,States victim of sexual assault,56890008,71,91,56890008,Y05,1,1,1
-2018751100,ObGyn,"Pregnancy related, less than 20 weeks",428566005,75,11,428566005,O269,0,0,1
-2018752100,ObGyn,"Pregnancy related, greater than 20 weeks",429715006,75,21,429715006,O998,0,0,1
-2018753100,ObGyn,Vaginal bleeding - abnormal,289530006,75,31,289530006,N939,0,0,1
-2018755100,ObGyn,Foreign body in vagina,34124000,75,51,34124000,T192,1,0,1
-2018756100,ObGyn,Problem related to vagina,25658005,75,61,25658005,N949,0,0,1
-2018757100,ObGyn,Problem related to breast,79604008,75,71,79604008,N649,0,0,1
-2018811100,Environmental,Poisoning from any source,75478009,81,11,75478009,T659,1,1,1
-2018813100,Environmental,Electrical exposure (inc. lightning),371708003,81,31,371708003,T754,1,1,1
-2018814100,Environmental,Hypothermia,386689009,81,41,386689009,T68,1,1,1
-2018814500,Environmental,Frostbite,370977006,81,45,370977006,T357,1,1,1
-2018816100,Environmental,Near drowning,87970004,81,61,87970004,T751,1,1,1
-2018817100,Environmental,Exposure to communicable disease (inc. needlestick/ body fluids),417981005,81,71,417981005,Z209,1,1,1
-2018818100,Environmental,Chemical exposure,371704001,81,81,371704001,T658,1,1,1
-2018818500,Environmental,Noxious inhalation - gas / fumes / vapour,57335002,81,85,57335002,T599,1,1,1
-2018911100,Mental health / D&A,Drug / alcohol intoxication / withdrawal,66214007,91,11,66214007,F199,0,1,1
-2018913100,Mental health / D&A,Intentional self-harm,248062006,91,31,248062006,X84,1,1,1
-2018914100,Mental health / D&A,Suicidal intent,267073005,91,41,267073005,R458,0,1,1
-2018915100,Mental health / D&A,Depression,35489007,91,51,35489007,F329,0,1,1
-2018916100,Mental health / D&A,Anxiety,48694002,91,61,48694002,X419,0,1,1
-2018918100,Mental health / D&A,Behaviour - bizarre,248020004,91,81,248020004,R462,0,1,1
-2018918200,Mental health / D&A,Behaviour - violent,248004009,91,82,248004009,R456,0,1,1
-2018919100,Mental health / D&A,Hallucinations / delusionis,7011001,91,91,7011001,R443,0,1,1
-2018971100,General / minor,Fever,386661006,97,11,386661006,A509,0,1,1
-2018972100,General / minor,Hyperglycaemia,80394007,97,21,80394007,R739,0,1,1
-2018972500,General / minor,Hypoglycaemia,302866003,97,25,302866003,E162,0,1,1
-2018973100,General / minor,Postoperative / wound care (no complication),225358003,97,31,225358003,T941,0,1,1
-2018973500,General / minor,Postoperative / medical device with complication,385486001,97,35,385486001,T889,1,1,1
-2018975100,General / minor,Crying infant,162214009,97,51,162214009,R681,0,1,1
-2018976100,General / minor,Generalised weakness,13791008,97,61,13791008,R53,0,1,1
-2018977100,General / minor,Pale colour,398979000,97,71,398979000,R231,0,1,1
-2018977500,General / minor,Blue colour (cyanosis),3415004,97,75,3415004,R230,0,1,1
-2018978100,General / minor,Social problem (medically well),161152002,97,81,161152002,Z609,0,1,1
+ECDS_UniqueID,Sort1,Sort2,ECDS_Group1,ECDS_Description,SNOMED_Code,Flag_Pain,Flag_Injury,Flag_Male,Flag_Female
+UEC04CCC1111111000,11,11,Airway / breathing,Short of breath,267036007,0,0,1,1
+UEC04CCC1121111000,11,21,Airway / breathing,Difficulty breathing,230145002,0,0,1,1
+UEC04CCC1131111000,11,31,Airway / breathing,Stridor,70407001,0,0,1,1
+UEC04CCC1141111000,11,41,Airway / breathing,Noisy respiration,248573009,0,0,1,1
+UEC04CCC1151111000,11,51,Airway / breathing,Coughing up blood (haemoptysis),66857006,0,0,1,1
+UEC04CCC1161111000,11,61,Airway / breathing,Foreign body in respiratory tract,262599003,1,1,1,1
+UEC04CCC1171111000,11,71,Airway / breathing,Infant with episodes not breathing (apnoea),13094009,0,0,1,1
+UEC04CCC1181111000,11,81,Airway / breathing,Respiratory arrest,87317003,0,0,1,1
+UEC04CCC2111111000,21,11,Circulation / chest,Chest pain,29857009,1,0,1,1
+UEC04CCC2121111000,21,21,Circulation / chest,Palpitations,80313002,0,0,1,1
+UEC04CCC2131111000,21,31,Circulation / chest,Irregular heart beat,361137007,0,0,1,1
+UEC04CCC2141111000,21,41,Circulation / chest,Near syncope (feeling faint without LOC),427461000,0,0,1,1
+UEC04CCC2151111000,21,51,Circulation / chest,Syncope (collapse with LOC),271594007,0,0,1,1
+UEC04CCC2161111000,21,61,Circulation / chest,Swollen legs (both),762898005,1,0,1,1
+UEC04CCC2171111000,21,71,Circulation / chest,Swollen leg (single),449614009,1,0,1,1
+UEC04CCC2181111000,21,81,Circulation / chest,Cold painful limb,21631000119105,1,0,1,1
+UEC04CCC2191111000,21,91,Circulation / chest,Cardiac arrest,410429000,0,0,1,1
+UEC04CCC2195111000,21,95,Circulation / chest,Cardiac arrest due to trauma,422970001,0,1,1,1
+UEC04CCC3111111000,31,11,Gastrointestinal,Abdominal pain,21522001,1,0,1,1
+UEC04CCC3116111000,31,16,Gastrointestinal,Constipation,14760008,1,0,1,1
+UEC04CCC3121111000,31,21,Gastrointestinal,Diarrhoea,62315008,0,0,1,1
+UEC04CCC3126111000,31,26,Gastrointestinal,Nausea without vomiting,422587007,0,0,1,1
+UEC04CCC3131111000,31,31,Gastrointestinal,Vomiting + / - nausea,422400008,0,0,1,1
+UEC04CCC3136111000,31,36,Gastrointestinal,Abdominal distension,60728008,1,0,1,1
+UEC04CCC3141111000,31,41,Gastrointestinal,Hiccoughs,65958008,0,0,1,1
+UEC04CCC3146111000,31,46,Gastrointestinal,Jaundice,18165001,0,0,1,1
+UEC04CCC3151111000,31,51,Gastrointestinal,Loss of appetite,79890006,0,0,1,1
+UEC04CCC3156111000,31,56,Gastrointestinal,Vomiting blood,8765009,0,0,1,1
+UEC04CCC3161111000,31,61,Gastrointestinal,Rectal pain,77880009,1,0,1,1
+UEC04CCC3166111000,31,66,Gastrointestinal,Blood in stool,405729008,0,0,1,1
+UEC04CCC3171111000,31,71,Gastrointestinal,Injury of anus,276464002,1,1,1,1
+UEC04CCC3176111000,31,76,Gastrointestinal,Food / foreign body in oesophagus,47609003,1,1,1,1
+UEC04CCC3181111000,31,81,Gastrointestinal,Difficulty swallowing,40739000,1,0,1,1
+UEC04CCC3186111000,31,86,Gastrointestinal,Foreign body in digestive tract,33334006,1,1,1,1
+UEC04CCC3191111000,31,91,Gastrointestinal,Foreign body in rectum,70176004,1,1,1,1
+UEC04CCC3511111000,35,11,Neurological,Headache,25064002,1,0,1,1
+UEC04CCC3516111000,35,16,Neurological,Confusion,40917007,0,0,1,1
+UEC04CCC3521111000,35,21,Neurological,Drowsy,271782001,0,0,1,1
+UEC04CCC3526111000,35,26,Neurological,Limb weakness,713514005,0,0,1,1
+UEC04CCC3531111000,35,31,Neurological,Facial weakness,95666008,0,0,1,1
+UEC04CCC3536111000,35,36,Neurological,Speech disturbance,29164008,0,0,1,1
+UEC04CCC3541111000,35,41,Neurological,Seizure (fit),91175000,0,0,1,1
+UEC04CCC3546111000,35,46,Neurological,Dizziness,404640003,0,0,1,1
+UEC04CCC3551111000,35,51,Neurological,Numbness / tingling (parasthesia),44077006,0,0,1,1
+UEC04CCC3556111000,35,56,Neurological,Tremor,26079004,0,0,1,1
+UEC04CCC3561111000,35,61,Neurological,Unsteady when walking,22631008,0,0,1,1
+UEC04CCC3566111000,35,66,Neurological,Falls,161898004,0,0,1,1
+UEC04CCC3571111000,35,71,Neurological,Insomnia,193462001,0,0,1,1
+UEC04CCC4111111000,41,11,Skin,Wound : abrasion,399963005,1,1,1,1
+UEC04CCC4116111000,41,16,Skin,Wound : laceration,312608009,1,1,1,1
+UEC04CCC4121111000,41,21,Skin,Wound : puncture,312609001,1,1,1,1
+UEC04CCC4126111000,41,26,Skin,Wound : sting,299972003,1,1,1,1
+UEC04CCC4131111000,41,31,Skin,Wound : bite,283682007,1,1,1,1
+UEC04CCC4136111000,41,36,Skin,Burn,125666000,1,1,1,1
+UEC04CCC4141111000,41,41,Skin,Rash,271807003,1,0,1,1
+UEC04CCC4146111000,41,46,Skin,Localised swelling / redness / lumps / bumps,297982009,1,0,1,1
+UEC04CCC4151111000,41,51,Skin,Skin lump,444905003,1,0,1,1
+UEC04CCC4156111000,41,56,Skin,Skin redness / inflammation,247441003,1,0,1,1
+UEC04CCC4161111000,41,61,Skin,Itching,418363000,1,0,1,1
+UEC04CCC4166111000,41,66,Skin,Spontaneous bruising,161887000,0,0,1,1
+UEC04CCC4171111000,41,71,Skin,Foreign body in skin / subcutaneous tissue,93459000,1,1,1,1
+UEC04CCC5111111000,51,11,Head and neck,Facial pain (inc. toothache),95668009,1,0,1,1
+UEC04CCC5116111000,51,16,Head and neck,Toothache,27355003,1,0,1,1
+UEC04CCC5121111000,51,21,Head and neck,Neck pain,81680005,1,0,1,1
+UEC04CCC5126111000,51,26,Head and neck,Ear : pain,162356005,1,0,1,1
+UEC04CCC5131111000,51,31,Head and neck,Ear : injury,2999009,1,1,1,1
+UEC04CCC5136111000,51,36,Head and neck,Ear : discharge,300132001,1,0,1,1
+UEC04CCC5141111000,51,41,Head and neck,Ear : hearing loss,15188001,0,0,1,1
+UEC04CCC5146111000,51,46,Head and neck,Ear : ringing in ears (tinnitus),60862001,0,0,1,1
+UEC04CCC5151111000,51,51,Head and neck,Ear : foreign body,75441006,1,1,1,1
+UEC04CCC5156111000,51,56,Head and neck,Nose : bleeding from nose,249366005,0,0,1,1
+UEC04CCC5161111000,51,61,Head and neck,Nose : injury,19491003,1,1,1,1
+UEC04CCC5166111000,51,66,Head and neck,Nose : congestion,68235000,0,0,1,1
+UEC04CCC5171111000,51,71,Head and neck,Nose : foreign body,74699008,1,1,1,1
+UEC04CCC5176111000,51,76,Head and neck,Throat : sore,267102003,1,0,1,1
+UEC04CCC5181111000,51,81,Head and neck,Throat : cough,49727002,0,0,1,1
+UEC04CCC5186111000,51,86,Head and neck,Throat : swelling,421581006,1,0,1,1
+UEC04CCC5191111000,51,91,Head and neck,Throat : foreign body in mouth,14380007,1,1,1,1
+UEC04CCC5196111000,51,96,Head and neck,Throat : foreign body in throat,25479004,1,1,1,1
+UEC04CCC5511111000,55,11,Eye,Red eye,75705005,1,0,1,1
+UEC04CCC5521111000,55,21,Eye,Foreign body on eye,55899000,1,1,1,1
+UEC04CCC5531111000,55,31,Eye,Pain in / around eye,41652007,1,0,1,1
+UEC04CCC5541111000,55,41,Eye,Discharge from eye,246679005,1,0,1,1
+UEC04CCC5551111000,55,51,Eye,Visual disturbance,63102001,0,0,1,1
+UEC04CCC5561111000,55,61,Eye,Photophobia,409668002,1,0,1,1
+UEC04CCC5571111000,55,71,Eye,Eye injury,282752000,1,1,1,1
+UEC04CCC5581111000,55,81,Eye,Eye review,170720001,0,0,1,1
+UEC04CCC6111111000,61,11,Injury,Head injury,82271004,1,1,1,1
+UEC04CCC6114111000,61,14,Injury,Facial injury,125593007,1,1,1,1
+UEC04CCC6117111000,61,17,Injury,Injury of neck,90460009,1,1,1,1
+UEC04CCC6120111000,61,20,Injury,Clavicle injury,282760004,1,1,1,1
+UEC04CCC6123111000,61,23,Injury,Injury of shoulder region,125594001,1,1,1,1
+UEC04CCC6126111000,61,26,Injury,Injury of upper arm,125595000,1,1,1,1
+UEC04CCC6129111000,61,29,Injury,Injury of elbow,125596004,1,1,1,1
+UEC04CCC6132111000,61,32,Injury,Injury of forearm,125597008,1,1,1,1
+UEC04CCC6135111000,61,35,Injury,Injury of wrist,125598003,1,1,1,1
+UEC04CCC6138111000,61,38,Injury,Injury of hand,125599006,1,1,1,1
+UEC04CCC6141111000,61,41,Injury,Injury of finger,52011008,1,1,1,1
+UEC04CCC6144111000,61,44,Injury,Thumb injury,262520005,1,1,1,1
+UEC04CCC6147111000,61,47,Injury,Injury of hip region,125600009,1,1,1,1
+UEC04CCC6150111000,61,50,Injury,Injury of thigh,7523003,1,1,1,1
+UEC04CCC6153111000,61,53,Injury,Injury of knee,125601008,1,1,1,1
+UEC04CCC6156111000,61,56,Injury,Injury of lower leg,125602001,1,1,1,1
+UEC04CCC6159111000,61,59,Injury,Injury of ankle,125603006,1,1,1,1
+UEC04CCC6162111000,61,62,Injury,Injury of foot,125604000,1,1,1,1
+UEC04CCC6165111000,61,65,Injury,Heel injury,282780003,1,1,1,1
+UEC04CCC6168111000,61,68,Injury,Injury of toe,282776008,1,1,1,1
+UEC04CCC6171111000,61,71,Injury,Chest injury,262525000,1,1,1,1
+UEC04CCC6174111000,61,74,Injury,Injury of ribs,282770002,1,1,1,1
+UEC04CCC6177111000,61,77,Injury,Injury of sternum,432754003,1,1,1,1
+UEC04CCC6180111000,61,80,Injury,Injury of chest wall,65978000,1,1,1,1
+UEC04CCC6183111000,61,83,Injury,Injury of abdomen,128069005,1,1,1,1
+UEC04CCC6186111000,61,86,Injury,Injury of cervical region of back (disorder),450724008,1,1,1,1
+UEC04CCC6189111000,61,89,Injury,Injury of upper back,282765009,1,1,1,1
+UEC04CCC6192111000,61,92,Injury,Injury of lower back,282766005,1,1,1,1
+UEC04CCC6195111000,61,95,Injury,Major trauma (serious injury >1 body area) traumatic injury,1089261000000101,1,1,1,1
+UEC04CCC6198111000,61,98,Injury,Traumatic amputation,262595009,1,1,1,1
+UEC04CCC6511111000,65,11,Musculoskeletal,Backache (no recent injury),161891005,1,0,1,1
+UEC04CCC6514111000,65,14,Musculoskeletal,Shoulder pain,45326000,1,0,1,1
+UEC04CCC6517111000,65,17,Musculoskeletal,Pain in upper arm,771083005,1,0,1,1
+UEC04CCC6520111000,65,20,Musculoskeletal,Pain in elbow,74323005,1,0,1,1
+UEC04CCC6523111000,65,23,Musculoskeletal,Pain in forearm,444899003,1,0,1,1
+UEC04CCC6526111000,65,26,Musculoskeletal,Pain in wrist,56608008,1,0,1,1
+UEC04CCC6529111000,65,29,Musculoskeletal,Hand pain,53057004,1,0,1,1
+UEC04CCC6532111000,65,32,Musculoskeletal,Pain in finger,18876004,1,0,1,1
+UEC04CCC6535111000,65,35,Musculoskeletal,Pain in thumb,300955002,1,0,1,1
+UEC04CCC6538111000,65,38,Musculoskeletal,Hip pain,49218002,1,0,1,1
+UEC04CCC6541111000,65,41,Musculoskeletal,Thigh pain,78514002,1,0,1,1
+UEC04CCC6544111000,65,44,Musculoskeletal,Pain in knee,1003722009,1,0,1,1
+UEC04CCC6547111000,65,47,Musculoskeletal,Pain in calf,300954003,1,0,1,1
+UEC04CCC6550111000,65,50,Musculoskeletal,Ankle pain,247373008,1,0,1,1
+UEC04CCC6553111000,65,53,Musculoskeletal,Foot pain,47933007,1,0,1,1
+UEC04CCC6556111000,65,56,Musculoskeletal,Heel pain,2733002,1,0,1,1
+UEC04CCC6559111000,65,59,Musculoskeletal,Pain in toe,285365001,1,0,1,1
+UEC04CCC6562111000,65,62,Musculoskeletal,Joint swelling,271771009,1,0,1,1
+UEC04CCC7111111000,71,11,Genitourinary,Pain on passing urine,49650001,1,0,1,1
+UEC04CCC7116111000,71,16,Genitourinary,Increased frequency of urination,162116003,0,0,1,1
+UEC04CCC7121111000,71,21,Genitourinary,Unable to pass urine,267064002,1,0,1,1
+UEC04CCC7126111000,71,26,Genitourinary,Decreased urine output,718403007,0,0,1,1
+UEC04CCC7131111000,71,31,Genitourinary,Blood in urine,34436003,0,0,1,1
+UEC04CCC7136111000,71,36,Genitourinary,Flank pain,247355005,1,0,1,1
+UEC04CCC7141111000,71,41,Genitourinary,Pain in scrotum / testes,20502007,1,0,1,0
+UEC04CCC7146111000,71,46,Genitourinary,Abnormal swelling groin area,281398003,1,0,1,1
+UEC04CCC7151111000,71,51,Genitourinary,Pain in genital area (generalised),225565007,1,0,1,1
+UEC04CCC7156111000,71,56,Genitourinary,Pain in male genitalia,279020002,1,0,1,0
+UEC04CCC7161111000,71,61,Genitourinary,Pain in female genitalia,162143008,1,0,0,1
+UEC04CCC7166111000,71,66,Genitourinary,Injury of perineum,6923002,1,1,1,1
+UEC04CCC7171111000,71,71,Genitourinary,Injury to genital area,282772005,1,1,1,1
+UEC04CCC7176111000,71,76,Genitourinary,Problem related to penis,300528000,1,0,1,0
+UEC04CCC7181111000,71,81,Genitourinary,States victim of sexual assault,56890008,0,1,1,1
+UEC04CCC7511111000,75,11,ObGyn,Pregnancy related : less than 20 weeks,428566005,1,0,0,1
+UEC04CCC7521111000,75,21,ObGyn,Pregnancy related : greater than 20 weeks,429715006,1,0,0,1
+UEC04CCC7531111000,75,31,ObGyn,Abnormal vaginal bleeding,301822002,1,0,0,1
+UEC04CCC7541111000,75,41,ObGyn,Foreign body in vagina,34124000,1,1,0,1
+UEC04CCC7551111000,75,51,ObGyn,Problem related to vagina,289610003,1,0,0,1
+UEC04CCC7561111000,75,61,ObGyn,Problem related to breast,290085007,1,0,1,1
+UEC04CCC8111111000,81,11,Environmental,Poisoning from any source,75478009,1,1,1,1
+UEC04CCC8116111000,81,16,Environmental,Electrical exposure (inc. lightning),371708003,1,1,1,1
+UEC04CCC8121111000,81,21,Environmental,Effects of direct lightning strike,418723004,1,1,1,1
+UEC04CCC8126111000,81,26,Environmental,Hypothermia,386689009,0,1,1,1
+UEC04CCC8131111000,81,31,Environmental,Frostbite,370977006,1,1,1,1
+UEC04CCC8136111000,81,36,Environmental,Near drowning,87970004,0,1,1,1
+UEC04CCC8141111000,81,41,Environmental,Exposure to blood and/or body fluid,417981005,0,1,1,1
+UEC04CCC8146111000,81,46,Environmental,Exposure to communicable disease,444107005,0,0,1,1
+UEC04CCC8151111000,81,51,Environmental,Needle stick injury,10850741000119108,1,1,1,1
+UEC04CCC8156111000,81,56,Environmental,Chemical exposure,371704001,1,1,1,1
+UEC04CCC8161111000,81,61,Environmental,Noxious inhalation - gas / fumes / vapour,1156755000,1,1,1,1
+UEC04CCC8166111000,81,66,Environmental,Smoke inhalation,426936004,1,1,1,1
+UEC04CCC8511111000,85,11,Drug and Alcohol,Effects of alcohol and/or drug use,66214007,0,0,1,1
+UEC04CCC8521111000,85,21,Drug and Alcohol,Alcohol intoxication,18653004,0,0,1,1
+UEC04CCC8531111000,85,31,Drug and Alcohol,Alcohol withdrawal syndrome,191480000,0,0,1,1
+UEC04CCC8541111000,85,41,Drug and Alcohol,Drug withdrawal,363101005,1,0,1,1
+UEC04CCC9111111000,91,11,Psychosocial / Behaviour change,Self-harm,248062006,1,0,1,1
+UEC04CCC9121111000,91,21,Psychosocial / Behaviour change,Depressive feelings,366979004,0,0,1,1
+UEC04CCC9131111000,91,31,Psychosocial / Behaviour change,Feeling suicidal,6471006,0,0,1,1
+UEC04CCC9141111000,91,41,Psychosocial / Behaviour change,Feeling anxious,48694002,0,0,1,1
+UEC04CCC9151111000,91,51,Psychosocial / Behaviour change,Behaviour : unusual,248020004,0,0,1,1
+UEC04CCC9161111000,91,61,Psychosocial / Behaviour change,Behaviour :  violent,248004009,0,0,1,1
+UEC04CCC9171111000,91,71,Psychosocial / Behaviour change,Behaviour :  agitation,24199005,0,0,1,1
+UEC04CCC9181111000,91,81,Psychosocial / Behaviour change,Hallucinations,7011001,0,0,1,1
+UEC04CCC9191111000,91,91,Psychosocial / Behaviour change,Delusions,2073000,0,0,1,1
+UEC04CCC9511111000,95,11,General,Fever,386661006,0,0,1,1
+UEC04CCC9516111000,95,16,General,Hyperglycaemia,80394007,0,0,1,1
+UEC04CCC9521111000,95,21,General,Hypoglycaemia,302866003,0,0,1,1
+UEC04CCC9526111000,95,26,General,Dressing change/ wound care surveillance (uncomplicated),410379003,1,0,1,1
+UEC04CCC9531111000,95,31,General,Postoperative complication,385486001,1,1,1,1
+UEC04CCC9536111000,95,36,General,Complication associated with medical device,473023007,1,1,1,1
+UEC04CCC9541111000,95,41,General,Crying infant,162214009,0,0,1,1
+UEC04CCC9546111000,95,46,General,Generalised weakness,13791008,0,0,1,1
+UEC04CCC9551111000,95,51,General,Blue colour (cyanosis),3415004,0,0,1,1
+UEC04CCC9556111000,95,56,General,Social problem (medically well),161152002,0,0,1,1
+UEC04CCC9561111000,95,61,General,Direct referral to inpatient unit,78680009,0,0,1,1
+UEC04CCC9566111000,95,66,General,Requesting prescription,182888003,0,0,1,1
+UEC04CCC9591111000,95,91,General,"Asymptomatic, no symptoms",84387000,0,0,1,1

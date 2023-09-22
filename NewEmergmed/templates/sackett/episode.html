@@ -28,6 +28,7 @@
                     {
                         action: 'select',
                         onChange: new_diagnosis_select_changed,
+                        forceSelection: false,  // resolves bug where onChange was also fired onBlur
                         apiSettings: {
                             url: '{% url "sackett:diagnosis_search" ""%}{value}',
                             beforeSend: function(settings) {

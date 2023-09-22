@@ -131,11 +131,6 @@ function diagnosis_modifier_changed(value, text, $selected) {
 }
 
 function new_investigation_select_changed(value, text, $selected) {
-    console.log('new_investigation_select_changed');
-    console.log(value);
-    console.log(text);
-    console.log($selected);
-
     if ($selected == null) {
         return;
     }
@@ -164,21 +159,17 @@ function new_investigation_select_changed(value, text, $selected) {
 
 // TODO this is basically a copy/paste of the code for investigations
 function new_treatment_select_changed(value, text, $selected) {
-    console.log('new_treatment_select_changed: ');
     if ($selected == null) {
         return;
     }
-    console.log('1');
 
     ensure_treatments_data();
-    console.log('2');
 
     var treatment_id = value;
 
     if ($.inArray(treatment_id, data_changes['id_em_care_treatments']) > -1) {
         return;
     }
-    console.log('3');
 
     data_changes['id_em_care_treatments'].push(treatment_id);
 
@@ -191,7 +182,6 @@ function new_treatment_select_changed(value, text, $selected) {
                     .text(text);
     cloned_treatment.css('display', '');
     $('#treatments_grid').append(cloned_treatment);
-    console.log('4');
 }
 
 // TODO maybe we can break this up a bit more so it's not called every time for everything?

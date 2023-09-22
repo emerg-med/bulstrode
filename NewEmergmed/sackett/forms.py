@@ -137,15 +137,15 @@ class EpisodePreDiagnosisForm(forms.ModelForm):
         self.fields['em_care_chief_complaint'].widget.choices_raw = PickListDataProxy.load_raw_for_choice_field(
                 PickListTableTypes.EmCareChiefComplaint.value)
         self.fields['bed'].widget.choices_raw = [Expando(zone_label=b.zone.label,
-                                                     bed_label=_("%(zone)s: %(bed)s") %
-                                                               {'zone': b.zone.label,
-                                                                'bed': b.label
-                                                                if b.template_index != ZONE_WAITING_LIST_BED_INDEX
-                                                                else _("Waiting list")},
-                                                     template_index=b.template_index,
-                                                     bed_id=b.id)
-                                             for b in Bed.objects.filter(zone__deleted=False)
-                                             ]
+                                                         bed_label=_("%(zone)s: %(bed)s") %
+                                                                    {'zone': b.zone.label,
+                                                                     'bed': b.label
+                                                                     if b.template_index != ZONE_WAITING_LIST_BED_INDEX
+                                                                     else _("Waiting list")},
+                                                         template_index=b.template_index,
+                                                         bed_id=b.id)
+                                                 for b in Bed.objects.filter(zone__deleted=False)
+                                                 ]
 
         if (self.user and self.user.is_active and self.user.has_perm('can_clear_consultant')) or\
                 (instance.assigned_clinician is None):      # allow 'not set' if the clinician has not yet been set
@@ -173,7 +173,7 @@ class EpisodePreDiagnosisForm(forms.ModelForm):
                   'bed'
                   ]
         labels = {'em_care_chief_complaint': _('Chief complaint'),
-                  'em_care_assessment':_('Acuity'),
+                  'em_care_assessment': _('Acuity'),
                   'assigned_clinician': _('Doctor'),
                   'action': _('Action & time'),
                   'bed_requested': _('Bed requested'),
@@ -249,7 +249,7 @@ class InjuryDetailForm(forms.ModelForm):
             return []
 
         # need to replace \' with " since the code outputting the injury form converts the drugs/alcohol list
-        # into a string using single quoting, but that's not valie JSON - should be double quoted - so the parse
+        # into a string using single quoting, but that's not valid JSON - should be double quoted - so the parse
         # here fails during save. TODO find a neater solution to this - should output the correct format to begin with
         return json.loads(self.cleaned_data['em_care_inj_drug_alcohol'].replace('\'', '"'))
 
@@ -306,21 +306,21 @@ class PatientDetailsForm(forms.ModelForm):
                 PickListTableTypes.PersonStatedGender.value)
         self.fields['em_care_arrive_transport_mode'].widget.choices = PickListDataProxy.load_for_choice_field(
                 PickListTableTypes.EmCareArriveTransportMode.value)
-        self.fields['em_care_attendance_type'].widget.choices = PickListDataProxy.load_for_choice_field(
+        self.fields['em_care_attendance_type'].widget.choices_raw = PickListDataProxy.load_raw_for_choice_field(
                 PickListTableTypes.EmCareAttendanceType.value)
-        self.fields['em_care_referral_source'].widget.choices = PickListDataProxy.load_for_choice_field(
+        self.fields['em_care_referral_source'].widget.choices_raw = PickListDataProxy.load_raw_for_choice_field(
                 PickListTableTypes.EmCareReferralSource.value)
         self.fields['em_care_arrive_transfer_source'].widget.default_text =\
             PickListDataProxy.lookup_code(
                     PickListTableTypes.HealthCareFacility.value, self.instance.em_care_arrive_transfer_source) or\
             _('type to search')
-        self.fields['person_comm_lang'].widget.choices = PickListDataProxy.load_for_choice_field(
+        self.fields['person_comm_lang'].widget.choices_raw = PickListDataProxy.load_raw_for_choice_field(
                 PickListTableTypes.PersonCommLang.value)
-        self.fields['person_interpreter_lang'].widget.choices = PickListDataProxy.load_for_choice_field(
+        self.fields['person_interpreter_lang'].widget.choices_raw = PickListDataProxy.load_raw_for_choice_field(
                 PickListTableTypes.PersonInterpreterLang.value)
         self.fields['person_identity_withheld_reason'].widget.choices = PickListDataProxy.load_for_choice_field(
                 PickListTableTypes.PersonIdentityWithheldReason.value)
-        self.fields['person_usual_residence_type'].widget.choices = PickListDataProxy.load_for_choice_field(
+        self.fields['person_usual_residence_type'].widget.choices_raw = PickListDataProxy.load_raw_for_choice_field(
                 PickListTableTypes.PersonUsualResidenceType.value)
         self.fields['person_ethnic_category'].widget.choices = PickListDataProxy.load_for_choice_field(
                 PickListTableTypes.PersonEthnicCategory.value)
@@ -372,21 +372,26 @@ class PatientDetailsForm(forms.ModelForm):
                                              attrs={'class': 'track-value-changes'}),
             'em_care_arrive_transport_mode': SUSelect(fill_parent=True,
                                                       attrs={'class': 'track-value-changes'}),
-            'em_care_attendance_type': SUSelect(fill_parent=True,
-                                                attrs={'class': 'track-value-changes'}),
-            'em_care_referral_source': SUSelect(fill_parent=True,
-                                                attrs={'class': 'track-value-changes'}),
+            'em_care_attendance_type': MultiLevelSUSelect(levels=['sort1', 'sort2'], value_member='code',
+                                                          display_members=['group', 'description'],
+                                                          attrs={'class': 'track-value-changes'}),
+            'em_care_referral_source': MultiLevelSUSelect(levels=['sort1', 'sort2'], value_member='code',
+                                                          display_members=['group', 'description'],
+                                                          attrs={'class': 'track-value-changes'}),
             'em_care_arrive_transfer_source': SUSelect(fill_parent=True, searchable=True,
                                                        attrs={'class': 'track-value-changes'}),
-            'person_comm_lang': SUSelect(fill_parent=True, searchable=True,
-                                         attrs={'class': 'track-value-changes'}),
+            'person_comm_lang': MultiLevelSUSelect(levels=['sort1', 'sort2'], value_member='code',
+                                                   display_members=['group', 'description'],
+                                                   attrs={'class': 'track-value-changes'}),
             'person_interpreter_rqd': CheckboxInput(),
-            'person_interpreter_lang': SUSelect(fill_parent=True, searchable=True,
-                                                attrs={'class': 'track-value-changes'}),
+            'person_interpreter_lang': MultiLevelSUSelect(levels=['sort1', 'sort2'], value_member='code',
+                                                          display_members=['group', 'description'],
+                                                          attrs={'class': 'track-value-changes'}),
             'person_identity_withheld_reason': SUSelect(fill_parent=True,
                                                         attrs={'class': 'track-value-changes'}),
-            'person_usual_residence_type': SUSelect(fill_parent=True,
-                                                    attrs={'class': 'track-value-changes'}),
+            'person_usual_residence_type': MultiLevelSUSelect(levels=['sort1', 'sort2'], value_member='code',
+                                                              display_members=['group', 'description'],
+                                                              attrs={'class': 'track-value-changes'}),
             'person_ethnic_category': SUSelect(fill_parent=True,
                                                attrs={'class': 'track-value-changes'}),
             'person_gp_practice_code': SUSelect(fill_parent=True, searchable=True,
@@ -429,14 +434,15 @@ class TriageArrivalForm(forms.ModelForm):
             PickListDataProxy.load_raw_for_choice_field(PickListTableTypes.EmCareAttendanceType.value)
         # self.fields['person_interpreter_lang'].widget.choices =\
         #     PickListDataProxy.load_raw_for_choice_field(PickListTableTypes.PersonInterpreterLang.value)
-        self.fields['person_interpreter_lang'].widget.choices = PickListDataProxy.load_for_choice_field(
+        self.fields['person_interpreter_lang'].widget.choices_raw = PickListDataProxy.load_raw_for_choice_field(
                 PickListTableTypes.PersonInterpreterLang.value)
         self.fields['zone_id'].widget.choices_raw = get_zones_list()
         self.fields['em_care_assessment'].required = True
 
     def clean_person_interpreter_lang(self):
         return self.cleaned_data['person_interpreter_lang']\
-                if self.cleaned_data['person_interpreter_lang'] is not None and len(self.cleaned_data['person_interpreter_lang']) > 0\
+                if self.cleaned_data['person_interpreter_lang'] is not None and\
+                len(self.cleaned_data['person_interpreter_lang']) > 0\
                 else None
 
     class Meta:
@@ -466,10 +472,13 @@ class TriageArrivalForm(forms.ModelForm):
                                                           }),
             'em_care_arrive_transport_mode': MultiLevelSUSelect(levels=['sort1'], value_member='code',
                                                                 display_members=['description']),
-            'em_care_attendance_type': MultiLevelSUSelect(levels=['description'], value_member='code',
-                                                          display_members=['description']),
+            'em_care_attendance_type': MultiLevelSUSelect(levels=['sort1', 'sort2'], value_member='code',
+                                                          display_members=['group', 'description']),
             'person_interpreter_rqd': forms.CheckboxInput(),    # attrs={'id': 'triage_person_interpreter_rqd'}),
-            'person_interpreter_lang': SUSelect(searchable=True, attrs={'class': 'track-value-changes'}),
+            # 'person_interpreter_lang': SUSelect(searchable=True, attrs={'class': 'track-value-changes'}),
+            'person_interpreter_lang': MultiLevelSUSelect(levels=['sort1', 'sort2'], value_member='code',
+                                                          display_members=['group', 'description'],
+                                                          attrs={'class': 'track-value-changes'}),
             'em_care_assessment': SUSelect(choices=[(str(n), str(n)) for n in range(1, 6)]),
         }
 

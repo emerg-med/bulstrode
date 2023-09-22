@@ -1,6 +1,6 @@
-ECDS_UniqueID,ECDS_Description,ECDS_Code,Sort1
-2018010000,Record anonymised for legal/ statutory reasons ,1,1
-2018020000,Record anonymised at request of Caldicott Guardian ,2,2
-2018030000,Record anonymised at request of patient ,3,3
-2018970000,Record anonymised for other reason ,97,97
-2018990000,Identity withheld but reason not known ,99,99
+ECDS_Description,ECDS_Code,Sort1
+Record anonymised for legal/ statutory reasons,01,1
+Record anonymised at request of Caldicott Guardian,02,2
+Record anonymised at request of patient,03,3
+Record anonymised for other reason,97,4
+Identity withheld but reason not known,99,5

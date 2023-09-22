@@ -1,3 +1,4 @@
-ECDS_Code,ECDS_Description,Sort1
-315595002,No / not known,1
-315594003,Yes,2
+ECDS_UniqueID,Sort1,ECDS_Description,SNOMED_Code
+UEC04AIP1111111000,11,Interpreter not needed,315595002
+UEC04AIP2111111000,21,Interpreter needed,315594003
+UEC04AIP3111111000,31,Interpreter declined,759691000000101

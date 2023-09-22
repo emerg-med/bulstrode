@@ -1,18 +1,18 @@
-ECDS_UniqueID,ECDS_Group,ECDS_Description,ECDS_Code,Sort1,Sort2
-2018111100,Discharged,Home,2018111100,11,11
-2018112100,Discharged,Residential care facility without 24 hour nursing care (e.g. Residential Home),2018112100,11,21
-2018113100,Discharged,Residential care facility with 24 hour nursing care (e.g. Nursing Home),2018113100,11,31
-2018114100,Discharged,Police / Prison / Custody Facility,2018114100,11,41
-2018211100,Admitted,Ward – physical ward bed outside ED,2018211100,21,11
-2018215100,Admitted,High Dependency Unit / Coronary Care Unit (Level 2),2018215100,21,51
-2018216100,Admitted,Intensive Care Unit (Level 3),2018216100,21,61
-2018311100,Ambulatory / Short stay,Short stay (<24hr) ward managed by ED,2018311100,31,11
-2018312100,Ambulatory / Short stay,Ambulatory Care,2018312100,31,21
-2018313100,Ambulatory / Short stay,Virtual ward e.g. ‘hospital in the home’,2018313100,31,31
-2018412100,Transfer,Transfer to another hospital,2018412100,41,21
-2018511100,Left before treatment complete,Left before initial assessment,2018511100,51,11
-2018512100,Left before treatment complete,Left after assessment to go to alternative provider,2018512100,51,21
-2018513100,Left before treatment complete,Left after assessment but before seen by clinician,2018513100,51,31
-2018514100,Left before treatment complete,Left after seen by clinician but before treatment complete,2018514100,51,41
-2018811100,Died,Dead on arrival,2018811100,81,11
-2018812100,Died,Died in the Emergency Care facility,2018812100,81,21
+ECDS_UniqueID,Sort1,Sort2,ECDS_Group1,ECDS_Description,SNOMED_Code
+UEC04DGS1111111000,11,11,Treatment complete,Treatment complete,182992009
+UEC04DGS2111111000,21,11,Streamed at assessment,Streamed to primary care service / GP,1077021000000100
+UEC04DGS2121111000,21,21,Streamed at assessment,Streamed to Urgent Care Centre,1077031000000103
+UEC04DGS2131111000,21,31,Streamed at assessment,Streamed to Emergency Department,1077781000000101
+UEC04DGS2135111000,21,35,Streamed at assessment,Streamed to inpatient unit,1324201000000109
+UEC04DGS2141111000,21,41,Streamed at assessment,Same Day Emergency Care service,1077081000000104
+UEC04DGS2151111000,21,51,Streamed at assessment,Streamed to falls service,1077091000000102
+UEC04DGS2155111000,21,55,Streamed at assessment,Streamed to frailty service,1077101000000105
+UEC04DGS2161111000,21,61,Streamed at assessment,Streamed to mental health service,1077041000000107
+UEC04DGS2171111000,21,71,Streamed at assessment,Streamed to dental service,1077051000000105
+UEC04DGS2181111000,21,81,Streamed at assessment,Streamed to ophthalmology service,1077061000000108
+UEC04DGS2191111000,21,91,Left before treatment complete,Left before initial assessment,1066301000000103
+UEC04DGS3111111000,31,11,Streamed at assessment,Streamed to pharmacy service,1077071000000101
+UEC04DGS5121111000,51,21,Left before treatment complete,Left after assessment with intent to attend other healthcare provider,1066311000000101
+UEC04DGS5141111000,51,41,Left before treatment complete,Left after assessment but before treatment complete (destination unknown),1066321000000107
+UEC04DGS8111111000,81,11,Died,Dead on arrival,63238001
+UEC04DGS8121111000,81,21,Died,Died in the Emergency Care facility,75004002

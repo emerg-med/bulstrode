@@ -1,9 +1,6 @@
-ECDS_UniqueID,ECDS_Group,ECDS_Description,ECDS_Code,Sort1,Sort2
-2018111100,Unplanned / unanticipated,NEW clinical condition or deterioration of a chronic condition,2018111100,11,11
-2018113100,Unplanned / unanticipated,SAME / related problem as has attended THIS health provider WITHIN 7 DAYS. Includes failed discharge,2018113100,11,31
-2018116100,Unplanned / unanticipated,"SAME / related problem as has attended ANOTHER health provider WITHIN 7 DAYS. Includes failed discharge, GP",2018116100,11,61
-2018118100,Unplanned / unanticipated,Patient IN TRANSIT to another institution,2018118100,11,81
-2018511100,Planned / anticipated,RETURN visit WITHIN 7 DAYS following attendance at THIS health provider. Includes all ambulatory care,2018511100,51,11
-2018513100,Planned  / anticipated,TRANSFER from another medical institution for increased care,2018513100,51,31
-2018515100,Planned / anticipated,Arranged admission by inpatient unit,2018515100,51,51
-2018910000,Dead on arrival,Dead on arrival – no intent / attempt to resuscitate in Emergency Care facility,2018910000,91,0
+ECDS_Group1,ECDS_Description,ECDS_Code,Sort1,Sort2
+Unplanned / unanticipated,NEW clinical condition or deterioration of a chronic condition,1,11,11
+Unplanned / unanticipated,SAME / related problem as has attended THIS health provider WITHIN 7 DAYS. Includes failed discharge,2,11,21
+Unplanned / unanticipated,"SAME / related problem as has attended ANOTHER health provider WITHIN 7 DAYS. Includes failed discharge, GP",3,11,31
+Planned / anticipated,RETURN visit WITHIN 7 DAYS following attendance at THIS health provider. Includes all ambulatory care,4,51,11
+Dead on arrival,Dead on arrival – no intent / attempt to resuscitate in Emergency Care facility,X,91,11
