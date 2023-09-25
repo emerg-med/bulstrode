@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-19 15:49+0200\n"
+"POT-Creation-Date: 2023-09-22 10:34+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -23,100 +23,100 @@ msgstr ""
 msgid "%(surname)s, %(forename)s"
 msgstr "%(surname)s, %(forename)s"
 
-#. Translators: 'Male gender' and 'Female gender' MUST match the corresponding
-#. picklist data table entries
+#. Translators: 'Male' and 'Female' MUST match the corresponding picklist data
+#. table entries
 #: sackett/episodehelpers.py:21
-msgid "Male gender"
+msgid "Male"
 msgstr "Male"
 
 #: sackett/episodehelpers.py:22
-msgid "Female gender"
+msgid "Female"
 msgstr "Female"
 
 #: sackett/episodehelpers.py:76
 #, python-format
 msgid "Waiting time: %(wait_time_quantity)d minute"
 msgid_plural "Waiting time: %(wait_time_quantity)d minutes"
-msgstr[0] "Tiempo de espera: %(wait_time_quantity)d minuto"
-msgstr[1] "Tiempo de espera: %(wait_time_quantity)d minutos"
+msgstr[0] "Muda wa kusubiri: dakika %(wait_time_quantity)d"
+msgstr[1] "Muda wa kusubiri: dakika %(wait_time_quantity)d "
 
 #: sackett/episodehelpers.py:83
 #, python-format
 msgid "Waiting time: %(wait_time_quantity)d hour"
 msgid_plural "Waiting time: %(wait_time_quantity)d hours"
-msgstr[0] "Tiempo de espera: %(wait_time_quantity)d hora"
-msgstr[1] "Tiempo de espera: %(wait_time_quantity)d horas"
+msgstr[0] "Muda wa kusubiri: saa %(wait_time_quantity)d"
+msgstr[1] "Muda wa kusubiri: %(wait_time_quantity)d saa"
 
 #: sackett/episodehelpers.py:101
 #, python-format
 msgid "Triage category %(triage_category)s"
-msgstr "Categoría de triaje %(triage_category)s"
+msgstr "Aina ya majaribio %(triage_category)s"
 
 #: sackett/episodehelpers.py:102
 msgid "unknown"
-msgstr "desconocido"
+msgstr "haijulikani"
 
 #: sackett/episodehelpers.py:124
 msgid "Clinician must see patient"
-msgstr "El médico debe ver al paciente."
+msgstr "Daktari wa kliniki lazima amuone mgonjwa"
 
 #: sackett/episodehelpers.py:125
 msgid "Patient awaiting clinician"
-msgstr "Paciente en espera del médico"
+msgstr "Mgonjwa anayesubiri kliniki"
 
 #: sackett/episodehelpers.py:126
 msgid "Seen by clinician"
-msgstr "Visto por el médico"
+msgstr "Imeonekana na kliniki"
 
 #: sackett/episodehelpers.py:144 sackett/forms.py:179
 msgid "Bed requested"
-msgstr "Cama solicitada"
+msgstr "Kitanda kiliomba"
 
 #: sackett/episodehelpers.py:144
 msgid "Bed not requested"
-msgstr "Cama no solicitada"
+msgstr "Kitanda hakijaombwa"
 
 #: sackett/forms.py:19
 msgid "Clinical area name"
-msgstr "Nombre del área clínica"
+msgstr "Jina la eneo la kliniki"
 
 #: sackett/forms.py:29
 msgid "Template"
-msgstr "Plantilla"
+msgstr "Kiolezo"
 
 #: sackett/forms.py:66 sackett/forms.py:316 sackett/forms.py:330
 #: sackett/forms.py:334 sackett/widgets.py:38
 #: templates/sackett/episode_new_single_diagnosis.html:8
 msgid "type to search"
-msgstr "escribe para buscar"
+msgstr "chapa ili kutafuta"
 
 #: sackett/forms.py:78
 msgid "Status"
-msgstr "Estado"
+msgstr "Hali"
 
 #: sackett/forms.py:79
 msgid "Follow up"
-msgstr "Hacer un seguimiento"
+msgstr "Fuatilia"
 
 #: sackett/forms.py:80
 msgid "Medication"
-msgstr "Medicamento"
+msgstr "Dawa"
 
 #: sackett/forms.py:81
 msgid "Instructions"
-msgstr "Instrucciones"
+msgstr "Maagizo"
 
 #: sackett/forms.py:82
 msgid "Safeguarding"
-msgstr "Salvaguardia"
+msgstr "Kulinda"
 
 #: sackett/forms.py:83
 msgid "Destination"
-msgstr "Destino"
+msgstr "Marudio"
 
 #: sackett/forms.py:84
 msgid "Admitted to"
-msgstr "admitido en"
+msgstr "Imekubaliwa"
 
 #: sackett/forms.py:140
 #, python-format
@@ -126,273 +126,272 @@ msgstr "%(zone)s: %(bed)s"
 #: sackett/forms.py:144 templates/sackett/zone/eight_bed_demo_summary.html:48
 #: templates/sackett/zone/four_bed_demo_summary.html:44
 msgid "Waiting list"
-msgstr "Lista de espera"
+msgstr "Orodha ya kusubiri"
 
 #: sackett/forms.py:152
 msgid "not set"
-msgstr "no establecido"
+msgstr "haijawekwa"
 
-#: sackett/forms.py:175 sackett/forms.py:212 sackett/forms.py:453
+#: sackett/forms.py:175 sackett/forms.py:212 sackett/forms.py:459
 msgid "Chief complaint"
-msgstr "Queja principal"
+msgstr "malalamiko mkuu"
 
-#: sackett/forms.py:176 sackett/forms.py:457
+#: sackett/forms.py:176 sackett/forms.py:463
 msgid "Acuity"
-msgstr "Agudeza"
+msgstr "Ukali"
 
 #: sackett/forms.py:177
 msgid "Doctor"
-msgstr "Doctor"
+msgstr "Daktari"
 
 #: sackett/forms.py:178
 msgid "Action & time"
-msgstr "Tiempo de acción"
+msgstr "Kitendo na wakati"
 
 #: sackett/forms.py:180
 msgid "Bed"
-msgstr "Cama"
+msgstr "Kitanda"
 
-#: sackett/forms.py:210 sackett/forms.py:349 sackett/forms.py:448
+#: sackett/forms.py:210 sackett/forms.py:349 sackett/forms.py:454
 msgid "Given name"
-msgstr "Nombre de pila"
+msgstr "Jina la kupewa"
 
-#: sackett/forms.py:211 sackett/forms.py:350 sackett/forms.py:449
+#: sackett/forms.py:211 sackett/forms.py:350 sackett/forms.py:455
 msgid "Family name"
-msgstr "Apellido"
+msgstr "Jina la ukoo"
 
-#: sackett/forms.py:213 sackett/forms.py:450
+#: sackett/forms.py:213 sackett/forms.py:456
 msgid "Stated gender"
-msgstr "Género declarado"
+msgstr "Jinsia iliyotajwa"
 
-#: sackett/forms.py:214 sackett/forms.py:451
+#: sackett/forms.py:214 sackett/forms.py:457
 msgid "Age (approx)"
-msgstr "Edad (aprox.)"
+msgstr "Umri (takriban)"
 
 #: sackett/forms.py:262
 msgid "Date & time of injury"
-msgstr "Fecha y hora de la lesión"
+msgstr "Tarehe na wakati wa kuumia"
 
 #: sackett/forms.py:263
 msgid "Activity type"
-msgstr "Tipo de actividad"
+msgstr "Aina ya shughuli"
 
 #: sackett/forms.py:264
 msgid "Activity detail"
-msgstr "Detalle de la actividad"
+msgstr "Maelezo ya shughuli"
 
 #: sackett/forms.py:265
 msgid "Mechanism"
-msgstr "Mecanismo"
+msgstr "Utaratibu"
 
 #: sackett/forms.py:266
 msgid "Intent"
-msgstr "Intención"
+msgstr "Nia"
 
 #: sackett/forms.py:267
 msgid "Drugs/alcohol"
-msgstr "Drogas/alcohol"
+msgstr "Madawa ya kulevya/pombe"
 
 #: sackett/forms.py:268
 msgid "Type of location"
-msgstr "tipo de ubicación"
+msgstr "Aina ya eneo"
 
 #: sackett/forms.py:269
 msgid "Location"
-msgstr "Ubicación"
+msgstr "Mahali"
 
 #: sackett/forms.py:270
 msgid "Lat/long"
-msgstr "Latitud longitud"
+msgstr "Lat/nde"
 
 #: sackett/forms.py:291
 msgid "Phone"
-msgstr "Teléfono"
+msgstr "Simu"
 
 #: sackett/forms.py:292
 msgid "Mobile"
-msgstr "Móvil"
+msgstr "Rununu"
 
 #: sackett/forms.py:293
 msgid "Email"
-msgstr "Correo electrónico"
+msgstr "Barua pepe"
 
 #: sackett/forms.py:294
 msgid "Withhold identity"
-msgstr "Retener identidad"
+msgstr "Zuia utambulisho"
 
 #: sackett/forms.py:347
 msgid "NHS number"
-msgstr "número del NHS"
+msgstr "Nambari ya NHS"
 
 #: sackett/forms.py:348
 msgid "Local number"
-msgstr "Número local"
+msgstr "Nambari ya eneo"
 
 #: sackett/forms.py:351 templates/sackett/expected_arrival.html:90
 msgid "Gender"
-msgstr "Género"
+msgstr "Jinsia"
 
 #: sackett/forms.py:352
 msgid "Date of birth"
-msgstr "Fecha de nacimiento"
+msgstr "Tarehe ya kuzaliwa"
 
 #: sackett/forms.py:353
 msgid "Means of arrival"
-msgstr "Medios de llegada"
+msgstr "Njia za kuwasili"
 
-#: sackett/forms.py:354 sackett/forms.py:454
+#: sackett/forms.py:354 sackett/forms.py:460
 msgid "Attendance type"
-msgstr "Tipo de asistencia"
+msgstr "Aina ya mahudhurio"
 
 #: sackett/forms.py:355
 msgid "Referral source"
-msgstr "Fuente de referencia"
+msgstr "Chanzo cha rufaa"
 
 #: sackett/forms.py:356
 msgid "Transfer from"
-msgstr "Transferido de"
+msgstr "Uhamisho kutoka"
 
 #: sackett/forms.py:357
 msgid "Preferred language"
-msgstr "Idioma preferido"
+msgstr "Lugha inayopendekezwa"
 
-#: sackett/forms.py:358 sackett/forms.py:455
+#: sackett/forms.py:358 sackett/forms.py:461
 msgid "Interpreter reqd."
-msgstr "Se requiere intérprete."
+msgstr "Mkalimani reqd."
 
 #: sackett/forms.py:360
 msgid "Reason"
-msgstr "Razón"
+msgstr "Sababu"
 
 #: sackett/forms.py:361
 msgid "Usual address"
-msgstr "Dirección habitual"
+msgstr "Anwani ya kawaida"
 
 #: sackett/forms.py:363
 msgid "Postcode"
-msgstr "Código postal"
+msgstr "Msimbo wa posta"
 
 #: sackett/forms.py:364
 msgid "Residence type"
-msgstr "Tipo de residencia"
+msgstr "Aina ya makazi"
 
 #: sackett/forms.py:365
 msgid "Ethnic category"
-msgstr "categoría étnica"
+msgstr "Jamii ya kikabila"
 
 #: sackett/forms.py:366
 msgid "GP"
-msgstr "médico de cabecera"
+msgstr "GP"
 
 #: sackett/forms.py:367
 msgid "School"
-msgstr "Escuela"
+msgstr "Shule"
 
 #: sackett/forms.py:368
 msgid "Companion"
-msgstr "Compañero"
+msgstr "Mwenza"
 
-#: sackett/forms.py:400
+#: sackett/forms.py:405
 msgid "Clinical area"
-msgstr "Área clínica"
+msgstr "Eneo la kliniki"
 
-#: sackett/forms.py:403
+#: sackett/forms.py:408
 msgid "Expected patients"
-msgstr "Pacientes esperados"
+msgstr "Wagonjwa wanaotarajiwa"
 
-#: sackett/forms.py:452
+#: sackett/forms.py:458
 msgid "Arrival transport mode"
-msgstr "Modo de transporte de llegada"
-
-#: sackett/forms.py:478
-msgid "First name"
-msgstr "Nombre de pila"
-
-#: sackett/forms.py:479
-msgid "Last name"
-msgstr "Apellido"
-
-#: sackett/forms.py:484 sackett/forms.py:540
-#: templates/sackett/user_management_all.html:27
-msgid "Username"
-msgstr "Nombre de usuario"
-
-#: sackett/forms.py:485 sackett/forms.py:541
-msgid "Password"
-msgstr "Contraseña"
-
-#: sackett/forms.py:486
-msgid "Confirm password"
-msgstr "Confirmar Contraseña"
+msgstr "Njia ya usafiri wa kuwasili"
 
 #: sackett/forms.py:487
-msgid "User account enabled"
-msgstr "Cuenta de usuario habilitada"
+msgid "First name"
+msgstr "Jina la kwanza"
 
 #: sackett/forms.py:488
+msgid "Last name"
+msgstr "Jina la familia"
+
+#: sackett/forms.py:493 sackett/forms.py:549
+#: templates/sackett/user_management_all.html:27
+msgid "Username"
+msgstr "Jina la mtumiaji"
+
+#: sackett/forms.py:494 sackett/forms.py:550
+msgid "Password"
+msgstr "Nenosiri"
+
+#: sackett/forms.py:495
+msgid "Confirm password"
+msgstr "Thibitisha nenosiri"
+
+#: sackett/forms.py:496
+msgid "User account enabled"
+msgstr "Akaunti ya mtumiaji imewezeshwa"
+
+#: sackett/forms.py:497
 msgid "Administer other user accounts"
-msgstr "Administrar otras cuentas de usuario"
+msgstr "Simamia akaunti zingine za watumiaji"
 
-#: sackett/forms.py:489
+#: sackett/forms.py:498
 msgid "Configure system settings (e.g. branding)"
-msgstr "Configurar los ajustes del sistema (por ejemplo, la marca)"
+msgstr "Sanidi mipangilio ya mfumo (k.m. kuweka chapa)"
 
-#: sackett/forms.py:490
+#: sackett/forms.py:499
 msgid "Clear the assigned doctor for a patient"
-msgstr "Borrar el médico asignado para un paciente"
+msgstr "Futa daktari aliyepewa kwa mgonjwa"
 
-#: sackett/forms.py:491
+#: sackett/forms.py:500
 msgid "View recent discharged patients and undo discharge"
-msgstr "Ver pacientes dados de alta recientemente y deshacer el alta"
+msgstr "Tazama wagonjwa walioruhusiwa hivi majuzi na kutengua kutokwa na damu"
 
-#: sackett/forms.py:492
+#: sackett/forms.py:501
 msgid "Review quality breach reports"
-msgstr "Revisar los informes de incumplimiento de calidad"
+msgstr "Kagua ripoti za ukiukaji wa ubora"
 
-#: sackett/forms.py:493
+#: sackett/forms.py:502
 msgid "View dashboard"
-msgstr "Ver panel"
+msgstr "Tazama dashibodi"
 
-#: sackett/forms.py:494
+#: sackett/forms.py:503
 msgid "Export anonymised data"
-msgstr "Exportar datos anónimos"
+msgstr "Hamisha data isiyojulikana"
 
-#: sackett/forms.py:522 sackett/forms.py:532
+#: sackett/forms.py:531 sackett/forms.py:541
 msgid "Passwords don't match"
-msgstr "Las contraseñas no coinciden"
+msgstr "Manenosiri hayalingani"
 
-#: sackett/forms.py:530
+#: sackett/forms.py:539
 msgid "User name already in use"
-msgstr "Nombre de usuario ya está en uso"
+msgstr "Jina la mtumiaji tayari linatumika"
 
-#: sackett/forms.py:534
+#: sackett/forms.py:543
 msgid "Please specify a username and password"
-msgstr "Por favor especifique un nombre de usuario y contraseña"
+msgstr "Tafadhali taja jina la mtumiaji na nenosiri"
 
-#: sackett/forms.py:555
+#: sackett/forms.py:564
 msgid "Username or password incorrect, or user is disabled"
-msgstr ""
-"Nombre de usuario o contraseña incorrectos o el usuario está deshabilitado"
+msgstr "Jina la mtumiaji au nenosiri si sahihi, au mtumiaji amezimwa"
 
-#: sackett/forms.py:561
+#: sackett/forms.py:570
 msgid "Old password"
-msgstr "Contraseña anterior"
+msgstr "Namba ya siri ya zamani"
 
-#: sackett/forms.py:562
+#: sackett/forms.py:571
 msgid "New password"
-msgstr "Nueva contraseña"
+msgstr "Nenosiri mpya"
 
-#: sackett/forms.py:563
+#: sackett/forms.py:572
 msgid "Confirm new password"
-msgstr "Confirmar nueva contraseña"
+msgstr "Thibitisha nenosiri jipya"
 
-#: sackett/forms.py:582
+#: sackett/forms.py:591
 msgid "Old password incorrect, or user is disabled"
-msgstr "La contraseña anterior es incorrecta o el usuario está deshabilitado"
+msgstr "Nenosiri la zamani si sahihi, au mtumiaji amezimwa"
 
-#: sackett/forms.py:585
+#: sackett/forms.py:594
 msgid "New passwords don't match"
-msgstr "Las nuevas contraseñas no coinciden"
+msgstr "Manenosiri mapya hayalingani"
 
 #: sackett/views.py:137
 msgid "??"
@@ -400,7 +399,7 @@ msgstr "??"
 
 #: sackett/views.py:326
 msgid "Discharged at %H:%M, %d %b %Y"
-msgstr "Descargado en %H:%M, %d %b %Y"
+msgstr "Imezimwa kwa %H:%M, %d %b %Y"
 
 #: sackett/views.py:765
 #, python-format
@@ -410,86 +409,87 @@ msgstr "%(y)d y %(m)d m"
 #: sackett/views.py:1226
 #, python-format
 msgid "Clinical areas :: %(zone_label)s"
-msgstr "Áreas clínicas :: %(zone_label)s"
+msgstr "Maeneo ya kliniki :: %(zone_label)s"
 
 #: sackett/widgets.py:37 sackett/widgets.py:104 sackett/widgets.py:226
 #: templates/sackett/injury_detail.html:98
 msgid "choose"
-msgstr "elegir"
+msgstr "kuchagua"
 
 #: sackett/widgets.py:38
 msgid "choose or type to search"
-msgstr "elegir o escribir para buscar"
+msgstr "chagua au chapa ili kutafuta"
 
 #: templates/sackett/add_zone.html:4 templates/sackett/add_zone.html:70
 msgid "Add new clinical area"
-msgstr "Agregar nueva área clínica"
+msgstr "Ongeza eneo jipya la kliniki"
 
 #: templates/sackett/add_zone.html:86
 #: templates/sackett/expected_arrival.html:77
 #: templates/sackett/user_management_add_doctor.html:50
 #: templates/sackett/user_management_add_edit_user.html:122
 msgid "Add"
-msgstr "Agregar"
+msgstr "Ongeza"
 
 #: templates/sackett/add_zone_result.html:4
 msgid "New clinical area added:"
-msgstr "Nueva área clínica agregada:"
+msgstr "Eneo jipya la kliniki limeongezwa:"
 
 #: templates/sackett/add_zone_result.html:5
 msgid "Click here to view it"
-msgstr "Haga clic aquí para verlo"
+msgstr "Bofya hapa kuitazama"
 
 #: templates/sackett/add_zone_result.html:7
 msgid "Error adding new clinical area - please choose a label and a template"
 msgstr ""
-"Error al agregar una nueva área clínica: elija una etiqueta y una plantilla"
+"Hitilafu katika kuongeza eneo jipya la kliniki - tafadhali chagua lebo na "
+"kiolezo"
 
 #: templates/sackett/debug_import_diagnoses.html:7
 msgid "DEBUG - remove me - Import diagnoses CSV"
-msgstr "DEBUG - eliminarme - Importar diagnósticos CSV"
+msgstr "DEBUG - niondoe - Leta utambuzi wa CSV"
 
 #: templates/sackett/debug_import_diagnoses.html:12
 #: templates/sackett/debug_import_tables.html:12
 msgid "Import"
-msgstr "Importar"
+msgstr "Ingiza"
 
 #: templates/sackett/debug_import_tables.html:7
 msgid "DEBUG - remove me - Import data table CSVs"
-msgstr "DEBUG - eliminarme - Importar archivos CSV de tablas de datos"
+msgstr "DEBUG - niondoe - Leta CSV za jedwali la data"
 
 #: templates/sackett/episode.html:10
 msgid "Episode :: "
-msgstr "Episodio ::"
+msgstr "Kipindi ::"
 
-#: templates/sackett/episode.html:100
+#: templates/sackett/episode.html:101
 msgid "Breach/Incident detail"
-msgstr "Detalle de incumplimiento/incidente"
+msgstr "Maelezo ya ukiukaji/tukio"
 
-#: templates/sackett/episode.html:110
+#: templates/sackett/episode.html:111
 msgid "Cancel"
-msgstr "Cancelar"
+msgstr "Ghairi"
 
-#: templates/sackett/episode.html:112
+#: templates/sackett/episode.html:113
 msgid "Submit"
-msgstr "Entregar"
+msgstr "Wasilisha"
 
-#: templates/sackett/episode.html:118 templates/sackett/episode.html:143
-#: templates/sackett/episode.html:184
+#: templates/sackett/episode.html:119 templates/sackett/episode.html:144
+#: templates/sackett/episode.html:185
 #: templates/sackett/patient_details.html:144
 #: templates/sackett/patient_details.html:166
 #: templates/sackett/patient_details.html:220
 #: templates/sackett/user_management_add_edit_user.html:124
 msgid "Save"
-msgstr "Ahorrar"
+msgstr "Hifadhi"
 
-#: templates/sackett/episode.html:123
+#: templates/sackett/episode.html:124
 #: templates/sackett/patient_details.html:148
 msgid "Breach"
-msgstr "Incumplimiento"
+msgstr "Uvunjaji"
 
-#: templates/sackett/episode.html:134 templates/sackett/episode.html:152
-#: templates/sackett/episode.html:171
+#: templates/sackett/episode.html:135 templates/sackett/episode.html:153
+#: templates/sackett/episode.html:172
 #: templates/sackett/patient_details.html:157
 #: templates/sackett/patient_details.html:175
 #: templates/sackett/patient_details.html:197
@@ -498,83 +498,83 @@ msgstr "Incumplimiento"
 msgid "%(full_name)s"
 msgstr "%(full_name)s"
 
-#: templates/sackett/episode.html:138 templates/sackett/episode.html:156
-#: templates/sackett/episode.html:175
+#: templates/sackett/episode.html:139 templates/sackett/episode.html:157
+#: templates/sackett/episode.html:176
 msgid "Registration..."
-msgstr "Registro..."
+msgstr "Usajili..."
 
-#: templates/sackett/episode.html:193
+#: templates/sackett/episode.html:194
 #, python-format
 msgid "Unique id: %(unique_id)s"
-msgstr "Identificación única: %(unique_id)s"
+msgstr "Kitambulisho cha kipekee: %(unique_id)s"
 
-#: templates/sackett/episode.html:198
+#: templates/sackett/episode.html:199
 #, python-format
 msgid "Local number: %(local_number)s"
-msgstr "Número local: %(local_number)s"
+msgstr "Nambari ya eneo: %(local_number)s"
 
-#: templates/sackett/episode.html:206
+#: templates/sackett/episode.html:207
 #, python-format
 msgid "%(age)s years old"
-msgstr "%(age)s años"
+msgstr "Umri wa miaka %(age)s."
 
-#: templates/sackett/episode.html:220
+#: templates/sackett/episode.html:221
 msgid "Patient has been discharged - this record is read-only"
-msgstr "El paciente ha sido dado de alta; este registro es de sólo lectura"
+msgstr "Mgonjwa ameruhusiwa - rekodi hii ni ya kusoma tu"
 
-#: templates/sackett/episode.html:242
+#: templates/sackett/episode.html:243
 #: templates/sackett/triage_arrival.html:216
 msgid "Triage decision support"
-msgstr "Apoyo a la decisión de triaje"
+msgstr "Usaidizi wa uamuzi wa triage"
 
-#: templates/sackett/episode.html:285 templates/sackett/episode.html:291
+#: templates/sackett/episode.html:286 templates/sackett/episode.html:292
 msgid "Click here for patient registration"
-msgstr "Haga clic aquí para el registro de pacientes"
+msgstr "Bonyeza hapa kwa usajili wa wagonjwa"
 
 #: templates/sackett/episode_clinical_narrative.html:2
 #: templates/sackett/episode_clinical_narrative.html:3
 msgid "Clinical notes:"
-msgstr "Notas clínicas:"
+msgstr "Vidokezo vya kliniki:"
 
 #: templates/sackett/episode_clinical_narrative.html:17
 msgid "Add note"
-msgstr "Añadir la nota"
+msgstr "Ongeza kidokezo"
 
 #: templates/sackett/episode_diagnoses.html:5
 msgid "Diagnoses"
-msgstr "Diagnósticos"
+msgstr "Uchunguzi"
 
 #: templates/sackett/episode_discharge.html:35
 msgid "Discharge"
-msgstr "Descargar"
+msgstr "Utekelezaji"
 
 #: templates/sackett/episode_discharge.html:106
 msgid "Undo early discharge"
-msgstr "Deshacer el alta anticipada"
+msgstr "Tendua uondoaji mapema"
 
 #: templates/sackett/episode_discharge.html:113
 msgid "Complete Discharge"
-msgstr "Alta completa"
+msgstr "Utekelezaji kamili"
 
 #: templates/sackett/episode_discharge.html:116
 msgid "Click Save to continue"
-msgstr "Haga clic en Guardar para continuar"
+msgstr "Bofya Hifadhi ili kuendelea"
 
 #: templates/sackett/episode_discharge_early.html:4
 msgid "Discharge early"
-msgstr "Alta temprana"
+msgstr "Osha mapema"
 
 #: templates/sackett/episode_investigations.html:5
 msgid "Investigations"
-msgstr "Investigaciones"
+msgstr "Uchunguzi"
 
 #: templates/sackett/episode_single_diagnosis.html:17
 msgid "Proven/confirmed"
-msgstr "Probado/confirmado"
+msgstr "Imethibitishwa/imethibitishwa"
 
 #: templates/sackett/episode_single_diagnosis.html:20
 msgid "Working diagnosis"
-msgstr "Diagnóstico de trabajo"
+msgstr "Utambuzi wa kufanya kazi"
 
 #: templates/sackett/episode_single_diagnosis.html:25
 #: templates/sackett/episode_single_investigation.html:13
@@ -583,125 +583,125 @@ msgstr "Diagnóstico de trabajo"
 #: templates/sackett/injury_detail.html:91
 #: templates/sackett/user_management_all.html:93
 msgid "Delete"
-msgstr "Borrar"
+msgstr "Futa"
 
 #: templates/sackett/episode_treatments.html:5
 msgid "Treatments"
-msgstr "Tratos"
+msgstr "Matibabu"
 
 #: templates/sackett/expected_arrival.html:9
 #: templates/sackett/templatetags/nav_menu.html:11
 msgid "Expected patient"
-msgstr "Paciente esperado"
+msgstr "Mgonjwa anayetarajiwa"
 
 #: templates/sackett/expected_arrival.html:21
 msgid "New patient expected"
-msgstr "Se espera nuevo paciente"
+msgstr "Mgonjwa mpya anatarajiwa"
 
 #: templates/sackett/expected_arrival.html:83
 msgid "Other expected patients"
-msgstr "Otros pacientes esperados"
+msgstr "Wagonjwa wengine wanaotarajiwa"
 
 #: templates/sackett/expected_arrival.html:88
 msgid "Name"
-msgstr "Nombre"
+msgstr "Jina"
 
 #: templates/sackett/expected_arrival.html:89
 msgid "Information"
-msgstr "Información"
+msgstr "Habari"
 
 #: templates/sackett/expected_arrival.html:91
 msgid "Age"
-msgstr "Edad"
+msgstr "Umri"
 
 #: templates/sackett/injury_detail.html:28
 msgid "Injury detail"
-msgstr "Detalle de la lesión"
+msgstr "Maelezo ya jeraha"
 
 #: templates/sackett/patient_details.html:10
 #: templates/sackett/patient_details_overview.html:9
 msgid "Patient registration"
-msgstr "Registro de pacientes"
+msgstr "Usajili wa mgonjwa"
 
 #: templates/sackett/patient_details.html:161
 #: templates/sackett/patient_details.html:179
 #: templates/sackett/patient_details.html:201
 #: templates/sackett/patient_details.html:214
 msgid "Episode..."
-msgstr "Episodio..."
+msgstr "Kipindi..."
 
 #: templates/sackett/patient_details.html:280
 msgid "Age (est.): "
-msgstr "Edad (estimada):"
+msgstr "Umri (st.):"
 
 #: templates/sackett/patient_details.html:281
 msgid "Age: "
-msgstr "Edad:"
+msgstr "Umri:"
 
 #: templates/sackett/site_base.html:11
 #: templates/sackett/site_base_no_menu.html:10
 msgid "Site :: "
-msgstr "Sitio ::"
+msgstr "Tovuti ::"
 
 #: templates/sackett/templatetags/locking_messages.html:5
 msgid "Another user is editing this record - please wait a moment"
-msgstr "Otro usuario está editando este registro. Espere un momento."
+msgstr "Mtumiaji mwingine anahariri rekodi hii - tafadhali subiri kidogo"
 
 #: templates/sackett/templatetags/locking_messages.html:10
 msgid "This record is locked by another user and cannot be edited"
-msgstr "Este registro está bloqueado por otro usuario y no se puede editar"
+msgstr "Rekodi hii imefungwa na mtumiaji mwingine na haiwezi kuhaririwa"
 
 #: templates/sackett/templatetags/locking_messages.html:14
 msgid ""
 "There was an error while locking this record - it cannot be edited and saved"
 " at this time"
 msgstr ""
-"Se produjo un error al bloquear este registro; no se puede editar ni guardar"
-" en este momento."
+"Kulikuwa na hitilafu wakati wa kufunga rekodi hii - haiwezi kuhaririwa na "
+"kuhifadhiwa kwa wakati huu"
 
 #: templates/sackett/templatetags/locking_messages.html:16
 msgid ""
 "Further attempts will be made automatically - this message will disappear "
 "once the record has been successfully locked"
 msgstr ""
-"Se realizarán más intentos automáticamente; este mensaje desaparecerá una "
-"vez que el registro se haya bloqueado exitosamente."
+"Majaribio zaidi yatafanywa kiotomatiki - ujumbe huu utatoweka mara tu rekodi"
+" itakapofungwa"
 
 #: templates/sackett/templatetags/locking_messages.html:19
 msgid ""
 "This record has been locked by another user - any unsaved changes you have "
 "made will be lost"
 msgstr ""
-"Este registro ha sido bloqueado por otro usuario; cualquier cambio no "
-"guardado que haya realizado se perderá"
+"Rekodi hii imefungwa na mtumiaji mwingine - mabadiliko yoyote ambayo "
+"hayajahifadhiwa ambayo umefanya yatapotea"
 
 #: templates/sackett/templatetags/locking_messages.html:25
 msgid "Record locked"
-msgstr "Registro bloqueado"
+msgstr "Rekodi imefungwa"
 
 #: templates/sackett/templatetags/locking_messages.html:29
 msgid ""
 "Another user is editing this record. You can take control of it but they "
 "will lose any unsaved changes."
 msgstr ""
-"Otro usuario está editando este registro. Puedes tomar el control de él, "
-"pero perderán los cambios no guardados."
+"Mtumiaji mwingine anahariri rekodi hii. Unaweza kuidhibiti lakini itapoteza "
+"mabadiliko yoyote ambayo hayajahifadhiwa."
 
 #: templates/sackett/templatetags/locking_messages.html:30
 msgid "Take control of this record?"
-msgstr "¿Tomar el control de este disco?"
+msgstr "Je, ungependa kudhibiti rekodi hii?"
 
 #: templates/sackett/templatetags/locking_messages.html:36
 #: templates/sackett/user_management_all.html:36
 #: templates/sackett/user_management_all.html:74
 msgid "No"
-msgstr "No"
+msgstr "Hapana"
 
 #: templates/sackett/templatetags/locking_messages.html:40
 #: templates/sackett/user_management_all.html:36
 #: templates/sackett/user_management_all.html:74
 msgid "Yes"
-msgstr "Sí"
+msgstr "Ndiyo"
 
 #: templates/sackett/templatetags/nav_menu.html:14
 #: templates/sackett/templatetags/nav_menu.html:96
@@ -709,197 +709,196 @@ msgstr "Sí"
 #: templates/sackett/triage_arrival.html:116
 #: templates/sackett/triage_arrival.html:228
 msgid "Triage"
-msgstr "Triaje"
+msgstr "Triage"
 
 #: templates/sackett/templatetags/nav_menu.html:17
 msgid "Registration"
-msgstr "Registro"
+msgstr "Usajili"
 
 #: templates/sackett/templatetags/nav_menu.html:29
 #: templates/sackett/templatetags/nav_menu.html:111
 msgid "Account"
-msgstr "Cuenta"
+msgstr "Akaunti"
 
 #: templates/sackett/templatetags/nav_menu.html:33
 #: templates/sackett/templatetags/nav_menu.html:115
 msgid "User admin"
-msgstr "Administrador de usuarios"
+msgstr "Msimamizi wa mtumiaji"
 
 #: templates/sackett/templatetags/nav_menu.html:38
 #: templates/sackett/templatetags/nav_menu.html:120
 msgid "Export data"
-msgstr "Exportar datos"
+msgstr "Hamisha data"
 
 #: templates/sackett/templatetags/nav_menu.html:43
 #: templates/sackett/templatetags/nav_menu.html:125
 msgid "Quality review"
-msgstr "Revisión de calidad"
+msgstr "Ukaguzi wa ubora"
 
 #: templates/sackett/templatetags/nav_menu.html:48
 #: templates/sackett/templatetags/nav_menu.html:130
 msgid "Dashboard"
-msgstr "Panel"
+msgstr "Dashibodi"
 
 #: templates/sackett/templatetags/nav_menu.html:53
 #: templates/sackett/templatetags/nav_menu.html:135
 msgid "Discharged patients"
-msgstr "Pacientes dados de alta"
+msgstr "Wagonjwa walioruhusiwa"
 
 #: templates/sackett/templatetags/nav_menu.html:58
 #: templates/sackett/templatetags/nav_menu.html:140
 msgid "Settings"
-msgstr "Ajustes"
+msgstr "Mipangilio"
 
 #: templates/sackett/templatetags/nav_menu.html:69
 #: templates/sackett/zone_summary.html:27
 msgid "Clinical areas"
-msgstr "Áreas clínicas"
+msgstr "Maeneo ya kliniki"
 
 #: templates/sackett/templatetags/nav_menu.html:79
 #: templates/sackett/templatetags/nav_menu.html:161
 msgid "Add new..."
-msgstr "Añadir nuevo..."
+msgstr "Ongeza mpya..."
 
 #: templates/sackett/templatetags/nav_menu.html:90
 msgid "Overview"
-msgstr "Descripción general"
+msgstr "Muhtasari"
 
 #: templates/sackett/templatetags/nav_menu.html:93
 msgid "Expected"
-msgstr "Esperado"
+msgstr "Inatarajiwa"
 
 #: templates/sackett/templatetags/nav_menu.html:99
 msgid "Reg"
-msgstr "registro"
+msgstr "Reg"
 
 #: templates/sackett/templatetags/nav_menu.html:151
 msgid "Areas"
-msgstr "Áreas"
+msgstr "Maeneo"
 
 #: templates/sackett/triage_arrival.html:231
 msgid "Clear"
-msgstr "Claro"
+msgstr "Wazi"
 
 #: templates/sackett/user_management_add_doctor.html:9
 #: templates/sackett/user_management_add_doctor.html:17
 msgid "Add doctor"
-msgstr "Añadir médico"
+msgstr "Ongeza daktari"
 
 #: templates/sackett/user_management_add_doctor.html:25
 #, python-format
 msgid "Doctor '%(saved_first_name)s %(saved_last_name)s' created successfully"
-msgstr "Doctor '%(saved_first_name)s %(saved_last_name)s' creado exitosamente"
+msgstr "'%(saved_first_name)s %(saved_last_name)s' imeundwa kwa mafanikio"
 
 #: templates/sackett/user_management_add_edit_user.html:11
 #: templates/sackett/user_management_add_edit_user.html:24
 msgid "Add user"
-msgstr "Agregar usuario"
+msgstr "Ongeza mtumiaji"
 
 #: templates/sackett/user_management_add_edit_user.html:13
 #: templates/sackett/user_management_add_edit_user.html:26
 msgid "Edit user"
-msgstr "Editar usuario"
+msgstr "Badilisha mtumiaji"
 
 #: templates/sackett/user_management_add_edit_user.html:36
 #, python-format
 msgid "User with username '%(saved_username)s' created successfully"
 msgstr ""
-"Usuario con nombre de usuario '%(saved_username)s' creado exitosamente"
+"Mtumiaji aliye na jina la mtumiaji '%(saved_username)s' ameundwa kwa "
+"mafanikio"
 
 #: templates/sackett/user_management_add_edit_user.html:38
 msgid "User updated successfully"
-msgstr "Usuario actualizado exitosamente"
+msgstr "Mtumiaji amesasishwa"
 
 #: templates/sackett/user_management_add_edit_user.html:76
 msgid "Permissions"
-msgstr "Permisos"
+msgstr "Ruhusa"
 
 #: templates/sackett/user_management_all.html:9
 #: templates/sackett/user_management_personal.html:9
 msgid "User profile management"
-msgstr "Gestión de perfiles de usuario"
+msgstr "Usimamizi wa wasifu wa mtumiaji"
 
 #: templates/sackett/user_management_all.html:20
 msgid "Users"
-msgstr "Usuarios"
+msgstr "Watumiaji"
 
 #: templates/sackett/user_management_all.html:28
 #: templates/sackett/user_management_all.html:65
 msgid "Enabled"
-msgstr "Activado"
+msgstr "Imewashwa"
 
 #: templates/sackett/user_management_all.html:40
 msgid "Edit"
-msgstr "Editar"
+msgstr "Hariri"
 
 #: templates/sackett/user_management_all.html:51
 msgid "Add new user"
-msgstr "Añadir nuevo usuario"
+msgstr "Ongeza mtumiaji mpya"
 
 #: templates/sackett/user_management_all.html:56
 msgid "Doctors"
-msgstr "doctores"
+msgstr "Madaktari"
 
 #: templates/sackett/user_management_all.html:63
 msgid "Last Name"
-msgstr "Apellido"
+msgstr "Jina la familia"
 
 #: templates/sackett/user_management_all.html:64
 msgid "First Name"
-msgstr "Nombre de pila"
+msgstr "Jina la kwanza"
 
 #: templates/sackett/user_management_all.html:79
 msgid "Disable"
-msgstr "Desactivar"
+msgstr "Zima"
 
 #: templates/sackett/user_management_all.html:84
 msgid "Enable"
-msgstr "Permitir"
+msgstr "Wezesha"
 
 #: templates/sackett/user_management_all.html:104
 msgid "Add new doctor"
-msgstr "Agregar nuevo médico"
+msgstr "Ongeza daktari mpya"
 
 #: templates/sackett/user_management_login.html:10
 msgid "User login"
-msgstr "Inicio de sesión de usuario"
+msgstr "Kuingia kwa mtumiaji"
 
 #: templates/sackett/user_management_login.html:24
 #: templates/sackett/user_management_login.html:56
 msgid "Login"
-msgstr "Acceso"
+msgstr "Ingia"
 
 #: templates/sackett/user_management_login.html:29
 msgid "You can login here to access extra features of this site"
-msgstr ""
-"Puede iniciar sesión aquí para acceder a funciones adicionales de este "
-"sitio."
+msgstr "Unaweza kuingia hapa ili kufikia vipengele vya ziada vya tovuti hii"
 
 #: templates/sackett/user_management_personal.html:33
 msgid "Password updated successfully"
-msgstr "Contraseña actualizada exitosamente"
+msgstr "Nenosiri limesasishwa"
 
 #: templates/sackett/user_management_personal.html:39
 #, python-format
 msgid "Logged in as '%(current_user)s'"
-msgstr "Ha iniciado sesión como '%(current_user)s'"
+msgstr "Imeingia kama '%(current_user)s'"
 
 #: templates/sackett/user_management_personal.html:44
 msgid "Logout"
-msgstr "Cerrar sesión"
+msgstr "Ondoka"
 
 #: templates/sackett/user_management_personal.html:49
 msgid ""
 "You can update your password by completing the details here and clicking "
 "\"Update\""
 msgstr ""
-"Puede actualizar su contraseña completando los detalles aquí y haciendo clic"
-" en \"Actualizar\""
+"Unaweza kusasisha nenosiri lako kwa kujaza maelezo hapa na kubofya "
+"\"Sasisha\""
 
 #: templates/sackett/user_management_personal.html:84
 msgid "Update"
-msgstr "Actualizar"
+msgstr "Sasisha"
 
 #: templates/sackett/zone_summary.html:4
 msgid "Clinical areas overview"
-msgstr "Descripción general de las áreas clínicas"
+msgstr "Muhtasari wa maeneo ya kliniki"
