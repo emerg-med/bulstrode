@@ -28,4 +28,6 @@ EXPOSE 8000
 
 WORKDIR $BaseDir/NewEmergmed
 
-CMD python3 manage.py runserver
+ADD entrypoint.sh .
+
+CMD ${BaseDir}/NewEmergmed/entrypoint.sh

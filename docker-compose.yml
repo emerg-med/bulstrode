@@ -1,12 +1,46 @@
-version: '3.7'
+version: '3.9'
 
 services:
+  database:
+    image: mariadb:latest
+    volumes:
+      - db_data:/var/lib/mysql
+    environment:
+      MARIADB_ROOT_PASSWORD_FILE: /run/secrets/db_root_password
+      MARIADB_DATABASE: sackett
+      MARIADB_USER: emergmed
+      MARIADB_PASSWORD_FILE: /run/secrets/db_sackett_password
+    secrets:
+      - db_root_password
+      - db_sackett_password
+    networks:
+      - bulstrode-net
+    healthcheck:
+      test: out=$$(mariadb-admin ping -h 127.0.0.1 -u $$MARIADB_USER --password=$$(cat $$MARIADB_PASSWORD_FILE) 2>&1); echo $$out | grep 'mysqld is alive' || { echo $$out; exit 1; }
+      start_period: 5s
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
   app:
     image: bulstrode:latest
     ports:
       - "80:8000"
     networks:
       - bulstrode-net
+    depends_on:
+      database:
+        condition: service_healthy
+        restart: true
+
+secrets:
+  db_root_password:
+    file: db_root_password.txt
+  db_sackett_password:
+    file: db_sackett_password.txt
 
 networks:
   bulstrode-net:
+
+volumes:
+  db_data:
