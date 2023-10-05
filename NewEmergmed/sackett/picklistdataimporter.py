@@ -144,6 +144,8 @@ class PickListDataImporter:
             table_count += 1
             PickListDataImporter.update_status(completed_tables=table_count, table_rows_loaded=0, table_rows_written=0)
 
+        print("Picklist import completed")
+
     @staticmethod
     def start_background(lang_code):
         with open("/tmp/sackett-pick-status.txt", "wb") as f:

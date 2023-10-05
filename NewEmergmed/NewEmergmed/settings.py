@@ -80,7 +80,7 @@ WSGI_APPLICATION = 'NewEmergmed.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'HOST': '',                 # blank == localhost
+        'HOST': 'database',                 # blank == localhost
         'NAME': 'sackett',
         'USER': 'emergmed',
         'PASSWORD': 'Emergmedpassword2023.',

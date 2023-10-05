@@ -1,0 +1,72 @@
+Starting from a clean Linux installation:
+
+1. Open two terminals
+
+2. Install Docker Engine (https://docs.docker.com/engine/install/)
+
+  - ensure that the Docker service is enabled on restart (the above instructions don't appear to include that) - something like:
+
+    sudo systemctl enable docker
+
+3. Clone the repo (checkout a specific branch if necessary).
+
+4. Change directory to the root of the project; ensure Dockerfile and docker-compose.yml are in the current directory.
+
+5. Modify the password files:
+
+  - db_sackett_password.txt should contain the password for the 'sackett' user in the DATABASES section of NewEmergmed/NewEmergmed/settings.py
+  - db_root_password.txt should contain a strong password that will become the root password for the database server
+
+6. Build the Docker image:
+
+    sudo docker build -t sackett:latest .
+
+7. Start the system interactively for the first time:
+
+    sudo docker compose up
+
+  You should see the database and application start, and the application will apply database migrations the first time it is run.
+
+8. From the second terminal:
+
+  a) Change directory to the root of the project as before
+  b) Add a superuser:
+
+    sudo docker compose run app python3 manage.py createsuperuser
+
+    (follow the prompts)
+
+9. Navigate a web browser to http://<ip-address>/sackett/arrivals/expected
+
+  - ensure that this loads correctly
+  - note that drop-down lists will not yet be populated
+
+10. Navigate to http://<ip-address>/sackett/debug/import_datatables and click the import button
+
+  - refer to the first terminal where you will see log file output showing each of the CSV files being imported
+  - wait until this has finished before proceeding
+
+11. Navigate to http://<ip-address>/sackett/debug/import_diagnoses and click the import button
+
+  - once again refer to the first terminal for logging to ensure the process has completed before proceeding
+
+12. Navigate to http://<ip-address>/sackett/arrivals/expected
+
+  - verify that the drop-down lists are now populated
+
+13. Stop the system
+
+  - either hit CTRL-C from within the first terminal where 'docker compose' was run, or
+  - from the second terminal:
+
+    sudo docker compose down
+
+14. To start the system for normal usage (now or in the future), simply:
+
+  - ensure the current directory is the root of the project (where docker-compose.yml lives)
+  - run:
+
+    sudo docker compose up --detach
+
+  The system should automatically start up on reboot.
+

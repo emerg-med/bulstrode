@@ -108,6 +108,8 @@ class DiagnosisDataImporter:
 
         DiagnosisDataImporter.update_status(rows_written=rows_written)      # final total
 
+        print("Diagnosis import completed.")
+
     @staticmethod
     def get_or_create_search_terms(search_terms_string):
         search_terms = []
