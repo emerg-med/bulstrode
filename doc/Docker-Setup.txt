@@ -44,11 +44,11 @@ Starting from a clean Linux installation:
 10. Navigate to http://<ip-address>/sackett/debug/import_datatables and click the import button
 
   - refer to the first terminal where you will see log file output showing each of the CSV files being imported
-  - wait until this has finished before proceeding
+  - wait until this has finished before proceeding (you will see "Picklist import completed")
 
 11. Navigate to http://<ip-address>/sackett/debug/import_diagnoses and click the import button
 
-  - once again refer to the first terminal for logging to ensure the process has completed before proceeding
+  - once again refer to the first terminal for logging to ensure the process has completed before proceeding ("Diagnosis import completed")
 
 12. Navigate to http://<ip-address>/sackett/arrivals/expected
 

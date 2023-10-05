@@ -65,6 +65,8 @@ class DiagnosisDataImporter:
 
     @staticmethod
     def import_to_db(lang_code, filename):
+        print ("Importing diagnoses...")
+
         DiagnosisDataImporter.update_status(action=1)   # TODO: magic constant: 1 = loading rows
 
         rows = DiagnosisDataImporter.read_from_file(filename)
