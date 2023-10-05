@@ -14,7 +14,7 @@ services:
       - db_root_password
       - db_sackett_password
     networks:
-      - bulstrode-net
+      - sackett-net
     healthcheck:
       test: out=$$(mariadb-admin ping -h 127.0.0.1 -u $$MARIADB_USER --password=$$(cat $$MARIADB_PASSWORD_FILE) 2>&1); echo $$out | grep 'mysqld is alive' || { echo $$out; exit 1; }
       start_period: 5s
@@ -23,11 +23,11 @@ services:
       retries: 10
 
   app:
-    image: bulstrode:latest
+    image: sackett:latest
     ports:
       - "80:8000"
     networks:
-      - bulstrode-net
+      - sackett-net
     depends_on:
       database:
         condition: service_healthy
@@ -40,7 +40,7 @@ secrets:
     file: db_sackett_password.txt
 
 networks:
-  bulstrode-net:
+  sackett-net:
 
 volumes:
   db_data:
