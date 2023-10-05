@@ -125,6 +125,8 @@ class PickListDataImporter:
 
     @staticmethod
     def import_all(lang_code):
+        print ("Importing picklists...")
+
         PickListDataImporter.update_status(total_tables=len(PickListTableTypes))
         table_count = 0
         for table_type in PickListTableTypes:
@@ -143,6 +145,8 @@ class PickListDataImporter:
                                                                    table_type.name + '.csv'))
             table_count += 1
             PickListDataImporter.update_status(completed_tables=table_count, table_rows_loaded=0, table_rows_written=0)
+
+        print("Picklist import completed.")
 
     @staticmethod
     def start_background(lang_code):
